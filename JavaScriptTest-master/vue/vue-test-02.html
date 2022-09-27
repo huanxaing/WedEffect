@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+</head>
+<body style="text-align: center">
+<div id="example">
+    <p>计算属性{{msg}}</p>
+    <p>计算属性{{revMsg}}</p>
+</div>
+<div id="watch-example">
+    <h1>侦听函数</h1>
+    <p>
+        Ask a yes/no question:
+        <input v-model="question">
+    </p>
+    <p>{{ answer }}</p>
+</div>
+<script>
+   var ex = new Vue({
+       el:'#example',
+       data:{
+           msg:'hello'
+       },
+       computed:{
+           revMsg:{
+               get: function () {
+                   return this.msg.split('').reverse().join('');
+               },
+               set: function (newValue) {
+                    var msgs = newValue.split('');
+                    this.msg=msgs[0];
+                    alert(this.msg);
+               }
+           }
+
+       }
+   });
+   var ex1 = new Vue({
+       el:'#watch-example',
+       data: {
+           question: '',
+           answer: 'I cannot give you an answer until you ask a question!'
+       },
+       methods:{
+            getAnswer:_.debounce(
+                function(){
+                    if (this.question.indexOf('?')===-1){
+                        this.answer = 'Questions usually contain a question mark. ;-)'
+                        return
+                    }
+                    this.answer = 'Thinking...'
+                    var vm = this
+                    axios.prototype().get('http://search.caixin.com/search/newSearch.jsp?callback=test')
+                        .then(function (response) {
+                        vm.answer = response
+                        })
+                        .catch(function (error) {
+                            vm.answer = 'Error! Could not reach the API. ' + error
+                        })
+                }
+            ,5000)
+       },
+       watch:{
+           question: function (newQuestion,oldQuestion) {
+                this.answer = '等待停止输入';
+                this.getAnswer()
+           }
+       }
+   })
+</script>
+
+</body>
+</html>

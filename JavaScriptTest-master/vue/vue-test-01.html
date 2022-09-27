@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<div id="app">
+    {{message}}
+</div>
+<div id="app1">
+    <p>{{html}}</p>
+    <p v-html="html"></p>
+    <a :href="url">test</a>
+</div>
+</body>
+<script>
+    var data ={
+        message:"23442323"
+    };
+    var app = new Vue({
+        el:"#app",
+        data:data,
+        //钩子函数
+        created: function () {
+            // `this` 指向 vm 实例
+            console.log('a is: ' + this.message)
+        }
+    });
+    console.log(app.$data === data)
+    console.log(app.$el === document.getElementById("app"));
+    //监听器
+    app.$watch('message', function (newValue, oldValue) {
+        // 这个回调将在 `app.message` 改变后调用
+        console.log(newValue+' '+oldValue)
+    })
+    var app1=new Vue({
+        el:'#app1',
+        data:{
+            html:'<span>test</span>',
+            url: 'http://www.caixin.com'
+        }
+    })
+</script>
+</html>
