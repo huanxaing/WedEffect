@@ -1,0 +1,14 @@
+﻿@charset "utf-8";
+/*Initialization style*/
+body{color:#fff;background:#000;font:12px Tahoma,Helvetica,Arial,sans-serif;}
+html,body,form,input,select,textarea,div,p,h1,h2,h3,h4,h5,h6,p,ul,ol,li,form,img,dl,dt,dd,table,th,td,blockquote,fieldset,div,strong,label,em{margin:0;padding:0;}
+ul,li,dl,dt,dd{list-style:none;float:left;}
+textarea {overflow-y:auto;overflow-x:hidden;}
+input,select,img{vertical-align:middle;} 
+h1,h2{font-weight:bold;font-size:14px;color:#303030;text-align:justify;text-justify:inter-ideograph;}
+table,td,img{border:0;}
+table,tr,td{border-collapse:collapse;border-spacing:0;}
+a:link,a:visited{color:#0fa7ff;text-decoration:none;outline:none;cursor: pointer;}
+a:hover{color:#ff6407;text-decoration:underline;}
+em,strong,i{font-style: normal; font-weight: normal;}
+.clear{clear:both;}

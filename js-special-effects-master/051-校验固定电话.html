@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <input type="text">
+        <span>请输入电话号码!</span>
+    </div>
+    <script>
+        /*
+            需求:
+            1.直辖市: 3位-8位 
+            2.普通市: 4位-7位
+            思路:
+            1.符合正则,给一个样式
+            2.不符合正则,给另一个样式
+        */
+        var input = document.getElementsByTagName('input')[0];
+        // 获取下一个兄弟元素(兼容写法)
+        var span = input.nextElementSibling || input.nextSibling;
+        input.onblur = function () {
+            var reg = /^(\d{3}-\d{8})|(\d{4}-\d{7})$/;
+            if (reg.test(input.value)) {
+                span.innerHTML = '输入正确';
+                span.style.color = 'green';
+            } else {
+                span.innerHTML = '输入不合法';
+                span.style.color = 'red';
+            }
+        }
+    </script>
+</body>
+
+</html>

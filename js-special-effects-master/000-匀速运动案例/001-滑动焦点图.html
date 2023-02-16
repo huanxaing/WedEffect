@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        .container {
+            width: 490px;
+            height: 170px;
+            margin: 200px auto;
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+
+        .container .inner {
+            /*以这个元素为参考点 进行移动*/
+            width: 490px;
+            height: 170px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container .inner ul {
+            /*是父级元素的5倍宽,因为有5张图片*/
+            width: 500%;
+            position: absolute;
+            left: 0;
+        }
+
+        .container .inner ul li {
+            float: left;
+        }
+
+        .container .square {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+
+        .container .square span {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            line-height: 16px;
+            border: 1px solid #ccc;
+            margin: 5px;
+            text-align: center;
+            cursor: pointer;
+            background-color: #fff;
+        }
+
+        .container .square span.active {
+            background-color: #1acd7e;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="inner" id="inner">
+            <ul>
+                <li><img src="images/01.jpg" alt="1"></li>
+                <li><img src="images/02.jpg" alt="2"></li>
+                <li><img src="images/03.jpg" alt="3"></li>
+                <li><img src="images/04.jpg" alt="4"></li>
+                <li><img src="images/05.jpg" alt="5"></li>
+            </ul>
+            <div class="square">
+                <span class="active">1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    //需求：鼠标放到小方块上面，上面的图片(ul向左移动指定的个数个图片的宽)
+    //思路：绑定事件，点亮指定的盒子，移动ul。
+    //步骤：
+    //1.获取事件源和相关元素
+    //2.绑定事件和书写事件驱动程序(for循环绑定)
+    //3.点亮盒子
+    //4.移动ul(向左移动，给定目标为-值，放到第n个小方块上向左移动n-1个图片的宽)
+
+    var inner = document.getElementById('inner');
+    // 获取ul元素
+    var ul = inner.children[0];
+    // 获取span元素
+    var imgWidth = inner.offsetWidth;
+    var spans = inner.children[1].children;
+    for (var i = 0; i < spans.length; i++) {
+        spans[i]['index'] = i;
+        spans[i].onmouseover = function () {
+            // 1.tab切换
+            tab(this);
+            // 2.滚动切换
+            // 移动的是ul元素
+            // 移动ul(向左移动，给定目标为-值，放到第n个小方块上向左移动n-1个图片的宽)
+            animate(ul, -imgWidth * this.index);
+        }
+    }
+    // 封装tab切换功能
+    function tab(item) {
+        for (var i = 0; i < spans.length; i++) {
+            spans[i].className = '';
+        }
+        item.className = ' active';
+    }
+    // 封装运动框架
+    function animate(ele, target) {
+        clearInterval(ele.timer);
+        var step = target > ele.offsetLeft ? 7 : -7;
+        ele.timer = setInterval(function () {
+            var distance = target - ele.offsetLeft;
+            ele.style.left = ele.offsetLeft + step + 'px';
+            if (Math.abs(distance) < Math.abs(step)) {
+                ele.style.left = target + 'px';
+                clearInterval(ele.timer);
+            }
+        }, 30);
+    }
+</script>
+
+</html>

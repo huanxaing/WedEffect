@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div style="position: absolute;left:100.4px;top:100.4px;"></div>
+</body>
+<script>
+    var div = document.getElementsByTagName('div')[0];
+    // 距离
+    console.log(div.offsetLeft);  // 100
+    console.log(div.offsetTop);  // 100
+    console.log(div.style.left);
+    console.log(div.style.top);
+</script>
+</html>

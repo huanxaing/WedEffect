@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,Tab+无缝滚动（slide组合）">
+<meta name="Description" content="SuperSlide 致力于解决网站大部分特效展示问题，使网站代码规范整洁，方便维护更新。网站上常用的“焦点图/幻灯片”、“Tab标签切换”、“图片滚动”、“无缝滚动”等等只需要一个SuperSlide即可解决！还可以多个SuperSlide组合创造更多效果">
+<title>SuperSlide - Tab+无缝滚动（slide组合）</title>
+<script type="text/javascript" src="jquery1.42.min.js"></script><script type="text/javascript" src="jquery.SuperSlide.2.1.1.js"></script>
+</head>
+
+<body>
+
+
+
+		<style type="text/css">
+		/* css 重置 */
+		*{margin:0; padding:0; list-style:none; }
+		body{ background:#fff; font:normal 12px/22px 宋体;  }
+		img{ border:0;  }
+		a{ text-decoration:none; color:#333;  }
+		a:hover{ color:#1974A1;  }
+
+		/* 本例子css */
+		.slideGroup{ width:1200px; text-align:left;  }
+		.slideGroup .slideBox{ overflow:hidden; zoom:1; padding:10px 0 10px 84px; position:relative;   }
+		.slideGroup .sPrev,.slideGroup .sNext{ position:absolute; left:5px; top:50px; display:block; width:30px; height:94px; border:1px solid #ddd; background:url(images/icoLeft.gif) center center no-repeat #f4f4f4; }
+		.slideGroup .sNext{ left:auto; right:5px; background:url(images/icoRight.gif) center center no-repeat #f4f4f4;  }
+		.slideGroup .sPrev:hover,.slideGroup .sNext:hover{ border-color:#f60;  }
+		.slideGroup .parBd ul{ overflow:hidden; zoom:1;   }
+		.slideGroup .parBd ul li{ margin:0 8px; float:left; _display:inline; overflow:hidden; text-align:center;  }
+		.slideGroup .parBd ul li .pic{ text-align:center; background: #e2e2e5; border-radius: 2px; padding:3px;}
+		.slideGroup .parBd ul li .pic img{ width:234px; height:167px; display:block;  padding:2px; }
+		.slideGroup .parBd ul li .pic a:hover img{ border-color:#999;  }
+		.slideGroup .parBd ul li .title{ line-height:24px;   }
+
+
+		</style>
+
+
+		<div class="slideGroup" style="margin:0 auto">
+
+			<div class="parBd">
+
+					<div class="slideBox">
+						<a class="sPrev" href="javascript:void(0)"></a>
+						<ul>
+							<li>
+								<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic1.jpg" /></a></div>
+								<div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图1.1</a></div>
+							</li>
+							<li>
+								<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic1.jpg" /></a></div>
+								
+							</li>
+							<li>
+								<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic1.jpg" /></a></div>
+								
+							</li>
+							<li>
+								<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic1.jpg" /></a></div>
+								
+							</li>
+
+							<li>
+								<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic1.jpg" /></a></div>
+								<div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图1.1</a></div>
+							</li>
+							<li>
+								<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic1.jpg" /></a></div>
+								
+							</li>
+							<li>
+								<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic1.jpg" /></a></div>
+								
+							</li>
+							<li>
+								<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic1.jpg" /></a></div>
+								
+							</li>
+						</ul>
+						<a class="sNext" href="javascript:void(0)"></a>
+					</div><!-- slideBox End -->
+
+			</div><!-- parBd End -->
+		</div>
+
+		<script type="text/javascript">
+
+			/* 内层图片无缝滚动 */
+			jQuery(".slideGroup .slideBox").slide({ mainCell:"ul",vis:8,prevCell:".sPrev",nextCell:".sNext",effect:"leftMarquee",interTime:50,autoPlay:true,trigger:"click"});
+		</script>
+
+</body>
+</html>
+

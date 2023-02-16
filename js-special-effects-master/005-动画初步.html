@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: #1acd7e;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <button type="button" id="btn1">闪动</button>
+    <button type="button" id="btn2">匀速</button>
+    <div id="box1"></div>
+</body>
+<script>
+    var btn1 = document.getElementById('btn1');
+    var btn2 = document.getElementById('btn2');
+    var box1 = document.getElementById('box1');
+    var timer = null;
+    // 闪动
+    btn1.onclick = function () {
+        box1.style.left = '200px';
+    }
+    // 匀速运动
+    btn2.onclick = function () {
+        timer = setInterval(function () {
+            //  offsetLeft : 用于获取 距离
+            // style.left : 用于设置 距离
+            box1.style.left = box1.offsetLeft + 10 + 'px'
+            if(box1.offsetLeft === 100){
+                clearInterval(timer);
+            }
+        }, 30);
+    }
+</script>
+
+</html>

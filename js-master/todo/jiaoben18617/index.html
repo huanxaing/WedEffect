@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>音悦台首页满屏jQuery幻灯片</title>
+<link href="css/index.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.SuperSlide.js"></script>
+</head>
+<body>
+<!-- Start 焦点图 -->
+<div class="index_focus">
+<a href="javascript:;" class="index_focus_pre" title="上一张">上一张</a>
+<a href="javascript:;" class="index_focus_next" title="下一张">下一张</a>
+<div class="bd">
+<ul>
+<li>
+<a href="http://sc.admin5.com" class="pic" target="_blank">
+<div class="index_focus_info">
+<h3>音悦V榜 六月榜单</h3>
+<p class="text">音悦V榜2013年六月月榜热力出炉！五地榜单分量十足，精彩过瘾！表忘了看资深乐评人的专业解读喔，这样才有滋味~来一睹为快吧！</p>
+</div>
+<img class="pic" src="images/1.jpg" width="1600" height="600" alt="">
+</a>
+</li>
+
+<li>
+<a href="http://sc.admin5.com" class="pic" target="_blank">
+<div class="index_focus_info">
+<h3>音悦台APP 让你随时随地掌握好音乐</h3>
+<p class="text">最贴身的手机音乐神器，最受欢迎的掌中音乐APP，只要轻点下载即可享受顶级的音乐服务！联通用户还可使用沃音悦台免流量服务，看首播歌曲、下载高清MV不花流量！每月最高可减免6G流量！好音乐就在你掌握赶快下载吧！</p>
+</div>
+<img class="pic" src="images/2.JPG" width="1600" height="600" alt="">
+</a>
+</li>
+
+<li>
+<a href="http://sc.admin5.com" class="pic" target="_blank">
+<div class="index_focus_info">
+<h3>音悦V榜 火热播映中</h3>
+<p class="text">新一期的V榜节目来袭啦！就在今晚19点，你！准备好了吗？届时V榜将以最好玩有趣的视角为你解读上周的打榜情况！想知旁白君这次又有何想说，想听最新最好的歌充耳膜，想看近日谁最火，尽在V榜节目说！</p>
+</div>
+<img class="pic" src="images/3.jpg" width="1600" height="600" alt="">
+</a>
+</li>
+
+<li>
+<a href="http://sc.admin5.com" class="pic" target="_blank">
+<div class="index_focus_info">
+<h3>独家首播：薛凯琪 《诸葛亮》</h3>
+<p class="text">薛凯琪新歌《诸葛亮》MV首播！MV由陈映之执导，丁春诚担任MV男主角。《诸葛亮》由侧田作曲、Wyman填词，Wyman笔下的薛凯琪，无论有多悲伤或是弱点，每首歌曲内都饰演着性格坚强的角色，所以Fiona希望将这歌送给聪明的女孩子们。爱情路上，我们寻找伴侣时可能比较困难，但当找到真正的爱情时，一定会更加幸福及更加享受，因为我们都知道爱情得来不易。</p>
+</div>
+<img class="pic" src="images/4.jpg" width="1600" height="600" alt=""></a>
+</li>
+<li>
+<a href="http://sc.admin5.com" class="pic" target="_blank">
+<div class="index_focus_info">
+<h3>Britney Spears《Ooh La La》</h3>
+<p class="text">Britney Spears为《蓝精灵2》演唱主题曲“Ooh La La”MV超强首播！！ 小甜甜携子电影院温馨观赏《蓝精灵》，却意外被卷入蓝精灵的战局。一部把电影真正融入的MV，布布好美啊，声音还是那么可爱甜蜜！！ 布布再次霸气统治流行乐坛指日可待！！</p>
+</div>
+<img class="pic" src="images/5.jpg" width="1600" height="600" alt="">
+</a>
+</li>
+</ul>
+</div>
+<div class="slide_nav">
+<a href="javascript:;">●</a>
+<a href="javascript:;">●</a>
+<a href="javascript:;">●</a>
+<a href="javascript:;">●</a>
+<a href="javascript:;">●</a>
+</div>
+</div>
+<!-- End 焦点图 -->    
+<script type="text/javascript">
+jQuery(".index_focus").hover(function(){
+jQuery(this).find(".index_focus_pre,.index_focus_next").stop(true, true).fadeTo("show", 1)
+},function(){
+jQuery(this).find(".index_focus_pre,.index_focus_next").fadeOut()
+});
+jQuery(".index_focus").slide({
+titCell: ".slide_nav a ",
+mainCell: ".bd ul",
+delayTime: 500,
+interTime: 3500,
+prevCell:".index_focus_pre",
+nextCell:".index_focus_next",
+effect: "fold",
+autoPlay: true,
+trigger: "click",
+startFun:function(i){
+	jQuery(".index_focus_info").eq(i).find("h3").css("display","block").fadeTo(1000,1);
+	jQuery(".index_focus_info").eq(i).find(".text").css("display","block").fadeTo(1000,1);
+}
+});
+</script>
+<div style="text-align:center;clear:both">
+<p>来源：<a href="http://www.97zzw.com/" target="_blank">97站长网</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+iPresenter焦点图3D图片切换插件，可左右翻阅，有倒计时功能，兼容主流浏览器，懒人图库推荐下载！
+
+使用方法：
+1、head区域引用文件styles.css, demo1.css及jquery.min.js, ipresenter.packed.js
+2、在文件中加入<!-- 代码 开始 --><!-- 代码 结束 -->区域代码
+3、复制images文件夹里的图片到相应的路径
+
+*更多代码请访问：懒人图库 www.lanrentuku.com/js/

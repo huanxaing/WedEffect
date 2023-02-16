@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="keywords" content="JS代码,焦点图,JS广告代码,JS特效代码" />
+<meta name="description" content="此代码内容为100%自适应左右切换jQuery焦点图代码，属于站长常用代码，更多焦点图代码请访问懒人图库JS代码频道。" />
+<title>100%自适应左右切换jQuery焦点图代码_懒人图库</title>
+<link href="css/foucs.css" rel="stylesheet" />
+<script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="js/jquery.foucs.js" type="text/javascript"></script>
+</head>
+<body>
+    <!-- 代码 开始 -->
+    <div id="main">
+        <div id="index_b_hero">
+            <div class="hero-wrap">
+                <ul class="heros clearfix">
+                    <li class="hero">
+                        <a href="http://www.lanrentuku.com/" target="_blank" title="第一张图的说明">
+                            <img src="images/1.jpg" class="thumb" alt="懒人图库" />
+                        </a>
+                    </li>
+                    <li class="hero">
+                        <a href="http://www.lanrentuku.com/" target="_blank" title="第二张图的说明">
+                            <img src="images/2.jpg" class="thumb" alt="懒人图库" />
+                        </a>
+                    </li>
+                    <li class="hero">
+                        <a href="http://www.lanrentuku.com/" target="_blank" title="第三张图的说明">
+                            <img src="images/3.jpg" class="thumb" alt="懒人图库" />
+                        </a>
+                    </li>
+                    <li class="hero">
+                        <a href="http://www.lanrentuku.com/" target="_blank" title="第4张图的说明">
+                            <img src="images/4.jpg" class="thumb" alt="懒人图库" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="helper">
+                <div class="mask-left">
+                </div>
+                <div class="mask-right">
+                </div>
+                <a href="#" class="prev icon-arrow-a-left"></a>
+                <a href="#" class="next icon-arrow-a-right"></a>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $.foucs({ direction: 'right' });
+    </script>
+    <!-- 代码 结束 -->
+    <div style="text-align: center">
+        <p>来源：<a href="http://www.haohaizi.com/?version=b&utm_expid=67818631-1" target="_blank">好孩子官方商城</a>　代码整理：<a href="http://www.lanrentuku.com/" target="_blank">懒人图库</a>　感谢：<a href="http://lmk123.com/" target="_blank">Mr.Here</a></p>
+        <p>＊尊重他人劳动成果，转载请自觉注明出处！注：此代码仅供学习交流，请勿用于商业用途。</p>
+        <p></p>
+        <p><p>好孩子官网100%自适应左右切换焦点图，兼容IE&nbsp;6/7/8/9及其它主流浏览器，懒人图库推荐下载！</p><p>使用方法：</p><p>1、依次引入foucs.css、jQuery脚本库及jquery.foucs.js文件；<br />2、将代码复制到页面中即可。<br />3、可对效果进行三项设置：<br />direction：图片自动滚动时的方向，默认为&#39;left&#39;，即向左滚动，可设为&#39;right&#39;使其向右滚动。例&nbsp;$.foucs({&nbsp;direction:&nbsp;&#39;right&#39;&nbsp;})<br />animateTime：图片滚动时需要多少毫秒，默认为500，可设为其它数值。例&nbsp;$.foucs({&nbsp;animateTime:&nbsp;1500&nbsp;})<br />interval：图片每隔多少毫秒滚动一次，默认为3500，可设为其它数值。例&nbsp;$.foucs({&nbsp;interval:&nbsp;5000&nbsp;})<br />&nbsp;&nbsp;&nbsp;&nbsp;注意：请确保&nbsp;interval&nbsp;的值大于&nbsp;animateTime&nbsp;的值<br />4、以上三项设置可同时出现，未设置的将使用默认值。例&nbsp;$.foucs({&nbsp;animateTime:&nbsp;1000,&nbsp;direction:&nbsp;&#39;right&#39;&nbsp;})</p></p>
+        <p></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            list-style: none;
+            background-color: #1acd7e;
+            height: 36px;
+            line-height: 36px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <button type="button">创建3个移民li</button>
+    <ul>
+        <li>本土001</li>
+        <div>本土div</div>
+        <li>本土002</li>
+        <div>本土div</div>
+        <li>本土003</li>
+    </ul>
+    <script>
+        var btn = document.getElementsByTagName('button')[0];
+        var ul = document.getElementsByTagName('ul')[0];
+        var lis = document.getElementsByTagName('li');
+        // 动态创建元素
+        btn.onclick = function () {
+            for (var i = 0; i < 3; i++) {
+                // 1.创建元素
+                var newLi = document.createElement('li');
+                var newDiv = document.createElement('div');
+                // 2.添加内容
+                newLi.innerHTML = '移民00' + i;
+                newDiv.innerHTML = '移民div';
+                ul.appendChild(newLi);
+                ul.appendChild(newDiv);
+            }
+        }
+
+        ul.onclick = function (e) {
+            var event = e || window.event;
+            var target = event.target || event.srcEelement;
+            // 过滤子元素
+            // 如果子标签名是 LI ,输出内容
+            if (target.tagName === 'LI') {
+                console.log('我是li');
+            }
+        }
+    </script>
+</body>
+
+</html>

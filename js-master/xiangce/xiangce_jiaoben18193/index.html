@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>圆形幻灯片</title>
+<link rel="stylesheet" href="css/website.css" type="text/css" media="screen"/>
+
+	<!--[if lte IE 6]>
+		<style type="text/css">
+		/* Internet Explorer 6 PNG transparency fix */
+		#rotatescroll .overlay { background: none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/bg-rotatescroll.png", sizingmethod='scale'); }
+		#rotatescroll .thumb { background: none; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/bg-thumb.png", sizingmethod='scale'); }
+		</style>
+	<![endif]-->
+	
+	<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.tinycircleslider.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#rotatescroll').tinycircleslider({ interval: true, snaptodots: true });
+		});
+	</script>	
+</head>
+<body>
+<center>
+<div id="rotatescroll">
+		<div class="viewport">
+			<ul class="overview">
+				<li><a href="http://sc.admin5.com"><img src="images/img1_m.jpg" /></a></li>
+				<li><a href="http://sc.admin5.com"><img src="images/img2_m.jpg" /></a></li>
+				<li><a href="http://sc.admin5.com"><img src="images/img6_m.jpg" /></a></li>
+				<li><a href="http://sc.admin5.com"><img src="images/img9_m.jpg" /></a></li>
+				<li><a href="http://sc.admin5.com"><img src="images/img10_m.jpg" /></a></li>															
+			</ul>
+		</div>
+		
+		<div class="dot"></div>
+		<div class="overlay"></div>
+		<div class="thumb"></div>
+	</div></center>
+<div style="text-align:center;clear:both">
+</div>
+</body>
+</html>

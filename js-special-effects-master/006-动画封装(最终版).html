@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            margin: 0;
+            padding: 5px;
+            height: 200px;
+            background-color: #ddd;
+            position: relative;
+        }
+
+        button {
+            margin: 5px;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 0;
+            /*这个要加上 相当于从0开始 清零*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <button type="button" id="btn1">运动到200</button>
+        <button type="button" id="btn2">运动到400</button>
+        <div class="box2" id="box2"></div>
+    </div>
+</body>
+<script>
+    var btn1 = document.getElementById('btn1');
+    var btn2 = document.getElementById('btn2');
+    var box2 = document.getElementById('box2');
+    // 运动到200
+    btn1.onclick = function () {
+        _animate(box2,60);
+    }
+    // 运动到200
+    btn2.onclick = function () {
+        _animate(box2,400);
+    }
+
+    // 把元素作为参数传递进去
+    function _animate(ele,target) {
+        clearInterval(ele.timer);
+        var step = target > ele.offsetLeft ? 7 : -7;
+        ele.timer = setInterval(function () {
+            var distance = target - ele.offsetLeft;
+            ele.style.left = ele.offsetLeft + step + 'px';
+            if (Math.abs(distance) <= Math.abs(step)) {
+                ele.style.left = target + 'px';
+                clearInterval(ele.timer);
+            }
+        }, 30);
+    }
+</script>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            border: 10px solid red;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1"></div>
+</body>
+<script>
+    // offsetWidth/offsetHeight = width + pading + border
+    var div = document.getElementById('box1');
+    console.log(div.offsetHeight);
+    console.log(div.offsetWidth);
+</script>
+</html>

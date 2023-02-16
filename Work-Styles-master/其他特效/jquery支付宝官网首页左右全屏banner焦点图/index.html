@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery支付宝官网首页左右全屏banner焦点图</title>
+<link href="css/lanrenzhijia.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+
+<!-- 代码begin -->
+<div class="flexslider">
+	<ul class="slides">
+		<li style="background:url(images/img1.jpg) 50% 0 no-repeat;"></li>
+		<li style="background:url(images/img2.jpg) 50% 0 no-repeat;"></li>
+		<li style="background:url(images/img3.jpg) 50% 0 no-repeat;"></li>
+		<li style="background:url(images/img4.jpg) 50% 0 no-repeat;"></li>
+		<li style="background:url(images/img5.jpg) 50% 0 no-repeat;"></li>
+	</ul>
+</div>
+<!-- 代码end -->
+
+
+<!-- js调用部分begin -->
+<script src="http://www.lanrenzhijia.com/ajaxjs/jquery.min.js"></script>
+<script src="js/jquery.flexslider-min.js"></script>
+<script>
+$(function(){
+	$('.flexslider').flexslider({
+		directionNav: true,
+		pauseOnAction: false
+	});
+});
+</script>
+<!-- js调用部分end -->
+</body>
+</html>

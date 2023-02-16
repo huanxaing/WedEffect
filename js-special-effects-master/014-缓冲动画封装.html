@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <button type="button">200</button>
+    <button type="button">400</button>
+    <button type="button">200.5</button>
+    <button type="button">400.5</button>
+    <div></div>
+</body>
+<script>
+    var btn1 = document.getElementsByTagName('button')[0];
+    var btn2 = document.getElementsByTagName('button')[1];
+    var btn3 = document.getElementsByTagName('button')[2];
+    var btn4 = document.getElementsByTagName('button')[3];
+    var div = document.getElementsByTagName('div')[0];
+    btn1.onclick = function () {
+        animate(div, 200);
+    }
+    btn2.onclick = function () {
+        animate(div, 400);
+    }
+    btn3.onclick = function () {
+        animate(div, 200.5);
+    }
+    btn4.onclick = function () {
+        animate(div, 400.5);
+    }
+    function animate(ele, target) {
+        // target < 0 表示目标点在参考点的左边
+        // target > 0 表示目标点在参考点的右边
+        // 1.先清除定时器
+        clearInterval(ele.timer);
+        ele.timer = setInterval(function () {
+            // 2.计算步长,因为是缓冲动画,步长是需要发生变化的
+            // 我们这里使用的公式是
+            // step = (target - 当前位置)/步长缩放比例;
+            // ele.offsetLeft:这个值可以是正 也课时负值
+            // ele.offsetLeft < 0 表示元素当前的位置在参考点的左边
+            // ele.offsetLeft > 0 表示元素当前的位置在参考点的右边
+            var distance = target - ele.offsetLeft;
+            var step = distance / 10;
+            // 3.对step进行取整
+            // step>0 表示向右运动,需要向上取整 使用Math.ceil
+            // step<0 表示向左运动,需要向下取整,使用Math.
+            step = step > 0 ? Math.ceil(step) : Math.floor(step);
+            ele.style.left = ele.offsetLeft + step + 'px';
+            console.log(step);
+            if (Math.abs(distance) <= Math.abs(step)) {
+                // 这个if判断要加上= ,否则有些情况下,不会执行到if语句里面去
+                console.log('清除定时器');
+                ele.style.left = target + 'px';
+                clearInterval(ele.timer);
+            }
+        }, 30);
+    }
+</script>
+
+</html>

@@ -1,0 +1,20 @@
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="{$config['web_keywords']}" />
+<meta name="description" content="{$config['web_description']}" />
+<meta name="baidu-site-verification" content="eJsWs3o2Bs" />
+<if condition="$config.switch_mbaidu eq '1'">
+<link rel="alternate" type="application/vnd.wap.xhtml+xml" media="handheld" href="http://{$config.web_url}/m/"/> 
+</if>
+<link href="../Public/Css/css.css" rel="stylesheet" />
+<script src="__TMPL__Public/Js/jquery.js"></script>
+<script src="__TMPL__Public/Js/jquery.marquee.js"></script>
+<script src="__TMPL__Public/Js/jquery.SuperSlide.2.1.1.js"></script>
+<!--[if lt IE 7]> 
+<script src="__TMPL__Public/Js/iepng.js" type="text/javascript"></script>
+<script type="text/javascript">
+   EvPNG.fix('div, ul, img, li, input, a, h2');  
+</script>
+<![endif]-->
+<title>{$title}</title>
+{$config.code_head}

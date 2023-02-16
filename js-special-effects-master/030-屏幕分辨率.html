@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        window.onresize = function () {
+            // 不管怎么缩放窗口大小 值都是不变的
+            // 注意和可视区区域大小的区别
+            document.title = window.screen.width + ',' + window.screen.height;
+        }
+    </script>
+</body>
+
+</html>

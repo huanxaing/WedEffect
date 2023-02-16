@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>CSS3鼠标滑过图片放大特效DEMO演示</title>
+
+
+    <style>
+@import url("http://fonts.googleapis.com/css?family=Lato");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: 14px/1 Lato, sans-serif;
+  color: #555;
+  background: #eee;
+}
+
+.gallery {
+  width: 790px;
+  margin: 30px auto;
+  padding: 5px;
+  background: #333;
+}
+.pro {
+  width: 790px;
+  margin: 30px auto;
+  padding: 5px;
+  background: #333;
+}
+.pro li {
+  width: 200px;
+  float: left;
+}
+.pro li img {
+  width: 200px;
+  transition: .1s transform;
+  transform: translateZ(0);
+  /* hack */
+}
+.pro li:hover img {
+  transform: scale(1.5, 1.5);
+  transition: .3s transform;
+}
+
+.gallery > div {
+  position: relative;
+  float: left;
+  padding: 5px;
+}
+
+.gallery > div > img {
+  width: 250px;
+  transition: .1s transform;
+  transform: translateZ(0);
+  /* hack */
+}
+
+.gallery > div:hover {
+  z-index: 1;
+}
+
+.gallery > div:hover > img {
+  transform: scale(1.5, 1.5);
+  transition: .3s transform;
+}
+
+.cf:before, .cf:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+
+.cf:after {
+  clear: both;
+}
+
+h1 {
+  margin: 40px 0;
+  font-size: 24px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+footer {
+  margin: 80px 0;
+  text-align: center;
+}
+
+</style>
+
+   
+
+</head>
+
+<body>
+
+
+
+<div class="gallery cf">
+  <div>
+    <img src="landscape-test-1_1x.jpg" />
+  </div>
+  <div>
+    <img src="iceberg_1x.jpg" />
+  </div>
+  <div>
+    <img src="igloo-800_1x.jpg" />
+  </div>
+  <div>
+    <img src="trees_1x.jpg" />
+  </div>
+  <div>
+    <img src="space_1x.jpg" />
+  </div>
+  <div>
+    <img src="render1_1x.jpg" />
+  </div>
+</div>
+
+
+</div>
+
+</body>
+
+</html>

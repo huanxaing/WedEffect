@@ -1,0 +1,392 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>parallax视差立体场景动画效果</title>
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+</head>
+<style type="text/css">
+ul,li{ margin:0; padding:0; list-style:none;}
+.wrapper{ width:100%; height:1500px; background:#000; padding-top:100px; overflow:hidden;}
+.content{ width:923px; height:750px; margin:0 auto;}
+#scene{
+	height: 940px;
+    list-style: none outside none;
+    margin: 30px auto 0 auto;
+    padding: 0;
+    width: 100%;
+	position:relative;
+	}
+.layer{ display:block;}
+.swing-4 {
+  -webkit-animation: swing 2s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  -moz-animation: swing 2s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  animation: swing 2s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+
+.swing-4i {
+  -webkit-animation: swing4i 2s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  -moz-animation: swing4i 2s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  animation: swing4i 2s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+  
+@-webkit-keyframes swing {
+  0% {
+    -webkit-transform: rotateZ(10deg);
+    -moz-transform: rotateZ(10deg);
+    transform: rotateZ(10deg); }
+
+  100% {
+    -webkit-transform: rotateZ(-10deg);
+    -moz-transform: rotateZ(-10deg);
+    transform: rotateZ(-10deg); } }
+
+@-moz-keyframes swing {
+  0% {
+    -webkit-transform: rotateZ(10deg);
+    -moz-transform: rotateZ(10deg);
+    transform: rotateZ(10deg); }
+
+  100% {
+    -webkit-transform: rotateZ(-10deg);
+    -moz-transform: rotateZ(-10deg);
+    transform: rotateZ(-10deg); } }
+
+@-ms-keyframes swing {
+  0% {
+    -webkit-transform: rotateZ(10deg);
+    -moz-transform: rotateZ(10deg);
+    transform: rotateZ(10deg); }
+
+  100% {
+    -webkit-transform: rotateZ(-10deg);
+    -moz-transform: rotateZ(-10deg);
+    transform: rotateZ(-10deg); } }
+
+@keyframes swing {
+  0% {
+    -webkit-transform: rotateZ(10deg);
+    -moz-transform: rotateZ(10deg);
+    transform: rotateZ(10deg); }
+
+  100% {
+    -webkit-transform: rotateZ(-10deg);
+    -moz-transform: rotateZ(-10deg);
+    transform: rotateZ(-10deg); } }
+
+
+/**/
+
+
+@-webkit-keyframes swing4i {
+  0% {
+    -webkit-transform: rotateZ(-10deg);
+    -moz-transform: rotateZ(-10deg);
+    transform: rotateZ(-10deg); }
+
+  100% {
+    -webkit-transform: rotateZ(10deg);
+    -moz-transform: rotateZ(10deg);
+    transform: rotateZ(10deg); } }
+
+@-moz-keyframes swing4i {
+  0% {
+    -webkit-transform: rotateZ(-10deg);
+    -moz-transform: rotateZ(-10deg);
+    transform: rotateZ(-10deg); }
+
+  100% {
+    -webkit-transform: rotateZ(10deg);
+    -moz-transform: rotateZ(10deg);
+    transform: rotateZ(10deg); } }
+
+@-ms-keyframes swing4i {
+  0% {
+    -webkit-transform: rotateZ(-10deg);
+    -moz-transform: rotateZ(-10deg);
+    transform: rotateZ(-10deg); }
+
+  100% {
+    -webkit-transform: rotateZ(10deg);
+    -moz-transform: rotateZ(10deg);
+    transform: rotateZ(10deg); } }
+
+@keyframes swing4i {
+  0% {
+    -webkit-transform: rotateZ(-10deg);
+    -moz-transform: rotateZ(-10deg);
+    transform: rotateZ(-10deg); }
+
+  100% {
+    -webkit-transform: rotateZ(10deg);
+    -moz-transform: rotateZ(10deg);
+    transform: rotateZ(10deg); } }
+
+
+/**/
+  
+.swing-2 {
+  -webkit-animation: swing2 4s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  -moz-animation: swing2 4s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  animation: swing2 4s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+  
+.swing-6 {
+  -webkit-animation: swing6 3s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  -moz-animation: swing6 3s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  animation: swing6 3s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+
+.swing-6i {
+  -webkit-animation: swing6i 3s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  -moz-animation: swing6i 3s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  animation: swing6i 3s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+  
+@-webkit-keyframes swing2 {
+  0% {
+    -webkit-transform: rotateZ(3deg);
+    -moz-transform: rotateZ(3deg);
+    transform: rotateZ(3deg); }
+
+  100% {
+    -webkit-transform: rotateZ(-3deg);
+    -moz-transform: rotateZ(-3deg);
+    transform: rotateZ(-3deg); } }
+
+@-moz-keyframes swing2 {
+  0% {
+    -webkit-transform: rotateZ(3deg);
+    -moz-transform: rotateZ(3deg);
+    transform: rotateZ(3deg); }
+
+  100% {
+    -webkit-transform: rotateZ(-3deg);
+    -moz-transform: rotateZ(-3deg);
+    transform: rotateZ(-3deg); } }
+
+@-ms-keyframes swing2 {
+  0% {
+    -webkit-transform: rotateZ(3deg);
+    -moz-transform: rotateZ(3deg);
+    transform: rotateZ(3deg); }
+
+  100% {
+    -webkit-transform: rotateZ(-3deg);
+    -moz-transform: rotateZ(-3deg);
+    transform: rotateZ(-3deg); } }
+
+@keyframes swing2 {
+  0% {
+    -webkit-transform: rotateZ(3deg);
+    -moz-transform: rotateZ(3deg);
+    transform: rotateZ(3deg); }
+
+  100% {
+    -webkit-transform: rotateZ(-3deg);
+    -moz-transform: rotateZ(-3deg);
+    transform: rotateZ(-3deg); } }
+
+
+/**/
+
+
+@-webkit-keyframes swing6 {
+  0% {
+    -webkit-transform: rotateZ(40deg);
+    -moz-transform: rotateZ(40deg);
+    transform: rotateZ(40deg); }
+
+  100% {
+    -webkit-transform: rotateZ(-40deg);
+    -moz-transform: rotateZ(-40deg);
+    transform: rotateZ(-40deg); } }
+
+@-moz-keyframes swing6 {
+  0% {
+    -webkit-transform: rotateZ(40deg);
+    -moz-transform: rotateZ(40deg);
+    transform: rotateZ(40deg); }
+
+  100% {
+    -webkit-transform: rotateZ(-40deg);
+    -moz-transform: rotateZ(-40deg);
+    transform: rotateZ(-40deg); } }
+
+@-ms-keyframes swing6 {
+  0% {
+    -webkit-transform: rotateZ(40deg);
+    -moz-transform: rotateZ(40deg);
+    transform: rotateZ(40deg); }
+
+  100% {
+    -webkit-transform: rotateZ(-40deg);
+    -moz-transform: rotateZ(-40deg);
+    transform: rotateZ(-40deg); } }
+
+@keyframes swing6 {
+  0% {
+    -webkit-transform: rotateZ(40deg);
+    -moz-transform: rotateZ(40deg);
+    transform: rotateZ(40deg); }
+
+  100% {
+    -webkit-transform: rotateZ(-40deg);
+    -moz-transform: rotateZ(-40deg);
+    transform: rotateZ(-40deg); } }
+
+
+/**/
+
+
+@-webkit-keyframes swing6i {
+  0% {
+    -webkit-transform: rotateZ(-40deg);
+    -moz-transform: rotateZ(-40deg);
+    transform: rotateZ(-40deg); }
+
+  100% {
+    -webkit-transform: rotateZ(40deg);
+    -moz-transform: rotateZ(40deg);
+    transform: rotateZ(40deg); } }
+
+@-moz-keyframes swing6i {
+  0% {
+    -webkit-transform: rotateZ(-40deg);
+    -moz-transform: rotateZ(-40deg);
+    transform: rotateZ(-40deg); }
+
+  100% {
+    -webkit-transform: rotateZ(40deg);
+    -moz-transform: rotateZ(40deg);
+    transform: rotateZ(40deg); } }
+
+@-ms-keyframes swing6i {
+  0% {
+    -webkit-transform: rotateZ(-40deg);
+    -moz-transform: rotateZ(-40deg);
+    transform: rotateZ(-40deg); }
+
+  100% {
+    -webkit-transform: rotateZ(40deg);
+    -moz-transform: rotateZ(40deg);
+    transform: rotateZ(40deg); } }
+
+@keyframes swing6i {
+  0% {
+    -webkit-transform: rotateZ(-40deg);
+    -moz-transform: rotateZ(-40deg);
+    transform: rotateZ(-40deg); }
+
+  100% {
+    -webkit-transform: rotateZ(40deg);
+    -moz-transform: rotateZ(40deg);
+    transform: rotateZ(40deg); } }
+  
+  
+</style>
+<script type="text/javascript">
+$(window).load(function() {
+	$('.wrapper').css('height', $(window).height());
+	$('.wrapper').css('width', $(window).width());
+});
+$(window).resize(function(){
+	$('.wrapper').css('height', $(window).height());
+	$('.wrapper').css('width', $(window).width());
+});
+
+
+</script>
+
+<body>
+<div class="wrapper">
+    <div class="content">
+        <ul id="scene">
+            <li class="layer" data-depth="0.10">
+            	<div style=" width:923px; height:750px;position:absolute; top:0; left:0;"><img src="images/bg.jpg" width="923" height="750" /></div>
+                
+                <div class="swing-4i" style="width:82px; height:117px; position:absolute; top:433px; left:273px;">
+                	<img src="images/st_ch1_s.png" width="82" height="117" />
+                </div>
+                <div style="width:180px; height:140px; position:absolute; top:430px; left:235px;">
+                	<img src="images/st_ch1_m.png" width="180" height="140" />
+                </div>
+                <div class="swing-4i" style="width:164px; height:235px; position:absolute; top:603px; left:323px;">
+                	<img src="images/st_ch2_s.png" width="164" height="235" />
+                </div>
+                <div style="width:380px; height:270px; position:absolute; top:592px; left:206px;">
+                    <img src="images/st_ch2_m.png" width="380" height="270" />
+                </div>
+                <div class="swing-4i" style="width:105px; height:176px; position:absolute; top:500px; left:518px;">
+                    <img src="images/st_ch3_s.png" width="105" height="176" />
+                </div>
+                <div style="width:240px; height:150px; position:absolute; top:498px; left:447px;">
+                    <img src="images/st_ch3_m.png" width="240" height="190" />
+                </div>
+                <div class="swing-4i" style="width:35px; height:41px; position:absolute; top:447px; left:678px;">
+                    <img src="images/st_ch4_s.png" width="35" height="41" />
+                </div>
+                <div style=" width:120px; height:60px; position:absolute; top:447px; left:643px;">
+                    <img src="images/st_ch4_m.png" width="120" height="60" />
+                </div>
+                <div class="swing-4" style="width:82px; height:117px; position:absolute; top:317px; left:273px;">
+                	<a href="#"><img src="images/st_ch1.png" width="82" height="117" /></a>
+                </div>
+                <div class="swing-4" style="width:164px; height:235px; position:absolute; top:368px; left:323px;">
+                	<a href="#"><img src="images/st_ch2.png" width="164" height="235" /></a>
+                </div>
+                <div class="swing-4" style="width:164px; height:235px; position:absolute; top:324px; left:518px;">
+                	<a href="#"><img src="images/st_ch3.png" width="105" height="176" /></a>
+                </div>
+                <div class="swing-4" style="width:164px; height:235px; position:absolute; top:407px; left:678px;">
+                	<a href="#"><img src="images/st_ch4.png" width="35" height="41" /></a>
+                </div>
+            </li>
+            <li class="layer" data-depth="0.20">
+            	<div style=" width:271px; height:427px; position:absolute; top:-10px; left:630px;"><img src="images/p5.png" width="271" height="427" /></div>
+            </li>
+            <li class="layer" data-depth="0.20">
+            	<div style="width:270px; height:428px; position:absolute; top:-10px; left:0px;"><img src="images/p8.png" width="270" height="428" /></div>
+            </li>
+            <li class="layer" data-depth="0.40">
+            	<div style="width:420px; height:314px; position:absolute; top:200px; left:720px;"><img src="images/p4.png" width="240" height="316" /></div>
+            </li>
+            <li class="layer" data-depth="0.40">
+            	<div style="width:188px; height:314px; position:absolute; top:200px; left:0px;"><img src="images/p7.png" width="188" height="314" /></div>
+            </li>
+            <li class="layer" data-depth="0.50">
+            	<div style="width:468px; height:164px; position:absolute; top:0px; left:235px;"><img src="images/p9.png" width="468" height="164" /></div>
+                <div class="swing-4" style="width:28px; height:53px; padding-top:53px; position:absolute; top:102px; left:456px;"><a href="#"><img src="images/ch4.png"></a></div>
+                
+            </li>
+            <li class="layer" data-depth="0.60">
+            	<div style="width:358px; height:416px; position:absolute; top:-183px; left:500px;"><img src="images/p3.png" width="358" height="416" /></div>
+                <div class="swing-4" style="width:31px; height:57px; padding-top:57px; position:absolute; top:152px; left:684px;"><a href="#"><img src="images/ch5.png"></a></div>
+                <div class="swing-6i" style="width:65px; height:80px; padding-top:80px; position:absolute; top:20px; left:740px;"><a href="#"><img src="images/ch3.png"></a></div>
+                
+            </li>
+            <li class="layer" data-depth="0.60">
+            	<div style="width:357px; height:416px; position:absolute; top:-180px; left:30px;"><img src="images/p6.png" width="357" height="416" /></div>
+                <div class="swing-4" style="width:34px; height:45px; padding-top:45px; position:absolute; top:180px; left:160px;"><a href="#"><img src="images/ch6.png"></a></div>
+                <div class="swing-6" style="width:64px; height:61px; padding-top:61px; position:absolute; top:19px; left:120px;"><a href="#"><img src="images/ch2.png"></a></div>
+                
+            </li>
+            <li class="layer" data-depth="0.80">
+            	<div style="width:205px; height:266px; position:absolute; top:-180px; left:405px;"><img src="images/p2.png" width="205" height="266" /></div>
+                <div class="swing-6" style="width:41px; height:78px; padding-top:78px; position:absolute; top:-108px; left:640px;"><a href="#"><img src="images/ch1.png"></a></div>
+                
+            </li>
+            <li class="layer" data-depth="0.90">
+            	<div style="width:242px; height:311px; position:absolute; top:-180px; left:230px;"><img src="images/p1.png" width="242" height="311" /></div>
+                <div class="swing-2" style="width:33px; height:229px; padding-top:229px; position:absolute; top:-409px; left:210px;"><a href="#"><img src="images/ch7.png"></a></div>
+                
+            </li>
+            <li class="layer" data-depth="1.0">
+            <div class="swing-2" style="width:43px; height:447px; padding-top:447px; position:absolute; top:-627px; left:518px;"><a href="#"><img src="images/ch8.png"></a></div>
+            </li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery.parallax.js"></script>
+<script type="text/javascript">
+	$('#scene').parallax();
+</script>
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+</div>
+</body>
+</html>

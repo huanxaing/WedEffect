@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body,
+        html {
+            height: 100%;
+        }
+
+        .mask {
+            position: fixed;
+            /* width: 100%; */
+            /* height: 100%; */
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, .6);
+            display: none;
+        }
+
+        .login {
+            width: 400px;
+            height: 300px;
+            background-color: #fff;
+            box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 1);
+            margin: 150px auto;
+            padding: 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#">登录</a>
+    <div class="mask" id="mask">
+        <div class="login" id="login">
+            <h2>赶紧登录吧</h2>
+        </div>
+    </div>
+    <script>
+        /*
+        需求:点击mask,区域,隐藏模态框 
+        */
+        var a = document.getElementsByTagName('a')[0];
+        var mask = document.getElementById('mask');
+        a.onclick = function (event) {
+            var event = event || window.event;
+            mask.style.display = 'block';
+            // 取值冒泡
+            if (event && event.stopPropagation) {
+                // chrome  FF IE9(含)+
+                event.stopPropagation();
+            } else {
+                // ie6/7/8
+                event.cancelBubble = true;
+            }
+        }
+        document.onclick = function (event) {
+            var event = event || window.event;
+            // this.style.display = 'none';
+            var target = event.target ? event.target : event.srcElement;
+            // 如果点击的是login模态框,不需要隐藏
+            if (target.id !== 'login') {
+                mask.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>

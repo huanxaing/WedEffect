@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            /*文字不换行*/
+            /* white-space:nowrap;   */
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        好好
+        好好学习 天天向上
+        好好学习 天天向上
+        好好学习 天天向上
+        好好学习 天天向上
+    </div>
+</body>
+<script>
+    /*
+        scrollWidth 和 scrollHeight
+        1.不包括 border 
+        2.不包括 margin
+        3.包括padding
+        4.scrollWidth / scrollHeight  = padding +width
+
+
+        scrollWidth/scrollHeight 特殊:
+        1.如果文字超出了盒子的宽度/高度,宽度/高度为超出盒子的内容的宽度/高度
+        2.如果文字没有超出盒子,那么就是盒子本身的宽度/高度
+        注意:
+        ie7(含)以下版本,是如下特点啊
+        1.如果文字超出了盒子的宽度/高度,宽度/高度为超出盒子的内容的高度(和上面一样)
+        2.如果文字没有超出盒子,为盒子中内容的高度
+        ie7(含)以下版本,总结成一句话,scrollWidth/scrollHeight为盒子中内容的高度
+    */
+    var div = document.getElementsByTagName('div')[0];
+    console.log(div.scrollWidth);
+    console.log(div.scrollHeight);
+
+    // chrome中测试  width  height
+    // 没有出现滚动条 120 ,  120
+    // 出现横向滚动条 592 ,  103(文字一行显示,此时width为文字内容的宽度,高度为盒子的高度-滚动条的高度)
+    // 出现纵向滚动条 103 ,  209(此时width为盒子的宽度-滚动条宽度,高度为内容的高度)
+
+    // ie7中测试
+    // 没有出现滚动条 120 ,  38(height为文字内容的高度)
+    // 出现横向滚动条 628 ,  38(文字一行显示,height为文字内容的高度)
+    // 出现纵向滚动条 120 ,  146
+
+    // 如果盒子有没有任何的内容
+    // chrome  120  , 120
+    // ie7      20  , 10(这个情况比较特殊)
+</script>
+
+</html>

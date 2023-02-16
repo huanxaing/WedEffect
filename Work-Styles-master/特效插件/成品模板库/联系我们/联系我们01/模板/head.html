@@ -1,0 +1,57 @@
+<meta charset="UTF-8">
+	<title>{$title}</title>
+	<meta name="keywords" content="{$web_keywords}">
+	<meta name="description" content="{$web_description}">
+	<if condition="$config.switch_mbaidu eq '1'">
+	<link rel="alternate" type="application/vnd.wap.xhtml+xml" media="handheld" href="http://{$config.web_url}/m/"/> 
+	</if>
+    <link rel="stylesheet" href="__TMPL__Public/Css/master.css?v=<php>echo time();</php>">
+    <link rel="stylesheet" href="__TMPL__Public/Css/aos.css">
+	<link rel="stylesheet" href="__TMPL__Public/Css/page.css">
+	<style><?php echo '#'.MODULE_NAME.'{background:#f4c23d; color: #0e0000;}'; ?></style>
+	<script src="__TMPL__Public/Js/jquery.js"></script>
+    <script src="__TMPL__Public/Js/unslider.min.js"></script>
+    <script src="__TMPL__Public/Js/sNav.min.js"></script>
+    <script src="__TMPL__Public/Js/sucaijiayuan.js"></script>
+	<script src="__TMPL__Public/Js/fontscroll.js"></script>
+	<script src="__TMPL__Public/Js/jquery.kinMaxShow-1.1.min.js"></script>
+    <script type="text/javascript" src="__TMPL__Public/Js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="__TMPL__Public/Js/aos.js"></script>
+    <script type="text/javascript" src="__TMPL__Public/Js/public.js"></script>
+    <!-- <load href="__TMPL__Public/Js/fancybox/jquery.fancybox-1.3.4.css" />
+	<load href="__TMPL__Public/Js/fancybox/jquery.fancybox-1.3.4.js" /> -->
+    {$config.code_head}
+
+    <script type="text/javascript">
+        // 设置为主页
+        function SetHome(obj, vrl) {
+            try {
+                obj.style.behavior = 'url(#default#homepage)';
+                obj.setHomePage(vrl);
+            } catch(e) {
+                if (window.netscape) {
+                    try {
+                        netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+                    } catch(e) {
+                        alert("此操作被浏览器拒绝！\n请在浏览器地址栏输入about:config并回车\n然后将 [signed.applets.codebase_principal_support]的值设置为'true',双击即可。");
+                    }
+                    var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+                    prefs.setCharPref('browser.startup.homepage', vrl);
+                } else {
+                    alert("您的浏览器不支持，请按照下面步骤操作：1.打开浏览器设置。2.点击设置网页。3.输入：" + vrl + "点击确定。");
+                }
+            }
+        }
+        // 加入收藏 兼容360和IE6
+        function shoucang(sTitle, sURL) {
+            try {
+                window.external.addFavorite(sURL, sTitle);
+            } catch(e) {
+                try {
+                    window.sidebar.addPanel(sTitle, sURL, "");
+                } catch(e) {
+                    alert("加入收藏失败，请使用Ctrl+D进行添加");
+                }
+            }
+        }
+    </script>

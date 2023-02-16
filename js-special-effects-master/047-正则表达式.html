@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+       // 定义正则表达式:
+       // 1. 内置对象 
+       // 2. 字面量
+        var reg1 = new RegExp(/abc/);
+        // 第一种方法
+        console.log(reg1);  // 
+        // 第二种方法
+        var reg2 = /def/;
+        console.log(reg2);
+
+
+        // 使用正则表示  通过test方法 返回值是boolean类型
+        console.log(reg1.test('abc'));  // true
+        console.log(/abc/.test('abc')); 
+   </script> 
+</body>
+</html>

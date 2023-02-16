@@ -1,0 +1,33 @@
+﻿@charset "utf-8";
+
+.hidden{overflow:hidden;}
+/*======== scrollMap start =======*/
+.scrollMap{position:relative;width:980px;height:640px;overflow:hidden;background:#000;margin:30px auto;-webkit-border-radius:5px;-moz-border-radius:5px;-o-border-radius:5px;border-radius:5px;-webkit-box-shadow: 0 1px 4px rgba(0,0,0,.2);-moz-box-shadow: 0 1px 4px rgba(0,0,0,.2);-o-box-shadow: 0 1px 4px rgba(0,0,0,.2);}
+.scrollMap .picWrap{width:100%;position:relative;}
+.scrollMap .picWrap li{position:absolute;}
+.scrollMap .picWrap img{min-width:320px;max-width:980px;width:980px;height:564px;}
+.slidePre,.slideNext{background:url(../images/ipadRight.png) repeat;width:102px;height:95px;text-indent:-99999px;position:absolute;top:40%;margin-left:24px;z-index:200;}
+.slideNext{right:0;background:url(../images/ipadLeft.png) repeat;margin:0 12px 0 0;margin:0 24px 0 0;}
+.slidePre a, .slideNext a{display:block;position:relative;width:102px;height:95px;}
+.slideTxtMore{height:26px;line-height:26px;position:absolute;right:0; bottom:60px;z-index:200;}
+.slideTxtMore a{display:block;background:url(../images/ipad-btn.png) no-repeat;_background:url(../images/ipad-btn.gif) no-repeat;padding-left:30px;}
+.slideTxtMore a span{background:#55b647;color:#fff;display:block;padding-right:10px;}
+.slideTxtMore a:hover{text-decoration:none;background-position:left -27px;}
+.slideTxtMore a:hover span{background-color:#70d063;}
+
+
+.sliderTextBox{color:#fff;padding-bottom:10px;color:#fff;width:100%;position:absolute;bottom:42px;left:0;z-index:4;}
+.sliderTextBg{background:url(../images/ipd-mapBg.png) repeat;opacity:0.8;filter:alpha(opacity=80);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";position:absolute;z-index:1;}
+.sliderTextAll{position:absolute;z-index:10;}
+.sliderText{z-index:5;position:relative;}
+.sliderTxtBot{color:#fff;position:relative;z-index:5;padding-top:10px;}
+.sliderText h2{color:#fff;margin:12px 10px 10px 10px;font-size:1.8em;line-height:1.1;font-weight:bold;text-transform:uppercase;}
+.sliderText p,.sliderTxtBot p{line-height:1.7;margin:0 10px;width:80%;}
+.sliderText a{color:#fff;}
+.sliderText .sLine{border-left:5px solid #55b647;padding-left:10px;margin-bottom:4px;}
+.SliderSignBox{background:url(../images/ipd-navBg.png) repeat-x;height:42px;width:100%;position:absolute;bottom:0px;left:0;z-index:4;}
+.sliderSign{padding:15px 0; float:left; position:absolute; left:40%;}
+.sliderSign li{text-indent:-999999px;cursor:pointer;background:url(../images/ipd-navDot.png) no-repeat left -24px;width:12px;height:12px;margin-right:5px;}
+.sliderSign li a{display:block;background:url(../images/ipd-navDot.png) no-repeat left -24px;width:12px;height:12px;overflow:hidden;}
+.sliderSign li a:hover{background-position:right -12px;}
+.sliderSign li.current{background-position:right 0;}

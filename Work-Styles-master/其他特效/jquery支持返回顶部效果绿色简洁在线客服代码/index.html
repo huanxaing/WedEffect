@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery支持返回顶部效果绿色简洁在线客服代码</title>
+<link href="css/style.css" type="text/css" rel="stylesheet" />
+</head>
+<body style="height:3000px;">
+
+<!-- 代码部分begin -->
+<div class="fixed-bar">
+	<div class="wide-bar">
+		<div class="consult-box">
+			<div class="consult-header clearfix">
+			<h3 class="consult-title">免费咨询</h3>
+			</div>
+			<ul class="consult-list">
+				<li class="clearfix">
+					<span>汪先生：</span>
+					<a target="_blank" href=""><img border="0" src="images/JS_qq.png" alt="QQ" title="点击开始QQ交谈/留言"></a>
+				</li>
+				<li class="clearfix">
+					<span>汪先生：</span>
+					<a target="_blank" href=""><img border="0" src="images/JS_qq.png" alt="QQ" title="点击开始QQ交谈/留言"></a>
+				</li>
+				<li class="clearfix">
+					<span>汪先生：</span>
+					<a target="_blank" href=""><img border="0" src="images/JS_qq.png" alt="QQ" title="点击开始QQ交谈/留言"></a>
+				</li>
+				<li class="clearfix">
+					<span>汪先生：</span>
+					<a target="_blank" href=""><img border="0" src="images/JS_qq.png" alt="QQ" title="点击开始QQ交谈/留言"></a>
+				</li>
+				<li class="clearfix"><span class="tel-icon">400-123-1230</span></li> 
+				<li class="clearfix"><span class="tel-icon">0592-12345678</span></li> 
+				<li class="clearfix"><span class="tel-icon">0592-12345678</span></li> 
+			</ul>
+		</div>
+		<a href="javascript:scrollTo(0,0)" class="gotop" title="回到顶部" style="display:none;"><i class="icon">返回顶部</i><span>返回顶部</span></a>
+	</div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script>    
+$(function(){
+$(document).scroll(function(){ 
+	var  scrollTop =  $(document).scrollTop(),bodyHeight = $(window).height(); 
+	if(scrollTop > bodyHeight){ 
+		$('.fixed-bar .gotop').css('display','block');
+	}else{
+		$('.fixed-bar .gotop').css('display','none');
+	} 
+})
+})
+</script>
+<!-- 代码部分end -->
+
+</body>
+</html>

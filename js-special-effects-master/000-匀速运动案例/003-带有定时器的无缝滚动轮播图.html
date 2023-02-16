@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        .container {
+            width: 490px;
+            height: 170px;
+            margin: 200px auto;
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+
+        .container .inner {
+            /*以这个元素为参考点 进行移动*/
+            width: 490px;
+            height: 170px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container .inner:hover #arrow {
+            display: block;
+        }
+
+        .container .inner ul {
+            /*是父级元素的6倍宽,因为有5张图片 再加上末尾追加的第一张图*/
+            width: 600%;
+            position: absolute;
+            left: 0;
+        }
+
+        .container .inner ul li {
+            float: left;
+        }
+
+        .container .square {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+
+        .container .square span {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            line-height: 16px;
+            border: 1px solid #ccc;
+            margin: 5px;
+            text-align: center;
+            cursor: pointer;
+            background-color: #fff;
+        }
+
+        .container .square span.active {
+            background-color: #1acd7e;
+        }
+
+        .container .inner #arrow {
+            display: none;
+        }
+
+        .container .inner #arrow span {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0, 0, 0, .5);
+            color: #fff;
+            font-size: 20px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+        }
+
+        .container .inner #arrow #left {
+            left: 0;
+        }
+
+        .container .inner #arrow #right {
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="inner" id="inner">
+            <!-- 图片区域 -->
+            <ul>
+                <li><img src="images/01.jpg" alt="1"></li>
+                <li><img src="images/02.jpg" alt="2"></li>
+                <li><img src="images/03.jpg" alt="3"></li>
+                <li><img src="images/04.jpg" alt="4"></li>
+                <li><img src="images/05.jpg" alt="5"></li>
+            </ul>
+            <!-- 计数器区域 -->
+            <div class="square">
+                <span class="active">1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+            </div>
+            <!-- 左右切换按钮区域 -->
+            <div id="arrow">
+                <span id="left"> &lt; </span>
+                <span id="right"> &gt; </span>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // 1.获取需要用到的元素
+    var inner = document.getElementById('inner');
+    // 获取ul元素
+    var ul = inner.children[0];
+    // 获取span元素
+    var imgWidth = inner.offsetWidth;
+    // 获取计数器
+    var spans = inner.children[1].children;
+    // 获取左边箭头
+    var left = document.getElementById('left');
+    var right = document.getElementById('right');
+    // 2.复制第一个图片所在的li,添加到ul的最后面去
+    var newLi = ul.children[0].cloneNode(true); // clone节点
+    // 3.然后添加到ul的最后面去
+    ul.appendChild(newLi);
+    // 4.鼠标移入,滑动滚动图片
+    for (var i = 0; i < spans.length; i++) {
+        spans[i]['index'] = i;
+        spans[i].onmouseover = function () {
+            // 1.tab切换
+            tab(this);
+            // 2.滚动切换
+            // 移动的是ul元素
+            // 移动ul(向左移动，给定目标为-值，放到第n个小方块上向左移动n-1个图片的宽)
+            animate(ul, -imgWidth * this.index);
+            // 3.鼠标放在小方块上面的时候,
+            // index imgIndex squareIndex 需要同步,
+            // 否则存在一个bug
+            imgIndex = squareIndex = this.index;
+        }
+    }
+    // 5.添加定时器
+    var timer = setInterval(autoPlay, 3000);
+    // 固定向右切换图片
+    // 需要两个计数器(一个记录图片,一个记录小方块)
+    var imgIndex = 0;
+    var squareIndex = 0;
+    function autoPlay() {
+        squareIndex++;
+        // squareIndex 最大值只能取到4
+        if (squareIndex > spans.length - 1) {
+            // 回到第一个上面去
+            squareIndex = 0;
+        }
+        // 控制小方块自动移动
+        for (var i = 0; i < spans.length; i++) {
+            spans[i].className = '';
+        }
+        spans[squareIndex].className = ' active';
+        imgIndex++;
+        // imgIndex  最大值能取到 5,注意:索引值为5,也是放的第一张图片
+        if (imgIndex > ul.children.length - 1) {
+            // 瞬间回到第一张图片
+            ul.style.left = 0;
+            // 然后再换到第二张上面去
+            imgIndex = 1;
+        }
+        // 控制图片的自动移动
+        animate(ul, -imgWidth * imgIndex);
+    }
+    inner.onmouseover = function () {
+        // 清楚定时器
+        clearInterval(timer);
+    }
+    inner.onmouseout = function () {
+        timer = setInterval(autoPlay, 1000);
+    }
+    // 6.点击 右边箭头 向左滑动
+    right.onclick = function () {
+        // 复用定时器的 autoPlay方法
+        autoPlay();
+    }
+    // 7. 点击 左边箭头 向右滑动
+    left.onclick = function () {
+        // 1. 小方块的控制
+        squareIndex--
+        // squareIndex 最大值只能取到4
+        if (squareIndex < 0) {  // 小于0 意味着是可以取到0
+            // 回到最后一个 小方块上面去 
+            // 也就是第5个小方块,对应的索引值是 4
+            squareIndex = spans.length - 1;
+        }
+        for (var i = 0; i < spans.length; i++) {
+            spans[i].className = '';
+        }
+        spans[squareIndex].className = ' active';
+        // 2.图片的控制
+        imgIndex--
+        // imgIndex  最大值能取到 5,注意:索引值为5,也是放的第一张图片
+        if (imgIndex < 0) {// 小于0 意味着是可以取到0
+            // 注意:图片是6张的,小方块是5个,因为最后
+            // 一张图片是复制的第一张图片
+            // 所以,此时应该回到倒数第二张上面去,那如何实现了
+            // a.首先回到最后一张(和第一张是一样的图片)
+            ul.style.left = -(spans.length)*imgWidth + 'px';
+            // b.然后再滑到倒数第二张上面去
+            // 这个时候 imgIndex的值是4 所以 spans.length(5) - 1 = 4
+            imgIndex = spans.length - 1; 
+        }
+        // 控制图片的自动移动
+        animate(ul, -imgWidth * imgIndex);
+    }
+    // 封装tab切换功能
+    function tab(item) {
+        for (var i = 0; i < spans.length; i++) {
+            spans[i].className = '';
+        }
+        item.className = ' active';
+    }
+    // 封装运动框架
+    function animate(ele, target) {
+        clearInterval(ele.timer);
+        var step = target > ele.offsetLeft ? 7 : -7;
+        ele.timer = setInterval(function () {
+            var distance = target - ele.offsetLeft;
+            ele.style.left = ele.offsetLeft + step + 'px';
+            if (Math.abs(distance) < Math.abs(step)) {
+                ele.style.left = target + 'px';
+                clearInterval(ele.timer);
+            }
+        }, 30);
+    }
+
+</script>
+
+
+</html>

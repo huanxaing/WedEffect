@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>jQuery.kinMaxShow API文档</title>
+<link type="text/css" href="css/base.css" rel="stylesheet" />
+<style type="text/css">
+.ver-content{padding:0px 20px 40px 20px;}
+.ver-content p{ line-height:26px; text-indent:10px; font-weight:bold; color:#09F; font-size:15px;}
+.api-content{ padding:20px 20px 60px 20px;}
+.api-list{ border:1px solid #a0b3d6; border-collapse:collapse;}
+.api-list .thead{ background:#e0e6f2; height:24px;}
+.api-list tr td{ border:1px solid #a0b3d6; font-family:'Lucida Grande', Verdana, Arial; color:#333; line-height:22px; padding:2px 6px; }
+.api-list tr:hover td{ background:#f3f6fa;}
+p.sub-tab{ font-weight:bold; margin:10px 0;}
+p.red{ color:#c00;}
+strong.var{ color:#2379da;}
+.support-tips{ color:#39F;}
+span.highlight{color:#F00; font-weight:bold;}
+sup.new-add{ font-style:normal;font-family:Verdana; font-size:8px; margin-left:4px; font-weight:normal;color:#c00;}
+</style>
+</head>
+
+<body>
+<div id="info_box">
+	<h1 class="title">kinMaxShow 当前版本信息</h1>
+    <div class="ver-content">
+    	<p>当前版本：kinMaxShow 1.1</p>
+        <p>更新时间：2013-08-27</p>
+    </div>
+    <h1 class="title">kinMaxShow API 可选参数以及详解</h1>
+    <div class="api-content">
+    <p class="text sub-tab" id="sub_table_01">kinMaxShow 主参数详解</p>
+    <table  class="api-list" width="100%">
+      <tr class="thead">
+        <th scope="col" width="10%">参数名称</th>
+        <th scope="col" width="35%">默认值</th>
+        <th scope="col" width="55%">简单释义</th>
+      </tr>
+      <tr>
+        <td><strong class="var">height</strong></td>
+        <td>500</td>
+        <td>【整型 (单位:像素)】焦点图高度，必须设置 缺省则启用默认高度 500</td>
+      </tr>
+      <tr>
+        <td><strong class="var">intervalTime</strong></td>
+        <td>6</td>
+        <td>【整型 (单位:秒)】焦点图切换间隔时间</td>
+      </tr>
+      <tr>
+        <td><strong class="var">switchTime</strong></td>
+        <td>1000</td>
+        <td>【整型 (单位:毫秒)】焦点图切换所需时间，若设置为0 则无切换效果 直接切换到下一张</td>
+      </tr>
+	  <tr>
+        <td><strong class="var">hoverPause<sup class="new-add">1.1+</sup></strong></td>
+        <td>ture</td>
+        <td>【布尔型】是否悬停暂停， 鼠标停留在kinMaxShow内 是否暂停切换 默认true 悬停暂停，设置为false 悬停不暂停</td>
+      </tr>      
+      <tr>
+        <td><strong class="var">easing</strong></td>
+        <td>"linear"</td>
+        <td>【字符型】擦除效果(切换) jQuery自带有 "linear" 和 "swing" ,如需要其他擦除效果请使用 <a href="http://gsgd.co.uk/sandbox/jquery/easing/" title="点击前往jQuery Easing Plugin" target="_blank">jquery.easing.js</a> 插件</td>
+      </tr>
+      <tr>
+        <td><strong class="var">imageAlign</strong></td>
+        <td>"center center"</td>
+        <td>【字符型】焦点图图片对齐方式，kinMaxShow原理是把默认结构里的img 设置为容器背景图片，所以这里是背景图片对齐方式。可选值:水平方向left、center、right，垂直方向top、center、bottom  中间以“空格”分隔</td>
+      </tr>
+      <tr>
+        <td><strong class="var">button</strong></td>
+        <td>
+            {<br />
+            &nbsp;&nbsp;switchEvent:'click',<br />
+            &nbsp;&nbsp;showIndex:false,<br />
+			&nbsp;&nbsp;normal:{width:'14px',height:'14px',lineHeight:'14px'<br />,right:'10px',bottom:'10px',fontSize:'10px',background:"#cccaca",border:"1px solid #ffffff",color:"#666666",textAlign:'center',marginRight:'8px',fontFamily:"Verdana",float:'left'},<br />
+			&nbsp;&nbsp;focus:{background:"#CC0000",border:"1px solid #FF0000",color:"#000000"}<br />
+			}
+        </td>
+        <td>【对象】焦点图按钮样式设置 详情见下面 <a href="#sub_table_01">【附表①】</a></td>
+      </tr>
+      <tr>
+        <td><strong class="var">callback</strong></td>
+        <td>function(index,action){ }</td>
+        <td>【函数】
+        焦点图切换回调，每张图片淡入、淡出都会调用 并且传入2个参数(index,action)<br />index (整型) 当前图片索引 0为第一张图片<br />action (字符型) 切入 或是 切出 值:fadeIn或fadeOut<br />
+		函数内 this指向 当前图片容器对象 可用来操作里面元素
+		</td>
+      </tr>
+    </table>
+    <p class="text sub-tab" id="sub_table_01">【附表①】 kinMaxShow button 参数详解</p>
+    <table  class="api-list" width="100%">
+      <tr class="thead">
+        <th scope="col" width="10%">参数名称</th>
+        <th scope="col" width="35%">默认值</th>
+        <th scope="col" width="55%">简单释义</th>
+      </tr>
+      <tr>
+        <td><strong class="var">switchEvent</strong></td>
+        <td>"click"</td>
+        <td>【字符型】按钮鼠标切换事件 可选事件：click 鼠标点击按钮切换、mouseover 鼠标滑过按钮切换</td>
+      </tr>
+      <tr>
+        <td><strong class="var">showIndex</strong></td>
+        <td>false</td>
+        <td>【布尔型】按钮上是否显示索引数字，从1开始，默认false 不显示</td>
+      </tr>
+      <tr>
+        <td><strong class="var">normal</strong></td>
+        <td>{width:'14px',height:'14px',lineHeight:'14px',right:'10px',bottom:'10px',fontSize:'10px',<br />background:"#cccaca",border:"1px solid #ffffff",color:"#666666",textAlign:'center',marginRight:'8px',fontFamily:"Verdana",float:'left'}</td>
+        <td>
+        	【对象】按钮常规下 样式设置 ，css写法，类似jQuery的 $('xxx').css({key:value,……})中css写法。<br />
+            对于带有"-"的CSS属性 支持 驼峰式写法或是键加上引号 如：{mrginRight:'8px'}或是{'mrgin-right':'8px'}<br />
+            如果设置了 display:none 则焦点图会隐藏按钮容器 不显示按钮，按钮结构也不会被创建，如不需要焦点图上面显示按钮可这样设置。<br />
+            友情提示：可以设置透明度哦 不用区分浏览器，统一为 opacity，透明度取值皆为0~1之间 如：opacity:0.5<br />
+            CSS3属性也支持哦 可以设置按钮圆角、投影、渐变等<br />
+            如：设置圆角 borderRadius:10px ，只不过IE8及以下不支持
+        </td>
+      </tr>
+      
+      <tr>
+        <td><strong class="var">focus</strong></td>
+        <td>{background:"#CC0000",border:"1px solid #FF0000",color:"#000000"}</td>
+        <td>
+        	【对象】当前索引按钮样式设置 设置方法同上
+        </td>
+      </tr>      
+
+    </table>
+    
+	</div>
+   <div class="user-tips">
+    <h1 class="title">kinMaxShow 友情小提示</h1>
+    <div>
+    <p class="text sub-tab" id="sub_table_01">kinMaxShow HTML结构中 如果你的焦点图不需要链接 仅供欣赏 则a链接可以省略。【demo-扩展】中模仿支付宝那个就没链接。结构如下：</p>
+<div class="mycode">
+<pre>
+<h4>HTML 代码</h4>
+&lt;div id="kinMaxShow"&gt;
+<span class="note">     &lt;!--HTML结构中 div容器不能省略哦--&gt;</span>
+    &lt;div&gt;  &lt;img src="images/demo_default_images/1.jpg"   /&gt;   &lt;/div&gt;
+    &lt;div&gt;  &lt;img src="images/demo_default_images/2.jpg"   /&gt;   &lt;/div&gt;
+    &lt;div&gt;  &lt;img src="images/demo_default_images/3.jpg"   /&gt;   &lt;/div&gt;
+    &lt;div&gt;  &lt;img src="images/demo_default_images/4.jpg"   /&gt;   &lt;/div&gt;
+    &lt;div&gt;  &lt;img src="images/demo_default_images/5.jpg"   /&gt;   &lt;/div&gt;
+    &lt;div&gt;  &lt;img src="images/demo_default_images/6.jpg"   /&gt;   &lt;/div&gt;                    
+        
+&lt;/div&gt;
+
+</pre>
+</div> 
+
+    <p class="text sub-tab" id="sub_table_01">kinMaxShow 默认包含 a 链接 HTML结构如下：</p>
+<div class="mycode">
+<pre>
+<h4>HTML 代码</h4>
+&lt;div id="kinMaxShow"&gt;
+
+    &lt;div&gt;
+        &lt;a href="http://www.qq.com" target="_blank"&gt;&lt;img src="images/demo_default_images/1.jpg"   /&gt;&lt;/a&gt;
+    &lt;/div&gt;
+    
+    &lt;div&gt;
+        &lt;a href="http://www.qq.com" target="_blank"&gt;&lt;img src="images/demo_default_images/2.jpg"  /&gt;&lt;/a&gt;
+    &lt;/div&gt;
+    
+    &lt;div&gt;
+        &lt;a href="http://www.qq.com" target="_blank"&gt;&lt;img src="images/demo_default_images/3.jpg"   /&gt;&lt;/a&gt;
+    &lt;/div&gt;
+    
+    &lt;div&gt;
+        &lt;a href="http://www.qq.com" target="_blank"&gt;&lt;img src="images/demo_default_images/4.jpg"   /&gt;&lt;/a&gt;
+    &lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;a href="http://www.qq.com" target="_blank"&gt;&lt;img src="images/demo_default_images/5.jpg"   /&gt;&lt;/a&gt;
+    &lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;a href="http://www.qq.com" target="_blank"&gt;&lt;img src="images/demo_default_images/6.jpg"   /&gt;&lt;/a&gt;
+    &lt;/div&gt;		
+        
+&lt;/div&gt;
+</pre>
+</div>  
+    <p class="text sub-tab" id="sub_table_01">kinMaxShow 支持情况</p>  
+<div class="mycode support-tips">
+kinMaxShow 支持 jQuery 1.4.2及以上版本 但不包(<span class="highlight">jQuery 1.8.0</span>和<span class="highlight">jQuery 1.8.1</span>) 在这两个jQuery版本中 当快速点击kinMaxShow 按钮时会有点小问题，研究了很久暂未解决。
+<br /><br />
+所以不建议在使用kinMaxShow时候 选择这两个jQuery版本，而且这两个jQuery版本本身就有Bug 详情请搜索下便知。
+<br /><br />
+使用kinMaxShow时建议使用最新的jQuery版本 以获得更好的支持，如：jQuery-1.10.x 以上版本。
+<br /><br />
+关于浏览器支持 IE6、IE7、IE8、IE9、chrome、Firefox 测试通过。如遇到有部分浏览器有bug或是其他问题的bug 欢迎反馈!
+<br /><br />
+<span class="highlight">反馈时 邮件标题请包含"kinMaxShow" 以便于邮箱自动归类 我比较容易看到。谢谢！</span> <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=awYZRQACBSsNBBMGCgIHRQgEBg">狠戳这里可以反馈Bug</a>
+</div> 
+
+<div id="user_tips">
+<h3>友情提示：</h3>
+<p>kinMaxShow 图片的宽度建议设置成奇数，如本例中图片宽度为2099，当图片宽度为偶数时 IE浏览器下执行透明度切换时会有1像素的位移，虽然没什么影响，但感觉很不爽，这是IE 背景图片对齐方式的一个BUG。其他浏览器无此现象。幻灯图片1px无所谓了而且全屏幻灯片的内容一般都是设计在中心两边是渐变，建议使用kinMaxShow设置全屏焦点图时 图片宽度为：2099px，这样足以满足国内分辨率了。详情查看：<a href="http://tongji.baidu.com/data/screen" target="_blank">百度统计-终端分辨率统计数据</a></p>
+</div>
+     
+    </div>
+    </div>     
+</div>
+
+<div style="text-align:center;margin:50px 0">
+<p>感谢：网友Kin　代码整理：<a href="http://www.lanrentuku.com/" target="_blank">懒人图库</a></p>
+<p>＊尊重他人劳动成果，转载请自觉注明出处！注：此代码仅供学习交流，请勿用于商业用途。</p>
+<p style="text-align:center"><a href="http://www.lanrentuku.com/js/d989.zip"><img border="0" src="http://img.lanrentuku.com/img/images/js_down.gif" /></a></p>
+<p style="margin:10px 0"><script src="http://img.lanrentuku.com/img/js/js728x90_preview.js"></script><center style="display:none"><script src="http://img.lanrentuku.com/img/js/tj.js"></script></center></p>
+</div>
+
+</body>
+</html>

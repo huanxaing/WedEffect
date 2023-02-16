@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .out {
+            width: 400px;
+            height: 400px;
+            background-color: #ccc;
+            margin: 100px auto;
+            position: relative;
+            padding: 10px;
+            border: 10px solid #000;
+        }
+
+        .inner {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            position: absolute;
+            padding: 10px;
+            border: 10px solid #000;
+            margin-left: 100px;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="out">
+        <div class="inner" id="inner"></div>
+    </div>
+    <script>
+        var inner = document.getElementById('inner');
+        console.log(inner.offsetLeft); // 110
+        console.log(inner.offsetLeft); // 110
+    </script>
+</body>
+
+</html>

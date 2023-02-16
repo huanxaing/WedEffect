@@ -1,0 +1,42 @@
+<!-- <div class="widget">
+		<div class="short_title">
+			<span><strong class="f16 white">产品类别</strong>&emsp;Products</span>
+		</div>
+		<ol id="pro_list" >
+			<volist name="type" id="vo">
+				<li><dd><a href="__APP__/product">所有产品</a></dd></li>
+				<volist name="vo.son" id="vo1">
+					<li><dd><a href="__APP__/product/{$vo1.id}">{$vo1.name}</a></dd></li>
+				</volist>
+			</volist>
+		</ol>
+	</div>
+	<div class="widget">
+		<div class="short_title">
+			<span><strong class="f16 white">联系方式</strong>&emsp;Contact&nbsp;us</span>
+		</div>
+		<if condition="$config['address'] neq ''"><p>地址：{$config['address']}</p></if>
+		<if condition="$config['tel'] neq ''"><p>电话：{$config['tel']}</p></if>
+		<if condition="$config['fax'] neq ''"><p>传真：{$config['fax']}</p></if>
+		<if condition="$config['zip'] neq ''"><p>邮编：{$config['zip']}</p></if>
+		<if condition="$config['email'] neq ''"><p>邮箱：{$config['email']}</p></if>
+	</div> -->
+
+			<div class="hd">
+			<if condition="$parent_type">
+			{$parent_type['name']}
+			<else />
+			{$typeInfo['name']}
+			
+			</if>
+			<!-- {$typeInfo['name']} -->
+			</div>
+		
+			<div class="bd">
+				<ul>
+					<volist name="type_son" id="vo">
+						<li><a href="__APP__/news/{$vo.id}">{$vo.name|mb_substr=0,6,"utf-8"}</a></li>
+					</volist>
+					
+				</ul>
+			</div>

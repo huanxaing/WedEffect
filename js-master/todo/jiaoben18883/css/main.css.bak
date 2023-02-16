@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+
+.v_show{ width:733px; height:337px; overflow:hidden; position:relative}
+.highlight_bg{ background-color:#000}
+.highlight_tip{ padding:7px 0 0; z-index:10; position:relative; position:absolute; left:0; bottom:0; width:733px; height:57px;}
+.highlight_tip ul li{ position:absolute; z-index:20; top:10px; cursor:pointer;}
+ul li.tab1{ left:8px}
+ul li.tab2{ left:110px}
+ul li.tab3{ left:212px}
+ul li.tab4{ left:316px}
+ul li.tab5{ left:419px}
+ul li.tab6{ left:524px}
+ul li.tab7{ left:628px}
+.v_content_list ul{ position:absolute}
+.v_content_list ul li{ width:733px; float:left; overflow:hidden; position:relative}
+li.navigation img{width:95px;border: 1px #fff solid;position:absolute;opacity:0.5;-moz-opacity:0.5;-webkit-opacity:0.5;	filter:alpha(opacity=50);}
+li.current img{border: 2px #0076A8 solid;opacity:1;-moz-opacity:1;-webkit-opacity:1;filter:alpha(opacity=100)}

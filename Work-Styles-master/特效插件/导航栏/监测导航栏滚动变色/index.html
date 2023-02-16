@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <style>
+  	.header{
+  	  width: 100%;
+  	  height: 64px;
+  	  background: rgba(0, 0, 0, 0);
+  	  color: #FFF;
+  	  font-size: 32px;
+  	  text-align: center;
+  	  position: fixed;
+  	  top: 0;
+  	  left: 0;
+  	  transition: background 1s;
+  	}
+  	.content{
+  	  width: 100%;
+  	  height: 1000px;
+  	  position: relative;
+  	  padding-top: 64px;
+  	}
+  	.scrolledDown{
+  	  background: rgba(0, 0, 0, 0.9);
+  	  color: #ddd;
+  	}
+  </style>
+</head>
+<body>
+ <header class="header">
+   menu
+ </header>
+   <div class="content">
+     this is a content
+   </div>
+
+
+   <script>
+   	(function(){
+   	  pos = 0;
+   	  ticking = false;
+   	  var header = document.querySelector(".header");
+   	  window.addEventListener("scroll", function(e){
+   	    pos = window.scrollY;
+   	    if(pos > 100&&!ticking){
+   	      header.classList.add("scrolledDown");
+   	      ticking = true;
+   	    }
+   	    if(pos < 100 && ticking){
+   	      header.classList.remove("scrolledDown");
+   	      ticking = false;
+   	    }
+   	  });
+   	})();
+   </script>
+</body>
+</html>

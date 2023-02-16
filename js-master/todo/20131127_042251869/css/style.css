@@ -1,0 +1,10 @@
+body{color:#000;margin:0;padding:0;font:14px "Microsoft YaHei","微软雅黑",Arial,\5b8b\4f53;font-weight:bold;}
+div::selection {background:#c00;}
+.chengfa{font-size:50px;color:#f60;width:980px;height:500px;margin:10px auto 0 auto;text-align:center;overflow:hidden;border:2px dashed #ccc;line-height:500px;}
+.cfav{width:240px;height:auto;margin:0 auto;padding-top:40px;}
+.cfav a{width:200px;height:40px;display:block;background:#f60;overflow:hidden;line-height:40px;color:#fff;text-align:center;border:1px solid #f30;border-radius:5px;float:left;margin:0 20px;cursor:pointer;display:none; position:relative;}
+.cfav a:hover{background:#f80;}
+.cfav a.count{ display:none;}
+.cfav a.moren{width:200px;height:40px;display:block;background:#f60;overflow:hidden;line-height:40px;color:#fff;text-align:center;border:1px solid #f30;border-radius:5px;float:left;margin:0 20px;cursor:pointer;display:none; position:relative;}
+.cfav a.count_a{background:#ccc;border:1px solid #eee;}
+.tmp_face{width:400px;height:400px;position:absolute;margin-top:-138px;left:-400px;}

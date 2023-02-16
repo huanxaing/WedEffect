@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 350px;
+            height: 350px;
+            border: 1px solid #ccc;
+            margin: 100px;
+            position: relative;
+        }
+
+        .small {
+            position: relative;
+        }
+
+        .mask {
+            width: 175px;
+            height: 175px;
+            background: rgba(255, 255, 0, 0.4);
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: move;
+            display: none;
+        }
+
+        .big {
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            /*使用绝对定位 脱离文档流*/
+            top: 0;
+            left: 360px;
+            border: 1px solid #ccc;
+            display: none;
+            overflow: hidden;
+        }
+
+        img {
+            /*注意该代码的使用,不然img下面会出现一个空白*/
+            vertical-align: middle;
+            /*两种方法都可以解决*/
+            /* display: block; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="box">
+        <div class="small">
+            <img src="images/001.jpg" alt="">
+            <div class="mask"></div>
+        </div>
+        <div class="big">
+            <img src="images/0001.jpg" alt="">
+        </div>
+    </div>
+    <script>
+        window.onload = function () {
+            // 1.获取元素
+            var box = document.getElementById('box');
+            var small = box.firstElementChild || box.firstChild;
+            var smallImg = small.children[0];
+            var big = box.lastElementChild || box.lastChild;
+            var bigImg = big.children[0];
+            var mask = small.children[1];
+            // 2. 鼠标移入 onmouseover 事件的区别
+            small.onmouseenter = function () {
+                show(mask);
+                show(big);
+            }
+            // 3. 鼠标移出  onmouseout 事件的区别
+            small.onmouseleave = function () {
+                hide(mask);
+                hide(big);
+            }
+            // 4. 黄盒子跟随移动 
+            // 事件:onmousemove ,  事件源: small
+            small.onmousemove = function (event) {
+                var event = event || window.event;
+                //想移动黄盒子，必须知道鼠标在small中的位置。x作为mask的left值，y作mask的top值。
+                // 1.获取pageY pageX
+                var pageX = event.pageX || (scroll().left + event.clientX);
+                var pageY = event.pageY || (scroll().toop + event.clientY);
+                // 注意这里要使用box.offsetLeft 而不能使用small.offsetLeft
+                /* var x = pageX - box.offsetLeft;
+                var y = pageY - box.offsetTop; */
+                // (a)需要让鼠标在黄色盒子的正中间
+                var x = pageX - box.offsetLeft - mask.offsetWidth / 2;
+                var y = pageY - box.offsetTop - mask.offsetHeight / 2;
+                // (b)还需要限制黄色盒子的移动范围
+                // mask的left取值: 大于0 ,小于 small盒子的宽度 - mask盒子的宽度
+                if (x < 0) {
+                    x = 0;
+                }
+                if (x > small.offsetWidth - mask.offsetWidth) {
+                    x = small.offsetWidth - mask.offsetWidth;
+                }
+                // mask的top取值:  大于0, 小于 small盒子的高度 - mask盒子的高度
+                if (y < 0) {
+                    y = 0;
+                }
+                if (y > small.offsetHeight - mask.offsetHeight) {
+                    y = small.offsetHeight - mask.offsetHeight
+                }
+                mask.style.left = x + 'px';
+                mask.style.top = y + 'px';
+                // 5.右侧大图片等比例移动
+                // 大图片走的距离/mask走的距离= 大图片的宽度/小图片的宽度
+                var scale = bigImg.offsetWidth / smallImg.offsetWidth;
+                var xx = x * scale;
+                var yy = y * scale;
+                bigImg.style.marginTop = -yy + 'px';// 注意是反方向移动所以是负的
+                bigImg.style.marginLeft = -xx + 'px';
+            }
+        }
+        function show(ele) {
+            ele.style.display = 'block';
+        }
+        function hide(ele) {
+            ele.style.display = 'none';
+        }
+        function scroll() {
+            return {
+                top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop,
+                left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft
+            }
+        }
+    </script>
+</body>
+
+</html>

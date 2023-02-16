@@ -1,0 +1,9 @@
+kinMaxShow 1.1焦点图代码，兼容主流浏览器，懒人图库推荐下载！
+
+kinMaxShow说是全屏焦点图插件(满屏自适应)，但是通过一定技巧设置就可以变成一个可控制的焦点图。kinMaxShow宽度默认是自适应100%比例。这时只要给他加个父级 并且控制了父级的宽度 这样kinMaxShow就会变成一个普通定宽的焦点图了。 
+
+使用方法：
+引入jQuery文件和jQuery.kinMaxShow 文件，查看demo直接使用就可以了。
+
+
+*更多代码请访问：懒人图库 www.lanrentuku.com/js/

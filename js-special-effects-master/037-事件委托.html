@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            list-style: none;
+            background-color: #1acd7e;
+            height: 36px;
+            line-height: 36px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <button type="button">创建3个移民li</button>
+    <ul>
+        <li>本土001</li>
+        <li>本土002</li>
+        <li>本土003</li>
+    </ul>
+    <script>
+        var btn = document.getElementsByTagName('button')[0];
+        var ul = document.getElementsByTagName('ul')[0];
+        var lis = document.getElementsByTagName('li');
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].onclick = function () {
+                console.log('好好学习');
+            }
+        }
+        btn.onclick = function () {
+            for (var i = 0; i < 3; i++) {
+                var newLi = document.createElement('li');
+                newLi.innerHTML = '移民00' + i;
+                ul.appendChild(newLi);
+            }
+        }
+    </script>
+</body>
+
+</html>

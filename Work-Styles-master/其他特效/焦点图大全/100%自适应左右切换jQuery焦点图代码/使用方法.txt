@@ -1,0 +1,14 @@
+好孩子官网左右切换焦点图，兼容IE 6/7/8/9及其它主流浏览器，懒人图库推荐下载！
+
+使用方法：
+
+1、依次引入foucs.css、jQuery脚本库及jquery.foucs.js文件；
+2、将代码复制到页面中即可。
+3、可对效果进行三项设置：
+direction：图片自动滚动时的方向，默认为'left'，即向左滚动，可设为'right'使其向右滚动。例 $.foucs({ direction: 'right' })
+animateTime：图片滚动时需要多少毫秒，默认为500，可设为其它数值。例 $.foucs({ animateTime: 1500 })
+interval：图片每隔多少毫秒滚动一次，默认为3500，可设为其它数值。例 $.foucs({ interval: 5000 })
+    注意：请确保 interval 的值大于 animateTime 的值
+4、以上三项设置可同时出现，未设置的将使用默认值。例 $.foucs({ animateTime: 1000, direction: 'right' })
+
+*更多代码请访问：懒人图库 www.lanrentuku.com/js/

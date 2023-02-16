@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>kinMaxShow 默认效果 -jquery.kinMaxShow</title>
+<link type="text/css" href="css/base.css" rel="stylesheet" />
+<style type="text/css">
+
+#kinMaxShow{visibility:hidden;width:100%; height:500px; overflow:hidden;}
+</style>
+<script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="js/jquery.kinMaxShow-1.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+$(function(){
+	
+	$("#kinMaxShow").kinMaxShow();
+
+
+});
+
+</script>
+</head>
+
+<body>
+	<!-- 代码 开始 -->
+    
+    <div id="kinMaxShow">
+    
+    	<div>
+        	<a href="http://www.lanrentuku.com" target="_blank"><img src="images/demo_default_images/1.jpg"   /></a>
+        </div>
+        
+        <div>
+        	<a href="http://www.lanrentuku.com" target="_blank"><img src="images/demo_default_images/2.jpg"  /></a>
+        </div>
+        
+        <div>
+        	<a href="http://www.lanrentuku.com" target="_blank"><img src="images/demo_default_images/3.jpg"   /></a>
+        </div>
+		
+        <div>
+        	<a href="http://www.lanrentuku.com" target="_blank"><img src="images/demo_default_images/4.jpg"   /></a>
+        </div>
+
+        <div>
+        	<a href="http://www.lanrentuku.com" target="_blank"><img src="images/demo_default_images/5.jpg"   /></a>
+        </div>
+
+        <div>
+        	<a href="http://www.lanrentuku.com" target="_blank"><img src="images/demo_default_images/6.jpg"   /></a>
+        </div>		
+            
+    </div>
+    
+	 
+
+<div id="info_box">
+<h1 class="title">kinMaxShow 默认效果演示</h1>
+<p class="text">上面为 kinMaxShow 默认效果 代码如下：</p>
+<div class="mycode">
+<pre>
+<h4>javascript 代码</h4>
+&lt;script src="js/jquery-1.10.2.min.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="js/jquery.kinMaxShow-1.0.min.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+	$(function(){
+		$("#kinMaxShow").kinMaxShow();
+	});
+&lt;/script&gt;
+</pre>
+</div>
+
+<div class="mycode">
+<pre>
+<h4>HTML 代码</h4>
+&lt;div id="kinMaxShow"&gt;
+
+    &lt;div&gt;
+        &lt;a href="http://www.lanrentuku.com" target="_blank"&gt;&lt;img src="images/demo_default_images/1.jpg"   /&gt;&lt;/a&gt;
+    &lt;/div&gt;
+    
+    &lt;div&gt;
+        &lt;a href="http://www.lanrentuku.com" target="_blank"&gt;&lt;img src="images/demo_default_images/2.jpg"  /&gt;&lt;/a&gt;
+    &lt;/div&gt;
+    
+    &lt;div&gt;
+        &lt;a href="http://www.lanrentuku.com" target="_blank"&gt;&lt;img src="images/demo_default_images/3.jpg"   /&gt;&lt;/a&gt;
+    &lt;/div&gt;
+    
+    &lt;div&gt;
+        &lt;a href="http://www.lanrentuku.com" target="_blank"&gt;&lt;img src="images/demo_default_images/4.jpg"   /&gt;&lt;/a&gt;
+    &lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;a href="http://www.lanrentuku.com" target="_blank"&gt;&lt;img src="images/demo_default_images/5.jpg"   /&gt;&lt;/a&gt;
+    &lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;a href="http://www.lanrentuku.com" target="_blank"&gt;&lt;img src="images/demo_default_images/6.jpg"   /&gt;&lt;/a&gt;
+    &lt;/div&gt;		
+        
+&lt;/div&gt;
+
+</pre>
+</div>
+<p class="text">IE浏览器下 在页面刚加载， js代码还未执行时候会出现一瞬间“常见”的“闪动”，为kinMaxShow 容器添加一句CSS display:none 即可解决，而且最好放在页面头部或是头部CSS文件中。(此方式不保留占位)</p>
+<div class="mycode">
+<pre>
+<h4>CSS样式</h4>
+&lt;style type="text/css"&gt;
+	#kinMaxShow{display:none;}
+&lt;/style&gt;
+</pre>
+</div>
+
+<p class="text">也可以这样设置 kinMaxShow容器的CSS样式 (此方式保留占位)</p>
+<div class="mycode">
+<pre>
+<h4>CSS样式</h4>
+&lt;style type="text/css"&gt;
+<span class="note">	/* 高度为焦点图高度 */</span>
+	#kinMaxShow{visibility:hidden;width:100%; height:500px;overflow:hidden;}
+&lt;/style&gt;
+</pre>
+</div>
+
+</div>
+ <!-- 代码 结束 -->
+
+<div style="text-align:center;margin:50px 0">
+<p>感谢：网友Kin　代码整理：<a href="http://www.lanrentuku.com/" target="_blank">懒人图库</a></p>
+<p>＊尊重他人劳动成果，转载请自觉注明出处！注：此代码仅供学习交流，请勿用于商业用途。</p>
+<p style="text-align:center"><a href="http://www.lanrentuku.com/js/d989.zip"><img border="0" src="http://img.lanrentuku.com/img/images/js_down.gif" /></a></p>
+<p style="margin:10px 0"><script src="http://img.lanrentuku.com/img/js/js728x90_preview.js"></script><center style="display:none"><script src="http://img.lanrentuku.com/img/js/tj.js"></script></center></p>
+</div>
+	
+</body>
+</html>

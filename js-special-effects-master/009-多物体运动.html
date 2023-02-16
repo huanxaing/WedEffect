@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            margin: 0;
+            padding: 5px;
+            height: 300px;
+            background-color: #ddd;
+            position: relative;
+        }
+
+        button {
+            margin: 5px;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 0;
+            /*这个要加上 相当于从0开始 清零*/
+        }
+
+        .box3 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            position: absolute;
+            left: 0;
+            top: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <button type="button" id="btn1">运动到200</button>
+        <button type="button" id="btn2">运动到400</button>
+        <div class="box2" id="box2">box2</div>
+        <div class="box3" id="box3">box3</div>
+    </div>
+</body>
+<script>
+    var btn1 = document.getElementById('btn1');
+    var btn2 = document.getElementById('btn2');
+    var box2 = document.getElementById('box2');
+    var box3 = document.getElementById('box3');
+    // 多物体运动 timer不能共用
+    // var timer = null;
+    // 运动到200
+    btn1.onclick = function () {
+        _animate(box2, 200);
+    }
+    // 运动到200
+    btn2.onclick = function () {
+        _animate(box3, 400);
+    }
+
+    // 把元素作为参数传递进去
+    function _animate(ele, target) {
+        // 一个元素只能有一个定时器,否则定时器会出现冲突,元素之间相互影响
+        // 所以就把timer做为ele的一个属性存在 就能解决问题
+        clearInterval(ele.timer);
+        var step = target > ele.offsetLeft ? 7 : -7;
+        ele.timer = setInterval(function () {
+            var distance = target - ele.offsetLeft;
+            ele.style.left = ele.offsetLeft + step + 'px';
+            if (Math.abs(distance) <= Math.abs(step)) {
+                ele.style.left = target + 'px';
+                clearInterval(ele.timer);
+            }
+        }, 30);
+    }
+</script>
+
+</html>

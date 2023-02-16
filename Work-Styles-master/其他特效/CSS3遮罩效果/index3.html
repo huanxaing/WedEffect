@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>简单的CSS3鼠标滑过图片标题和遮罩层动画特效</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
+	<style type="text/css">
+		.container-a3{
+			width: 800px;
+			max-width: 800px;
+			margin: 30px auto;
+		}
+		.caption-style-3{
+			list-style-type: none;
+			margin: 0px;
+			padding: 0px;
+			
+		}
+
+		.caption-style-3 li{
+			float: left;
+			padding: 0px;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.caption-style-3 li:hover .caption{
+			opacity: 1;
+			transform: translateY(-100px);
+			-webkit-transform:translateY(-100px);
+			-moz-transform:translateY(-100px);
+			-ms-transform:translateY(-100px);
+			-o-transform:translateY(-100px);
+		}
+
+		.caption-style-3 li:hover img{
+			opacity: 1;
+			transform: translateY(-40px);
+			-webkit-transform:translateY(-40px);
+			-moz-transform:translateY(-40px);
+			-ms-transform:translateY(-40px);
+			-o-transform:translateY(-40px);
+
+		}
+
+
+		.caption-style-3 img{
+			margin: 0px;
+			padding: 0px;
+			float: left;
+			z-index: 4;
+		}
+
+
+		.caption-style-3 .caption{
+			cursor: pointer;
+			position: absolute;
+			opacity: 0;
+			top:300px;
+			-webkit-transition:all 0.15s ease-in-out;
+			-moz-transition:all 0.15s ease-in-out;
+			-o-transition:all 0.15s ease-in-out;
+			-ms-transition:all 0.15s ease-in-out;
+			transition:all 0.15s ease-in-out;
+
+		}
+
+		.caption-style-3 img{
+			-webkit-transition:all 0.15s ease-in-out;
+			-moz-transition:all 0.15s ease-in-out;
+			-o-transition:all 0.15s ease-in-out;
+			-ms-transition:all 0.15s ease-in-out;
+			transition:all 0.15s ease-in-out;
+
+		}
+		.caption-style-3 .blur{
+			background-color: rgba(142, 68, 173,0.95);
+			height: 300px;
+			width: 400px;
+			z-index: 5;
+			position: absolute;
+		}
+
+		.caption-style-3 .caption-text h1{
+			text-transform: uppercase;
+			font-size: 18px;
+		}
+		.caption-style-3 .caption-text{
+			z-index: 10;
+			color: #fff;
+			position: absolute;
+			width: 400px;
+			height: 300px;
+			text-align: center;
+			top:20px;
+		}
+
+			</style>
+		<!--[if IE]>
+			<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="htmleaf-container">
+			<header class="htmleaf-header">
+				<h1>简单的CSS3鼠标滑过图片标题和遮罩层动画特效 <span>CSS3 Based hover animation for Image Captions</span></h1>
+				<div class="htmleaf-links">
+					<a class="htmleaf-icon icon-htmleaf-home-outline" href="http://www.jb51.net/" title="脚本之家" target="_blank"><span> 脚本之家</span></a>
+					<a class="htmleaf-icon icon-htmleaf-arrow-forward-outline" href="http://www.jb51.net/" title="返回下载页" target="_blank"><span> 返回下载页</span></a>
+				</div>
+				<div class="htmleaf-demo center">
+				  <a href="index.html">DEMO1</a>
+				  <a href="index2.html">DEMO2</a>
+			  		<a href="index3.html" class="current">DEMO3</a>
+			  		<a href="index4.html">DEMO4</a>
+			</div>
+		</header>
+		<div class="container-a3">
+			<ul class="caption-style-3">
+				<li>
+					<img src="img/chaps_1x.jpg" alt="">
+					<div class="caption">
+						<div class="blur"></div>
+						<div class="caption-text">
+							<h1>Amazing Caption</h1>
+							<p>Whatever It Is - Always Awesome</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<img src="img/everycowboy_dribbbleready_shot.jpg" alt="">
+					<div class="caption">
+						<div class="blur"></div>
+						<div class="caption-text">
+							<h1>Amazing Caption</h1>
+							<p>Whatever It Is - Always Awesome</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<img src="img/ithinkican_01.jpg" alt="">
+					<div class="caption">
+						<div class="blur"></div>
+						<div class="caption-text">
+							<h1>Amazing Caption</h1>
+							<p>Whatever It Is - Always Awesome</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<img src="img/m.jpg" alt="">
+					<div class="caption">
+						<div class="blur"></div>
+						<div class="caption-text">
+							<h1>Amazing Caption</h1>
+							<p>Whatever It Is - Always Awesome</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<img src="img/raspberry.jpg" alt="">
+					<div class="caption">
+						<div class="blur"></div>
+						<div class="caption-text">
+							<h1>Amazing Caption</h1>
+							<p>Whatever It Is - Always Awesome</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<img src="img/sketch_1x.jpg" alt="">
+					<div class="caption">
+						<div class="blur"></div>
+						<div class="caption-text">
+							<h1>Amazing Caption</h1>
+							<p>Whatever It Is - Always Awesome</p>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+	</div>
+	
+</body>
+</html>

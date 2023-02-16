@@ -1,0 +1,133 @@
+// (function(){
+	
+// 	var winWidth = $(window).width(),
+// 		banner = $('.js-banner');
+
+
+// 	function setBannerSrc() {
+// 		if (winWidth > 1200) {
+// 			banner.attr('src', banner.attr('data-pc'));
+// 			return;
+// 		}
+// 		if (winWidth > 640) {
+// 			banner.attr('src', banner.attr('data-ipad'));
+// 			return;
+// 		}
+// 		banner.attr('src', banner.attr('data-mobile'));
+// 	}
+
+// 	setBannerSrc();
+
+// 	$(window).on('resize', function(){
+// 		winWidth = $(window).width();
+// 		setBannerSrc();
+// 	});
+
+
+// })();
+
+var _hq = _hq || {};
+
+$(window).resize(function(){
+	winWidth=$(window).width();
+	banner=$('.js-banner');
+	if(winWidth>1200){
+		banner.attr('src', banner.attr('data-pc'));
+		return;
+	}
+	if(winWidth>640){
+		banner.attr('src', banner.attr('data-ipad'));
+		return;
+	}
+	banner.attr('src', banner.attr('data-mobile'));
+	//$('.banner-container').height($('.banner-container .swiper-slide img').height())
+})
+
+
+//前端事业部 - 关注的问题
+_hq.indexQuestion = function() {
+	var now = {row: 1, col: 1},
+		last = {row: 0, col: 0},
+		isAnimating = false,
+		qcount = $('.js-qslide ul').length,
+		btnPrev = $('.js-qprev'),
+		btnNext = $('.js-qnext');
+	$('.js-qslide').css({'height': $('.question-list').eq(0).height()});
+	const towards = {up: 1, right: 2, down:3, left: 4};
+
+	btnPrev.on('click', function() {
+		last.row = now.row;
+        if(last.row != 1){
+            now.row = last.row - 1;
+            pageMove(towards.right);
+        }
+	});
+
+	btnNext.on('click', function() {
+		last.row = now.row;
+        if(last.row != qcount){
+            now.row = last.row + 1;
+            pageMove(towards.left);
+        }
+	});
+
+
+	function pageMoveTo(pNum) {
+
+		last.row = now.row;
+		now.row = parseInt(pNum);
+
+		if(last.row < pNum) {
+			pageMove(towards.left);
+		}
+
+		if(last.row > pNum) {
+			pageMove(towards.right);
+		}
+	}
+
+	function pageMove(tw) {
+		var _nowPage = $('.question-list').eq(now.row - 1),
+			_lastPage = $('.question-list').eq(last.row - 1);
+
+		$('.js-qslide').css({'height': _nowPage.height()});
+		switch (tw){
+			case towards.left:
+				_outClass = 'p-moveToLeft';
+				_inClass = 'p-moveFromRight';
+				break;
+
+			case towards.right:
+				_outClass = 'p-moveToRight';
+				_inClass = 'p-moveFromLeft';
+				break;
+		}
+		isAnimating = true;
+
+		_lastPage.addClass(_outClass);
+        _nowPage.addClass(_inClass);
+        _nowPage.addClass('active');
+
+        setTimeout(function(){
+            _lastPage.removeClass(_outClass);
+            _nowPage.removeClass(_inClass);
+            _lastPage.removeClass('active');
+            isAnimating = false;
+        },700);
+	}
+};
+
+
+// _hq.init = function() {
+// 	_hq.banner();
+// };
+
+// _hq.init();
+
+$(function(){
+	if($(window).width()<768){
+		$('.header .menu').click(function(){
+			$('.header-nav').slideToggle();
+		})
+	}
+})

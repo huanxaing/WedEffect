@@ -1,0 +1,65 @@
+
+/* message styles */
+.message ul{
+	overflow: hidden;
+}
+.message li{
+	float: left;
+	margin:10px;
+}
+.message input {
+	position: relative;
+	display: block;
+	float: right;
+	padding:1.2em 0.8em;
+	width: 400px;
+	border: none;
+	border-radius: 0;
+	background: #fff;
+	color: #0075c5;
+	font-weight: bold;
+}
+.message textarea {
+	position: relative;
+	display: block;
+	float: right;
+	padding:1.2em 0.8em;
+	width: 842px;
+	border: none;
+	border-radius: 0;
+	background: #fff;
+	color: #0075c5;
+	font-weight: bold;
+	resize:none;
+}
+.message textarea:focus {
+	outline: none;
+}
+.message input:focus {
+	outline: none;
+}
+.message #submit{
+	width: 120px;
+    height: 51px;
+    color: #fff;
+    background: #ccc;
+    -webkit-transition: background 0.3s;
+	transition: background 0.3s;
+}
+.message #submit:hover{
+	background: #0075c5;
+}
+/* Minoru */
+.mg-minoru {
+	width: 100%;
+	background: #fff;
+	box-shadow: 0px 0px 0px 2px transparent;
+	color: #eca29b;
+	-webkit-transition: box-shadow 0.3s;
+	transition: box-shadow 0.3s;
+}
+.mg-minoru:focus {
+	box-shadow: 0px 0px 0px 2px #0075c5;
+	pointer-events: none;
+
+}

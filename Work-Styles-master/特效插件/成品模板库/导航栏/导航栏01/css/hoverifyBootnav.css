@@ -1,0 +1,44 @@
+/* --  GENERAL -- */
+.hoverboot-wrap{
+	position: relative;
+	display: table;
+	margin-top: 15px;
+}
+ul.hoverboot{
+	position: relative;
+	z-index: 2;
+}
+ul.hoverboot>.active>a{
+	background: inherit;
+	border: inherit;
+	color: #ffe700;
+	border-radius: inherit;
+}
+ul.hoverboot>li>a:hover,ul.hoverboot>li.active>a:hover{
+	color: #ffe700;
+}
+
+.hoverboot-pill{
+	position: absolute;
+	z-index: 1;
+	margin-left: 2px;
+}
+/* -- EFFECTS -- */
+
+/* CADRE EFFECT */
+ul.hoverboot.hoverboot-cadre + .hoverboot-pill{
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-bottom-color: transparent;
+}
+ul.nav-stacked.hoverboot.hoverboot-cadre + .hoverboot-pill{
+	background-color: #fff;
+	border: 1px solid #ddd;
+}
+
+/* PILLS EFFECT */
+ul.hoverboot.hoverboot-pills + .hoverboot-pill{
+	background-color: rgba(0,0,0,.2);
+	border-radius: 4px;
+	color: #ffe700;
+}

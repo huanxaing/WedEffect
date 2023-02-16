@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="keywords" content="JS代码,焦点图,JS广告代码,JS特效代码" />
+<meta name="description" content="此代码内容为kinMaxShow焦点图代码（jQuery），属于站长常用代码，更多焦点图代码请访问懒人图库JS代码频道。" />
+<title>kinMaxShow焦点图代码（jQuery）_懒人图库</title>
+<link type="text/css" href="css/base.css" rel="stylesheet" />
+<style type="text/css">
+
+html { height:100%; overflow:hidden; background:#fff;}
+body { height:100%; overflow:hidden; background:#fff;}
+.topBox { position:absolute; left:0; top:0; right:0; height:40px; background:#333; *z-index:100;}
+.topBox table.layoutTab{ height:40px; width:100%;}
+.mainBox { position:absolute; left:0px; top:42px; bottom:0px; right:0; overflow:hidden; background:#FFF; *z-index:10}
+.mainBox iframe { width:100%; height:100%;}
+
+html { *padding:40px 0px 0px;}
+.topBox { *height:40px; *margin-top:-40px; *position:relative; *top:0; *right:0; *bottom:0; *left:0;}
+.mainBox { *height:100%; *margin-left:0px;*position:relative; *top:0; *right:0; *bottom:0; *left:0;}
+
+#Logo{width:200px; height:40px;}
+#Nav{width:600px;}
+#Nav ul{ padding-top:8px;}
+#Nav ul li{float:left; display:inline; margin-right:10px;}
+#Nav ul li a{ display:block; line-height:24px; height:24px;width:80px; padding:0 8px; text-align:center; font-size:14px;color:#000; border-radius:5px; background:#f0f0f0;outline:none;hide-focus:expression(this.hideFocus=true);}
+#Nav ul li a:hover{ background:#23a4da;color:#f0f0f0; }
+#Nav ul li a.hover{ background:#23a4da;color:#f0f0f0; }
+</style>
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" >
+$(function(){
+	$("#NavList li a").click(function(){
+		$("#NavList li a").removeClass('hover');
+		$(this).addClass('hover');	
+	})	
+})
+</script>
+</head>
+<body>
+
+    <div class="topBox">
+    	<div class="fn-cf_o">
+    	<div id="Logo" class="fn-f-l">
+        	<img src="images/logo.jpg" />
+        </div>
+        <div id="Nav" class="fn-f-r">
+        	<ul class="fn-cf_o" id="NavList">
+            	<li><a href="demo_default.html" class="hover" target="main">Demo-默认</a></li>
+                <li><a href="demo_extend.html" target="main">Demo-扩展</a></li>
+                <li><a href="demo_artifice.html" target="main">Demo-技巧</a></li>
+                <li><a href="api.html" target="main">API文档</a></li>
+                <li><a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=awYZRQACBSsNBBMGCgIHRQgEBg" target="main">Bug反馈</a></li>
+            </ul>
+        </div>
+        </div>
+    </div>
+    <div class="mainBox">
+        <iframe frameborder="0" src="demo_default.html" name="main"></iframe>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #head {
+            height: 100px;
+            background-color: #ccc;
+        }
+
+        #nav {
+            width: 100%;
+            height: 50px;
+            background-color: #1acd7e;
+        }
+
+        #main {
+            width: 80%;
+            height: 2000px;
+            margin: 0 auto;
+            background-color: darkorange;
+        }
+
+        .fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+    </style>
+    <script>
+        /*需求
+            1.当我们滚动页面的时候,被卷曲的头部 超过 导航条盒子距离顶部的距离时,
+                固定住导航条
+            2.同理,当我们滚动页面的时候,被卷曲的头部 小于 导航条盒子距离顶部的距离时,
+                导航条的位置还原
+        
+        */
+        window.onload = function () {
+            var head = document.getElementById('head');
+            var nav = document.getElementById('nav');
+            var main = document.getElementById('main');
+            var height = head.offsetHeight;
+            window.onscroll = function () {
+                if (scroll().top > height) {
+                    // 1.添加类名
+                    // bug#001
+                    // nav.className += ' fixed'; // 会重复添加多个类名
+                    nav.classList.add('fixed') // 通过这种方式不会 因为内部会进行判断
+                    // 2.因为导航条悬浮起来了,不占有空间
+                    // 所以我们需要给main盒子添加上边距,避免上面部分内容
+                    // 被nav盒子给遮挡住了
+                    main.style.marginTop = nav.offsetHeight + 'px';
+                }else{
+                    // 清空类名
+                    // nav.className = '';
+                    nav.classList.remove('fixed')
+                    main.style.marginTop = 0;
+                }
+            }
+        }
+        function scroll() {
+            return {
+                top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop,
+                left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="head"></div>
+    <div id="nav"></div>
+    <div id="main">
+        <h1>好好学习 天天向上</h1>
+    </div>
+</body>
+<script>
+
+</script>
+
+</html>

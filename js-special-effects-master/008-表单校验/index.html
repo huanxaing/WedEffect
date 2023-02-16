@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgba(0, 0, 0, .3);
+        }
+
+        .container {
+            width: 400px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 100px auto;
+        }
+
+        .container h2 {
+            text-align: center;
+            padding: 15px;
+        }
+
+        .container .form-item {
+            margin-bottom: 25px;
+        }
+
+        .container .form-item label {
+            float: left;
+            width: 80px;
+            height: 36px;
+            line-height: 36px;
+            border-radius: 4px;
+            text-align: right;
+            padding-right: 12px;
+        }
+
+        .container .form-item .form-item-input {
+            position: relative;
+            margin-left: 80px;
+        }
+
+
+        .container .form-item input {
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            display: block;
+            height: 36px;
+            line-height: 36px;
+            outline: none;
+            text-indent: 15px;
+            width: 100%;
+        }
+
+        .container .form-item span {
+            position: absolute;
+            top: 100%;
+            padding: 0 0 0 20px;
+            margin-top: 4px;
+            font-size: 12px;
+        }
+
+        .container .tips {
+            width: 220px;
+            height: 20px;
+            background-image: url(images/strong.jpg);
+            background-repeat: no-repeat;
+        }
+
+        /*等级1:弱*/
+        .grade1 {
+            background-position: 0 -20px;
+        }
+
+        /*等级2:一般*/
+        .grade2 {
+            background-position: 0 -40px;
+        }
+
+        /*等级3:很好*/
+        .grade3 {
+            background-position: 0 -60px;
+        }
+
+        /*等级4:极佳*/
+        .grade4 {
+            background-position: 0 -80px;
+        }
+
+        /*校验正确的样式*/
+        .right {
+            color: #67C23A;
+            background: url(images/right.png) no-repeat left center;
+        }
+
+        /*校验错误的样式*/
+        .wrong {
+            color: #F56C6C;
+            background: url(images/error.png) no-repeat left center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>赶紧注册吧</h2>
+        <div class="form-item">
+            <label for="">QQ</label>
+            <div class="form-item-input">
+                <input type="text" name="qq" id="qq">
+                <span></span>
+            </div>
+        </div>
+        <div class="form-item">
+            <label for="">手机号</label>
+            <div class="form-item-input">
+                <input type="text" name="tel" id="tel">
+                <span></span>
+            </div>
+        </div>
+        <div class="form-item">
+            <label for="">邮箱</label>
+            <div class="form-item-input">
+                <input type="text" name="email" id="email">
+                <span></span>
+            </div>
+        </div>
+        <div class="form-item">
+            <label for="">账号</label>
+            <div class="form-item-input">
+                <input type="text" name="account" id="account">
+                <span></span>
+            </div>
+        </div>
+        <div class="form-item">
+            <label for="">密码</label>
+            <div class="form-item-input">
+                <input type="text" name="pwd" id="pwd">
+                <span></span>
+            </div>
+        </div>
+        <div class="form-item">
+            <label for=""></label>
+            <div class="form-item-input">
+                <div class="tips" id="pwd-grade"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var grade = document.getElementById('pwd-grade');
+        // 1.QQ校验
+        onBlur('qq', function () {
+            var reg = /^[1-9][0-9]{4,}$/;
+            if (reg.test(this.value)) {
+                setHTML(this, '输入正确');
+                setClassName(this, 'right');
+            } else {
+                setHTML(this, '输入错误');
+                setClassName(this, 'wrong');
+            }
+        });
+        // 2.手机号校验
+        onBlur('tel', function () {
+            var reg = /^1[3456789]\d{9}$/;
+            if (reg.test(this.value)) {
+                setHTML(this, '输入正确');
+                setClassName(this, 'right');
+            } else {
+                setHTML(this, '输入错误');
+                setClassName(this, 'wrong');
+            }
+        });
+        // 3.邮箱校验
+        onBlur('email', function () {
+            var reg = /^[\w\.-]{5,}\@[\w]+\.[\w]{2,4}$/;
+            if (reg.test(this.value)) {
+                setHTML(this, '输入正确');
+                setClassName(this, 'right');
+            } else {
+                setHTML(this, '输入错误');
+                setClassName(this, 'wrong');
+            }
+        });
+        // 4.账号校验
+        onBlur('account', function () {
+            // 规则: 3-16位   不包含$符号
+            var reg = /^[\w-]{3,16}$/;
+            if (reg.test(this.value)) {
+                setHTML(this, '输入正确');
+                setClassName(this, 'right');
+            } else {
+                setHTML(this, '输入错误');
+                setClassName(this, 'wrong');
+            }
+        });
+        // 5.密码校验
+        onBlur('pwd', function () {
+            // 这个里面有两处使用了转义符 
+            // - 的前面使用了转义符 避免把 - 当成的组合类来使用
+            // $ 也是一样
+            var reg = /^[a-zA-Z0-9_\-\$]{6,18}$/;
+            if (reg.test(this.value)) {
+                setHTML(this, '输入正确');
+                setClassName(this, 'right');
+                grade.className = 'tips grade1'
+                // 只要密码校验通过了,才能执行密码强度校验
+                // 从强往弱进行判断
+                if (/^[A-Za-z0-9]+[_$][A-Za-z0-9]*$/.test(this.value)) {
+                    // 极佳
+                    grade.className = 'tips grade4';
+                } else if (/^([a-z].*[0-9])|([A-Z].*[0-9])|[0-9].*[a-zA-Z]$/.test(this.value)) {
+                    // 很好
+                    grade.className = 'tips grade3';
+                } else if (/^([a-z].*[A-Z])|([A-Z].*[a-z])$/.test(this.value)) {
+                    // 一般
+                    grade.className = 'tips grade2';
+                }
+            } else {
+                // 这个需要还原操作
+                grade.className = 'tips';
+                setHTML(this, '输入错误');
+                setClassName(this, 'wrong');
+            }
+        });
+        // 封装方法
+        function onBlur(selector, fn) {
+            document.getElementById(selector).onblur = fn;
+        }
+        function setHTML(ele, html) {
+            var span = ele.nextElementSibling || ele.nextSibling;
+            span.innerHTML = html;
+        }
+        function setClassName(ele, className) {
+            var span = ele.nextElementSibling || ele.nextSibling;
+            span.className = className;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+@charset "utf-8";
+*{padding:0;margin:0;}
+body{background:#333}
+img{border:none}
+ul,li{list-style:none}
+a{color:#333;font-size:14px; text-decoration: none;}
+a:hover{text-decoration:underline;}
+.cl:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0}.cl{zoom:1}
+
+.wrap{width:1100px;margin:0 auto;}
+
+/* sildes css begin */
+.control {width:900px;height:900px;background:#282828;display: block;position:absolute;top:0;left:0;overflow: hidden;}
+.change li{width:900px;overflow: hidden;text-align:center}
+
+/* 图片垂直居中,不是很准确 */
+.change li .imgWrap{display: table-cell ;width:900px;height:900px;vertical-align: middle;cursor:pointer;*font-size: 500px;}
+.change li img{max-width:900px;max-height:900px;width: expression(this.width > 900 && this.width > this.height ? 900 :true); height:expression(this.height >900 ? 900: true);vertical-align:middle; overflow:hidden}
+
+/* 描述部分 */
+.change li .textDesc{width:100%;height:100px;position:absolute;left:0;bottom:0;text-align:left;overflow: hidden;}
+.change li .opacity{width:100%;height:100px;position:absolute;left:0;bottom:0;background:#000;filter:alpha(opacity=50);opacity:0.5;}
+.change li .title{padding:10px 15px 0; color:#e6e6e6;font-size:14px;line-height:22px;}
+.change li .title a{color:#e6e6e6;}
+.change li .text{color:#b7b7b7;line-height:18px;padding:5px 15px;font-size:12px;}
+
+/* 翻页按钮 */
+.prev, .next{width:49px;height:49px;position:absolute;bottom:480px; color:#FFF;font-size:14px; z-index: 9;font-weight:bold; cursor: pointer;outline:none} 
+.prev span, .next span{display: none;}
+.prev{left:0;background:url(../images-thumb/arrows_01.png) no-repeat;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=crop,src="../images-thumb/arrows_01.png") ; _background:none}
+.next{right:0;background:url(../images-thumb/arrows_02.png) no-repeat;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=crop,src="../images-thumb/arrows_02.png") ; _background:none}
+
+/* 分页 */
+.pageClass{text-align:center;z-index: 9;position:absolute;top:50px;padding-top:10px;}
+.pageClass a{display: inline-block; width:10px;height:10px;margin:0 3px;overflow:hidden; border:1px solid #bebebe;background:#bebebe ;border-radius:5px;outline:none}
+.pageClass a span{display:none}
+.pageClass a:hover,.pageClass a.cur{border:1px solid #be230a;background:#be230a }
+
+/* 缩图部分 */
+.thumbWrap{width:140px;height:822px;padding:39px 0;position:absolute;right:0;top:0;background:#0d0d0d;border-radius:5px;overflow: hidden;}
+.thumbWrap .thumbCont{width:100%;height:100%;position:relative;overflow: hidden;}
+.thumbWrap ul{}
+.thumbWrap ul li{width:134px;height:89px;padding:8px 3px 3px;text-align:center;overflow: hidden;}
+.thumbWrap ul li div{display: table-cell ;width:138px;height:89px;vertical-align: middle;cursor:pointer;*font-size: 79px;}
+
+.thumbWrap ul li img {max-width:116px; max-height:89px; width: expression(this.width > 116 && this.width > this.height ? 116 :true); height:expression(this.height >89 ? 89: true);vertical-align:middle; overflow:hidden}
+
+.thumbWrap ul li.cur{background:url(../images-thumb/curBg.gif) no-repeat}
+
+/* 缩图按钮 */
+.thumbPrev,.thumbNext{width:140px;height:39px;text-align:center;position:absolute;color:#000;z-index: 9; outline:none}
+.thumbPrev span, .thumbNext span{display: none;}
+
+.thumbPrev{left:0;top:0;background:url(../images-thumb/Yprev.png) no-repeat;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=crop,src="../images-thumb/Yprev.png") ; _background:none}
+.thumbNext{left:0;bottom:0;background:url(../images-thumb/Ynext.png) no-repeat;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=crop,src="../images-thumb/Ynext.png") ; _background:none}

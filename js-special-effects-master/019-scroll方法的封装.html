@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 5000px;
+            width: 5000px;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    window.onscroll = function () {
+        console.log(scroll().left);
+        console.log(scroll().top);
+    }
+    function scroll() {
+        if (window.pageYOffset) {
+            return {
+                top: window.pageYOffset,
+                left: window.pageXOffset
+            }
+        } else if (document.compatMode === 'CSS1Compat') {
+            // 表示有DTD声明
+            return {
+                top: document.documentElement.scrollTop,
+                left: document.documentElement.scrollLeft
+            }
+        } else {
+            return {
+                top: document.body.scrollTop,
+                left: document.body.scrollLeft
+            }
+        }
+    }
+    // 优化版
+    function _scroll() {
+        return {
+            top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop,
+            left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft
+        }
+    }
+</script>
+
+</html>

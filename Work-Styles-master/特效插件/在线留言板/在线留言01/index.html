@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<include file="Public:head" />
+	<load href="__TMPL__Public/Js/fancybox/jquery.fancybox-1.3.4.css" />
+	<load href="__TMPL__Public/Js/fancybox/jquery.fancybox-1.3.4.js" />
+</head>
+<body>
+	<div class="wrap">
+		<div class="header">
+			<include file="Public:header" />
+		</div>
+		<div class="main">
+			<div class="inner">
+				<div class="left">
+					<include file="Public:sidebar" />
+				</div>
+				<div class="right">
+					<div class="article">
+						<div class="title"><strong>{$catname}</strong><span class="right f12">{$location}</span></div>
+						<form action="__APP__/message/add_message" method="POST" id="form1">
+							<ul class="message">
+								<li><input class="mg-minoru" name="name" type="text" id="name" placeholder="姓名"></li>
+								<li><input class="mg-minoru" name="tel" type="text" id="tel" placeholder="电话"></li>
+								<li><input class="mg-minoru" name="add" type="text" id="add" placeholder="地址"></li>
+								<li><input class="mg-minoru" name="email" type="text" id="email" placeholder="邮箱"></li>
+								<li><textarea class="mg-minoru" name="content" id="content" cols="70" rows="10" placeholder="内容"></textarea></li>
+								<li><input class="mg-minoru" type="text" id="captcha" name="captcha" maxlength="4" autocomplete="off" style="width:120px;height:18px; " placeholder="验证码">&ensp;
+										<img src="__APP__/Base/verify" style="width: 100px; height: 50px;margin-right: 20px" alt="" title="点击更换验证码" onclick="this.src='__APP__/Base/verify?t='+Math.random();"></li>
+								<li><input class="mg-minoru" id="submit" type="submit" value="提&emsp;交"></li>
+							</ul>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<script>
+				$(document).ready(function (){
+					$("#form1").submit(function (){
+						if($("#name").val() == ''){
+							alert('请添加姓名');
+							$("#name").focus();
+							return false;	
+						}
+						if($("#tel").val() == ''){
+							alert('请添加电话');
+							$("#tel").focus();
+							return false;	
+						}
+						if(!$("#tel").val().match(/^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1}))+\d{8})$/) && !$("#tel").val().match(/^(([0\+]\d{2,3}-)?(0\d{2,3})-)?(\d{7,8})(-(\d{3,}))?$/))
+						{
+							alert("电话格式错误！");
+							return false;
+						}
+						if($("#add").val() == ''){
+							alert('请添加地址');
+							$("#add").focus();
+							return false;	
+						}
+						if($("#email").val() == ''){
+						 alert("请添加邮箱！");
+						 return false;
+						}
+						if(!$("#email").val().match(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/))
+						{
+							alert("邮箱格式错误！");
+							return false;
+						}
+						if($("#content").val() == ''){
+							alert('请添加内容');
+							$("#content").focus();
+							return false;	
+						}
+						if($("#captcha").val() == ''){
+							alert('请添加验证码');
+							$("#captcha").focus();
+							return false;	
+						}
+
+					})	
+				})
+			</script>
+			<include file="Public:footer" />
+		</div>
+	</div>
+</body>	
+</html>

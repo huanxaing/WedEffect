@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>index</title>
+    <link type="text/css" rel="stylesheet" href="css/small2big.css"/>
+    <script type="application/javascript" src="js/jquery.min.js"></script>
+    <script type="application/javascript" src="js/jquery.mgang.small2big.js"></script>
+</head>
+<body>
+<div id="pageLink">
+    <a href="index.html">demo1</a>
+    <a href="demo2.html">demo2</a>
+    <a href="demo3.html">demo3</a>
+</div>
+<ul class="s2b_col" id="s2b_col">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+
+</ul>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#s2b_col").small2big({
+            s2bRadius : 100,
+            s2bColLiRowMargin : 20,
+            s2bLiBorderColor : "white"
+        }).initS2bCol().addS2bFunction();
+    });
+
+</script>
+</body>
+</html>

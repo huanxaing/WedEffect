@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body,
+        html {
+            height: 100%;
+        }
+        button{
+            height: 40px;
+        }
+        .container {
+            width: 400px;
+            height: 400px;
+            background-color: #ccc;
+            overflow: auto;
+            margin: 100px auto 0;
+            position: relative;
+        }
+
+        .container div {
+            width: 200px;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <button type="button">确定</button>
+    <div class="container" id="container">
+        <div style="background-color:red">1</div>
+        <div style="background-color: salmon;">2</div>
+        <div style="background-color: springgreen;">3</div>
+        <div style="background-color: steelblue;">4</div>
+    </div>
+    <script>
+        var btn = document.getElementsByTagName('button')[0];
+        var container = document.getElementById('container');
+        var children = container.children;
+        btn.onclick = function () {
+            console.log(children[2].offsetTop);
+        }
+    </script>
+</body>
+
+</html>

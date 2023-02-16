@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            margin: 0;
+            padding: 5px;
+            height: 200px;
+            background-color: #ddd;
+            position: relative;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 0;
+            /*这个要加上 相当于从0开始 清零*/
+        }
+
+        .tiao1 {
+            width: 1px;
+            height: 200px;
+            background-color: green;
+            position: absolute;
+            left: 200px;
+            top: 0;
+            z-index: 10;
+        }
+
+        .tiao2 {
+            width: 1px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+            left: 200px;
+            top: 0;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <button type="button" id="btn1">运动到200</button>
+        <button type="button" id="btn2">停止</button>
+        <div class="box2" id="box2"></div>
+        <div class="tiao1"></div>
+    </div>
+    <!-- <div class="tiao2"></div> -->
+</body>
+<script>
+    var btn1 = document.getElementById('btn1');
+    var btn2 = document.getElementById('btn2');
+    var box2 = document.getElementById('box2');
+    var timer = null;
+    var count = 0;
+    // 运动到200
+    btn1.onclick = function () {
+        // 保证每次只能开启一个定时器,防止不停的点击按钮,速度越来越快
+        clearInterval(timer);
+        // 这个代码是到达不了200的目的地
+        /* timer = setInterval(function () {
+            // 后面一定要加单位
+            box2.style.left = box2.offsetLeft + 7 + 'px';
+            if (box2.offsetLeft === 200) {
+                // 如果到达了目的地 就停止 也就是清除定时器
+                clearInterval(timer);
+            }
+        }, 30); */
+
+        // 如何解决了
+        timer = setInterval(function () {
+            // 每次循环都计算一遍 还剩余多少距离
+            var distance = 200 - box2.offsetLeft;
+            // 后面一定要加单位
+            box2.style.left = box2.offsetLeft + 7 + 'px';
+            // 如果剩余的距离 不够一个步长7,就直接停止掉定时器
+            // 同时 直接让元素.style.left = 200px
+            if (distance < 7) {
+                clearInterval(timer);
+                box2.style.left = '200px';
+            }
+        }, 30);
+    }
+    btn2.onclick = function () {
+        clearInterval(timer);
+    }
+</script>
+
+</html>

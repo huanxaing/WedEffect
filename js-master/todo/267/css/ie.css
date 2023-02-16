@@ -1,0 +1,4 @@
+@charset "utf-8";
+.bmenu li a{color:#fff;}
+.bmenu:hover li a{color:#fff;}
+.bmenu li a:hover{color:#fff;padding-left:10px;}

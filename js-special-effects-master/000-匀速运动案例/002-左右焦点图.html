@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        .container {
+            width: 490px;
+            height: 170px;
+            margin: 100px auto;
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+
+        .container .inner {
+            /*以这个元素为参考点 进行移动*/
+            width: 490px;
+            height: 170px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container .inner:hover #arrow {
+            display: block;
+        }
+
+        .container .inner ul {
+            /*是父级元素的5倍宽,因为有5张图片*/
+            width: 500%;
+            position: absolute;
+            left: 0;
+        }
+
+        .container .inner ul li {
+            float: left;
+        }
+
+        .container .inner #arrow {
+            display: none;
+        }
+
+        .container .inner #arrow span {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0, 0, 0, .5);
+            color: #fff;
+            font-size: 20px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+        }
+
+        .container .inner #arrow #left {
+            left: 0;
+        }
+
+        .container .inner #arrow #right {
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="inner" id="inner">
+            <ul>
+                <li><img src="images/01.jpg" alt=""></li>
+                <li><img src="images/02.jpg" alt=""></li>
+                <li><img src="images/03.jpg" alt=""></li>
+                <li><img src="images/04.jpg" alt=""></li>
+                <li><img src="images/05.jpg" alt=""></li>
+            </ul>
+            <div id="arrow">
+                <span id="left"> &lt; </span>
+                <span id="right"> &gt; </span>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    //需求：鼠标放到盒子上，显示左右切换的图片。点击左则按钮图片(ul)向右移动，相反的按钮向左移动。
+    //思路：获取两个按钮，点击左侧按钮移动ul向右走(每次只走一张)(计数器从0开始)。
+    //如何移动盒子。利用计数器模拟index值，点右侧自增，点左侧自减。
+    //步骤：
+    //1.鼠标放上去显示移开以藏
+    //2.点击右侧盒子图片向做移动并用计数器模拟index值。
+    //3，点击左侧盒子，同理。
+    var left = document.getElementById('left');
+    var right = document.getElementById('right');
+    var inner = document.getElementById('inner');
+    var ul = inner.children[0];
+    var imgWidth = inner.offsetWidth;
+    var index = 0;
+
+    // 点击右边 是向左运动的   ->  这里不要弄反了
+    right.onclick = function () {
+        index++;
+        //我们要对index的值进行约束。index的值必须在[0,4]
+        if (index > ul.children.length - 1) {
+            index = ul.children.length - 1;
+            alert("到头了！");
+        }
+        //点击盒子以后移动图片（ul，和目标位置）
+        animate(ul, -index * imgWidth);// 为什么这个地方是负数
+    }
+    // 点击左边是 向右运行的  ->  这里不要弄反了
+    left.onclick = function () {
+        index--;
+        if (index < 0) {
+            index = 0;
+            alert("第一张！");
+        }
+        //点击盒子以后移动图片（ul，和目标位置）
+        animate(ul, -index * imgWidth);  // 为什么这个地方还是负数
+        // 最多是为0这个位置,如果为正数,就会出现空白,没图片显示了
+    }
+    // 封装运动框架
+    function animate(ele, target) {
+        clearInterval(ele.timer);
+        var step = target > ele.offsetLeft ? 10 : -10;
+        ele.timer = setInterval(function () {
+            var distance = target - ele.offsetLeft;
+            ele.style.left = ele.offsetLeft + step + 'px';
+            if (Math.abs(distance) <= Math.abs(step)) {
+                ele.style.left = target + 'px';
+                clearInterval(ele.timer);
+            }
+        }, 30);
+    }
+</script>
+
+</html>

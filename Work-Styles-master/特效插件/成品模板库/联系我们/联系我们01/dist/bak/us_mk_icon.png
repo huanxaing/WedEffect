@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>百度开发者平台</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no" >
+    <meta http-equiv="keywords" content="百度开发者平台,开发者中心,APP上传,app提交,应用提交,游戏提交,联运游戏,开发者帮助,开发者服务,开放平台,开发者,开发者网站" />
+    <meta http-equiv="description" content="百度开发者平台，轻松发布应用至百度手机助手,免费三端分发。接入百度移动开放平台,免费分享海量用户群，享受长期稳定的移动全产业链支持。获取海量推广资源,享多项优惠扶持政策,是您发布安卓应用、手机游戏的首选平台!" />
+    <link rel="shortcut icon" href="http://www.baidu.com/favicon.ico" type="image/x-icon" />
+    <link rel="icon" sizes="any" mask href="//www.baidu.com/img/baidu.svg" />
+    <link rel="apple-touch-icon" href="https://ascdn.bdstatic.com/devplat/apple-touch-icon.png"/>
+    <link rel="stylesheet" type="text/css" href="https://ascdn.bdstatic.com/devplat/static/pkg/widget_b52c2bb.css"/><link rel="stylesheet" type="text/css" href="https://ascdn.bdstatic.com/devplat/static/pkg/lib_9f3fc79.css"/><link rel="stylesheet" type="text/css" href="https://ascdn.bdstatic.com/devplat/static/index/index_8cd087e.css"/>
+    <script>
+        function isIE(){var myNav=navigator.userAgent.toLowerCase();return(myNav.indexOf('msie')!=-1)?parseInt(myNav.split('msie')[1]):false;}
+        if(location.pathname!='/index/notsupport'&&(isIE()==7||isIE()==6||isIE()==8)){location.href="/index/notsupport";}
+        var $up_url = '';
+    </script>
+</head>
+<body>
+
+    <script type="text/javascript">var head_audit = 2;var head_level = 0;</script>
+<div class="header-index iwrap-new header-blue ">
+    <div class="iheader-new">
+    <a href="/" class="logo"><span class="txt" style="bottom: 4px;"> | 百度开发者平台</span></a>
+    <div class="nav">
+        <a class="item tab-index" href="/">首页</a>
+        <a class="item tab-service" href="/serve/">服务</a>
+        <a class="item tab-activity" href="/index/golden">活动</a>
+        <a class="item tab-docs" href="/docs/">帮助</a>
+    </div>
+        <div class="logining">
+        <a href="javascript:void(0)" class="username" data-href="/pass">jackyangz</a>
+        <span class="boundary1">|</span>
+                <a class="manage" href="/apps/">管理中心</a>
+                <span class="boundary1">|</span>
+        <a class="minfo zero" href="/pass/msg">
+            <span class="inform-box">
+                消息
+                <span class="inform zero" >0</span>
+            </span>
+        </a>
+        <span class="boundary1">|</span>
+            
+                <a href="https://passport.baidu.com/?logout" class="quit">退出</a>
+                <!--
+        --<span class="boundary2">|</span><!--
+        --<a href="/docs" class="help">帮助</a>-->
+    </div>
+    </div>
+<script type="text/javascript">
+    function logoutuuap(){
+        $('#uuapframe2').attr('src', 'http://uuap.baidu.com/logout'); 
+        setTimeout(logoutbdu, 500);
+    }
+    function logoutbdu(){
+        $('#uuapframe1').attr('src', '/index/logoutuuap').on("load", function(){
+            top.location.href='https://passport.baidu.com/?logout';
+        });
+    }
+</script>
+
+</div>
+
+<!--mod-topbar-mobile0-->
+<div class="mod-topbar-mobile0 mod-topbar-mobile0-login">
+    <a class="btn-back" href="#"></a>
+    <span class="tit0">城市课程表</span>
+
+        <!--mod-login-info0-->
+    <div class="mod-login-info0">
+        <span class="username">
+            jackyangz        </span>
+        <span class="arrow"></span>
+        <a class="btn-logout" href="javascript:logout();" target="_self">退出</a>
+    </div>
+    <!--/mod-login-info0-->
+    </div>
+<!--/mod-topbar-modbile0-->
+
+<!--layer-sideright0-->
+<div class="layer-sideright0">
+	<a class="btn-close" href="javascript:;">&times;</a>
+	<span class="mod-help0"><a href="/user/kf" target="_blank"></a></span>
+	<!--mod-scan1-->
+	<div class="mod-scan1">
+		<div class="mod-scan1-pic">
+		    <span class="scan-pic0"><img src="https://ascdn.bdstatic.com/devplat/static/lib/img/pic-scan0_82a226d.jpg" width="92" height="133" alt="百度开发者平台二维码" /></span>
+		    <span class="scan-pic2"><img src="https://ascdn.bdstatic.com/devplat/static/lib/img/pic-scan2_09782d8.jpg" width="92" height="133" alt="百度开发者平台二维码" /></span>
+		</div>
+	</div>
+	
+	<!--/mod-scan1-->
+</div>
+<!--/layer-sideright0-->
+
+<div class="rbody">
+    <!--mod-nav-main0-->
+    <div class="mod-nav-main0">
+        <span class="mod-nav-main0-bg"></span>
+        <ul class="ul1">
+            <li class="ul1-li ul1-li-on" data-type="0">
+                <a href="/apps/">
+                    <span class="bg"></span>
+                    <span class="deco-line"></span>
+                    <span class="txt">应用管理</span>
+                </a>
+                <ul class="ul2">
+                    <span class="deco-arrow"></span>
+                    <li class="ul2-li">
+                        <a href="/apps/">应用管理</a>
+                    </li>
+                    <li class="ul2-li">
+                        <a href="/apps/claimlist">应用认领</a>
+                    </li>
+                    <li class="ul2-li">
+                        <a href="/chart/">应用统计</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="ul1-li" data-type="1">
+                <a href="/task/applist">
+                    <span class="bg"></span>
+                    <span class="deco-line"></span>
+                    <span class="txt">个性化运营</span>
+                </a>
+                <ul class="ul2">
+                    <span class="deco-arrow"></span>
+                    <li class="ul2-li">
+                        <a href="/task/applist">应用秀</a>
+                    </li>
+                    <li class="ul2-li">
+                        <a href="/task/keywordindex">搜索词投放</a>
+                    </li>
+                    <li class="ul2-li">
+                        <a href="/task/abtestindex">A/B 测试</a>
+                    </li>
+                    <li class="ul2-li">
+                        <a href="/union/servicelist">发布优惠</a>
+                    </li>
+                    <li class="ul2-li">
+                        <a href="/task/putin">个性化投放</a>
+                    </li>
+                    <li class="ul2-li">
+                        <a href="/first/">首发合作</a>
+                    </li>
+                    <li class="ul2-li">
+                        <a href="/inapp/">应用内搜索</a>
+                    </li>
+                    <li class="ul2-li">
+                        <a href="/task/agentlist">独家合作</a>
+                    </li>
+                    <li class="ul2-li">
+                        <a href="/game?action=videomake">视频订制</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="ul1-li" data-type="2">
+                <a href="/spread/index/3">
+                    <span class="bg"></span>
+                    <span class="deco-line"></span>
+                    <span class="txt">应用推广</span>
+                </a>
+                <ul class="ul2">
+                    <span class="deco-arrow"></span>
+                    <li class="ul2-li">
+                        <a href="/spread/index/3">竞价推广</a>
+                    </li>
+                    <li class="ul2-li">
+                        <a href="/spread/index/4">搜索推广</a>
+                    </li>
+                    
+                </ul>
+            </li>
+            <li class="ul1-li" data-type="3">
+                <a href="/game?action=appsummary&m=list">
+                    <span class="bg"></span>
+                    <span class="deco-line"></span>
+                    <span class="txt">应用联盟</span>
+                </a>
+                <ul class="ul2">
+                    <span class="deco-arrow"></span>
+                    <li class="ul2-li">
+                        <a href="/game?action=appsummary&m=list">联运游戏</a>
+                    </li>
+                    <li class="ul2-li">
+                        <a href="/exg/getSummaryData">广告联盟</a>
+                    </li>
+                    <li class="ul2-li">
+                        <a href="/exg/applist">交叉换量</a>
+                    </li>
+                    <li class="ul2-li">
+                        <a href="/union/channelapi">商店联盟</a>
+                    </li>
+                    <li class="ul2-li">
+                        <a href="/exg/reward">打赏服务</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="ul1-li" data-type="4">
+                <a href="/task/grayPublishList">
+                    <span class="bg"></span>
+                    <span class="deco-line"></span>
+                    <span class="txt">云能力</span>
+                </a>
+                <ul class="ul2">
+                    <span class="deco-arrow"></span>
+                    <li class="ul2-li">
+                        <a href="/task/grayPublishList">灰度发布</a>
+                    </li>
+                    <li class="ul2-li">
+                        <a href="/apps/upauto">自动更新</a>
+                    </li>
+                    <li class="ul2-li">
+                        <a href="/jiagu/">应用加固</a>
+                    </li>
+                    <li class="ul2-li">
+                        <a href="/apm/">性能服务</a>
+                    </li>
+                    <li class="ul2-li">
+                        <a href="/mtc/">应用测试</a>
+                    </li>
+                    <li class="ul2-li">
+                        <a href="/index/yyintro">语音服务</a>
+                    </li>
+                    <li class="ul2-li">
+                        <a href="/value/sdkservice">SDK集成</a>
+                    </li>
+                    <li class="ul2-li">
+                        <a href="/mota/">行业分析</a>
+                    </li>
+                    <li class="ul2-li">
+                        <a href="https://console.bce.baidu.com/agent/#/agent/bind~token=a6acf3df89e8c6ccac0eae2b3822e4f385cf37a8188ee7beb3e78c8ef7b17bf9&enable_im=1">云服务</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!--/mod-nav-main0-->
+    <!--mnav-->
+    <div class="mnav mnav-new" id="mnav">
+        <span class="deco0"></span>
+        <div class="mnav-in-ie8">
+            <div class="mnav-in">
+                <a class="mod-logo" href="/"><span class="logo"></span></a>
+                <ul class="ul1 generalServer">
+                    <!--应用管理-->
+                    <div class="ul1-li" data-type="0">
+                        <ul class="ul2">
+                            <!--应用统计-->
+                            <li class="ul2-li">
+                                <span class="ul2-tit"><a href="/chart/" title=""><span class="icon icon13"></span><span class="tit">应用统计</span><span class="arrow0"></span><span class="arrow1"></span></a></span>
+                            </li>
+                            <!--/应用统计-->
+                        </ul>
+                    </div>
+                    <!--/应用管理-->
+                    <!--个性化运营-->
+                    <div class="ul1-li" data-type="1">
+                        <ul class="ul2">
+                            <!--应用秀-->
+                            <li class="ul2-li">
+                                <span class="ul2-tit"><a href="/task/applist" title=""><span class="icon icon0 icon-uniE700"></span><span class="tit">应用秀</span><span class="arrow0 icon-uniE801"></span><span class="arrow1"></span><sub>new</sub></a></span>
+                            </li>
+                            <!--/应用秀-->
+                            <!--搜索词投放-->
+                            <li class="ul2-li">
+                                <span class="ul2-tit"><a href="/task/keywordindex" title=""><span class="arrow0"></span><span class="arrow1"></span><span class="icon icon3 icon-uniE703"></span><span class="tit">搜索词投放</span><sub>new</sub></a></span>
+                            </li>
+                            <!--/搜索词投放-->
+                            <!--A/B 测试-->
+                            <li class="ul2-li">
+                                <span class="ul2-tit"><a href="/task/abtestindex" title=""><span class="arrow0"></span><span class="arrow1"></span><span class="icon icon2 icon-uniE702"></span><span class="tit">A/B 测试</span><sub>new</sub></a></span>
+                            </li>
+                            <!--/A/B 测试-->
+                            <!--发布优惠-->
+                            <li class="ul2-li">
+                                <span class="ul2-tit"><a href="/union/servicelist" title=""><span class="icon icon4 icon-uniE704"></span><span class="tit">发布优惠</span><span class="arrow0"></span><span class="arrow1"></span></a></span>
+                            </li>
+                            <!--/发布优惠-->
+                            <!--个性化投放-->
+                            <li class="ul2-li">
+                                <span class="ul2-tit"><a href="/task/putin" title=""><span class="icon icon1 icon-uniE701"></span><span class="tit">个性化投放</span><span class="arrow0"></span><span class="arrow1"></span></a></span>
+                            </li>
+                            <!--/个性化投放-->
+                            <!--首发-->
+                            <li class="ul2-li">
+                                <span class="ul2-tit"><a href="/first/" title=""><span class="icon icon8 icon-uniE708"></span><span class="tit">首发合作</span><span class="arrow0"></span><span class="arrow1"></span></a></span>
+                            </li>
+                            <!--/首发-->
+                            <!--应用内搜索-->
+                            <li class="ul2-li">
+                                <span class="ul2-tit"><a href="/inapp/" title=""><span class="icon icon19 icon-uniE719"></span><span class="tit">应用内搜索</span><span class="arrow0"></span><span class="arrow1"></span></a></span>
+                            </li>
+                            <!--/应用内搜索-->
+                            <!--独家合作-->
+                            <li class="ul2-li">
+                                <span class="ul2-tit"><a href="/task/agentlist" title=""><span class="icon icon23 icon-uniE723"></span><span class="tit">独家合作</span><span class="arrow0"></span><span class="arrow1"></span></a></span>
+                            </li>
+                            <!--/独家合作-->
+                            <!--视频订制-->
+                            <li class="ul2-li">
+                                <span class="ul2-tit"><a href="/game?action=videomake" title=""><span class="icon icon34 icon-uniE734"></span><span class="tit">视频订制</span><span class="arrow0"></span><span class="arrow1"></span></a></span>
+                            </li>
+                            <!--/视频订制-->                         
+                        </ul>
+                    </div>
+                    <!--/个性化运营-->
+                    <!--应用推广-->
+                    <div class="ul1-li" data-type="2">
+                        <ul class="ul2">
+                            <!--竞价推广-->
+                            <li class="ul2-li">
+                                <span class="ul2-tit"><a href="/spread/index/3" title=""><span class="icon icon17 icon-uniE717"></span><span class="tit">竞价推广</span><span class="arrow0"></span><span class="arrow1"></span></a></span>
+                            </li>
+                            <!--/竞价推广-->
+                            <!--搜索推广-->
+                            <li class="ul2-li">
+                                <span class="ul2-tit"><a href="/spread/index/4" title=""><span class="icon icon18 icon-uniE718"></span><span class="tit">搜索推广</span><span class="arrow0"></span><span class="arrow1"></span></a></span>
+                            </li>
+                            <!--/搜索推广-->
+                        </ul>
+                    </div>
+                    <!--/应用推广-->
+                    <!--应用联盟-->
+                    <div class="ul1-li" data-type="3">
+                        <ul class="ul2">
+                            <!--联运游戏-->
+                            <li class="ul2-li">
+                                <span class="ul2-tit"><a href="javascript:;" title=""><span class="icon icon5 icon-uniE705"></span><span class="tit">联运游戏</span><span class="arrow0"></span><span class="arrow1"></span></a></span>
+                                <ul class="ul3">
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/game?action=appsummary&m=list" title=""><span class="arrow1"></span><span class="icon"></span>游戏统计</a></span>
+                                    </li>
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/game?action=summary" title=""><span class="arrow1"></span><span class="icon"></span>交易管理</a></span>
+                                    </li>
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/game?action=account" title=""><span class="arrow1"></span><span class="icon"></span>财务管理</a></span>
+                                    </li>
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/game?action=contract" title=""><span class="arrow1"></span><span class="icon"></span>合同管理</a></span>
+                                    </li>
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/task/game_detail" title=""><span class="arrow1"></span><span class="icon"></span>游戏换肤</a></span>
+                                    </li>
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/game?action=appvideoaction" title=""><span class="arrow1"></span><span class="icon"></span>视频运营</a></span>
+                                    </li>
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/game?action=message" title=""><span class="arrow1"></span><span class="icon"></span>消息管理</a></span>
+                                    </li>
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/game?action=migrate_list" title=""><span class="arrow1"></span><span class="icon"></span>三方转签</a></span>
+                                    </li>
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/task/life_activity" title=""><span class="arrow1"></span><span class="icon"></span>游戏任务</a></span>
+                                    </li>
+
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/game?action=activity" title=""><span class="arrow1"></span><span class="icon"></span>活动管理</a></span>
+                                    </li>
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/game?action=evaluation" title=""><span class="arrow1"></span><span class="icon"></span>游戏评测</a></span>
+                                    </li>
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/game?action=gifts&frompos=1000211" title=""><span class="arrow1"></span><span class="icon"></span>游戏礼包</a></span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!--/联运游戏-->
+                            <!--广告联盟-->
+                            <li class="ul2-li">
+                                <span class="ul2-tit"><a href="javascript:;" title=""><span class="icon icon20 icon-uniE720"></span><span class="tit">广告联盟</span><span class="arrow0"></span><span class="arrow1"></span></a></span>
+                                <ul class="ul3">
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/exg/getSummaryData" title=""><span class="arrow1"></span><span class="icon"></span>概况</a></span>
+                                    </li>
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/value/" title=""><span class="arrow1"></span><span class="icon"></span>合作管理</a></span>
+                                    </li>
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/exg/detdata" title=""><span class="arrow1"></span><span class="icon"></span>数据报告</a></span>
+                                    </li>
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/exg/finsitn" title=""><span class="arrow1"></span><span class="icon"></span>结算账单</a></span>
+                                    </li>
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="https://cas.baidu.com/?controller=pass&action=bindold&srcappid=313&aimappid=6" title=""><span class="arrow1"></span><span class="icon"></span>原百度联盟</a></span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!--/广告联盟-->
+                            <!--交叉换量-->
+                            <li class="ul2-li">
+                                <span class="ul2-tit"><a href="javascript:;" title=""><span class="icon icon21 icon-uniE721"></span><span class="tit">交叉换量</span><span class="arrow0"></span><span class="arrow1"></span></a></span>
+                                <ul class="ul3">
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/exg/applist" title=""><span class="arrow1"></span><span class="icon"></span>换量推广</a></span>
+                                    </li>
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/exg/adtdata" title=""><span class="arrow1"></span><span class="icon"></span>推广效果</a></span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!--/交叉换量-->
+                            <!--商店联盟-->
+                            <li class="ul2-li">
+                                <span class="ul2-tit"><a href="javascript:;" title=""><span class="icon icon6 icon-uniE706"></span><span class="tit">商店联盟</span><span class="arrow0"></span><span class="arrow1"></span></a></span>
+                                <ul class="ul3">
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/union/channelapi" title=""><span class="arrow1"></span><span class="icon"></span>渠道管理</a></span>
+                                    </li>
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/union/" title=""><span class="arrow1"></span><span class="icon"></span>概况数据</a></span>
+                                    </li>
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/union/?detaile=1" title=""><span class="arrow1"></span><span class="icon"></span>明细数据</a></span>
+                                    </li>
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/union/fininfo" title=""><span class="arrow1"></span><span class="icon"></span>财务信息</a></span>
+                                    </li>
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/union/signed" title=""><span class="arrow1"></span><span class="icon"></span>合同签约</a></span>
+                                    </li>
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/union/settle/" title=""><span class="arrow1"></span><span class="icon"></span>结算账单</a></span>
+                                    </li>
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/union/settle/?orderDetaile=1" title=""><span class="arrow1"></span><span class="icon"></span>订单明细</a></span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!--/商店联盟-->
+                            <!--打赏服务-->
+                            <li class="ul2-li">
+                                <span class="ul2-tit"><a href="javascript:;" title=""><span class="icon icon38 icon-uniE738"></span><span class="tit">打赏服务</span><span class="arrow0"></span><span class="arrow1"></span></a></span>
+                                <ul class="ul3">
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/exg/reward" title=""><span class="arrow1"></span><span class="icon"></span>申请开通</a></span>
+                                    </li>
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/game?action=tipservice&frompos=1000251" title=""><span class="arrow1"></span><span class="icon"></span>交易数据</a></span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!--/打赏服务-->
+                        </ul>
+                    </div>
+                    <!--/应用联盟-->
+                    <!--云能力-->
+                    <div class="ul1-li" data-type="4">
+                        <ul class="ul2">
+                            <!--灰度发布-->
+                            <li class="ul2-li">
+                                <span class="ul2-tit"><a href="/task/grayPublishList" title=""><span class="arrow0"></span><span class="arrow1"></span><span class="icon icon10 icon-uniE710"></span><span class="tit">灰度发布</span><sub>new</sub></a></span>
+                            </li>
+                            <!--/灰度发布-->
+                            <!--自动更新-->
+                            <li class="ul2-li">
+                                <span class="ul2-tit"><a href="/apps/upauto" title=""><span class="icon icon12 icon-uniE712"></span><span class="tit">自动更新</span><span class="arrow0"></span><span class="arrow1"></span></a></span>
+                            </li>
+                            <!--/自动更新-->
+                            <!--应用加固-->
+                            <li class="ul2-li">
+                                <span class="ul2-tit"><a href="/jiagu/" title=""><span class="icon icon11 icon-uniE711"></span><span class="tit">应用加固</span><span class="arrow0"></span><span class="arrow1"></span></a></span>
+                            </li>
+                            <!--/应用加固-->
+                            <!--性能服务-->
+                            <li class="ul2-li">
+                                <span class="ul2-tit"><a href="/apm/" title=""><span class="icon icon14 icon-uniE714"></span><span class="tit">性能服务</span><span class="arrow0"></span><span class="arrow1"></span></a></span>
+                            </li>
+                            <!--/性能服务-->
+                            <!--应用测试-->
+                            <li class="ul2-li">
+                                <span class="ul2-tit"><a href="javascript:;" title=""><span class="icon icon15 icon-uniE715"></span><span class="tit">应用测试</span><span class="arrow0"></span><span class="arrow1"></span></a></span>
+                                <ul class="ul3">
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/mtc/" title=""><span class="arrow1"></span><span class="icon"></span>Native App 测试</a></span>
+                                    </li>
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/mtc/index/target/tasks" title=""><span class="arrow1"></span><span class="icon"></span>管理中心</a></span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!--/应用测试-->
+                            <!--语音服务-->
+                            <li class="ul2-li">
+                                <span class="ul2-tit"><a href="javascript:;" title=""><span class="icon icon16 icon-uniE716"></span><span class="tit">语音服务</span><span class="arrow0"></span><span class="arrow1"></span></a></span>
+                                <ul class="ul3">
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/index/yyintro" title=""><span class="arrow1"></span><span class="icon"></span>服务介绍</a></span>
+                                    </li>
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/yuyin/apps" title=""><span class="arrow1"></span><span class="icon"></span>合作管理</a></span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!--/语音服务-->
+                            <!--SDK集成-->
+                            <li class="ul2-li">
+                                <span class="ul2-tit"><a href="/value/sdkservice" title=""><span class="icon icon22 icon-uniE722"></span><span class="tit">SDK集成</span><span class="arrow0"></span><span class="arrow1"></span></a></span>
+                            </li>
+                            <!--/SDK集成-->
+                            <!--行业分析-->
+                            <li class="ul2-li">
+                                <span class="ul2-tit"><a href="javascript:;" title=""><span class="icon icon9 icon-uniE709"></span><span class="tit">行业分析</span><span class="arrow0"></span><span class="arrow1"></span></a></span>
+                                <ul class="ul3">
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/mota/" title=""><span class="arrow1"></span><span class="icon"></span>行业概览</a></span>
+                                    </li>
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/mota/index.php/page/industry/market/index" title=""><span class="arrow1"></span><span class="icon"></span>市场趋势</a></span>
+                                    </li>
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/mota/index.php/page/industry/apprank/use" title=""><span class="arrow1"></span><span class="icon"></span>应用排行</a></span>
+                                    </li>
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/mota/index.php/page/industry/device/brand" title=""><span class="arrow1"></span><span class="icon"></span>移动设备</a></span>
+                                    </li>
+                                    <li class="ul3-li">
+                                        <span class="ul3-tit"><a href="/mota/index.php/page/industry/crowd/attr" title=""><span class="arrow1"></span><span class="icon"></span>移动用户</a></span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!--/行业分析-->
+                        </ul>
+                    </div>
+                    <!--/云能力-->
+                    <!--用户账号-->
+                    <li class="ul1-li" data-type="5">
+                        <ul class="ul2">
+                            <!--账号信息-->
+                            <li class="ul2-li">
+                                <span class="ul2-tit"><a href="/pass/" title=""><span class="icon icon22 icon-uniE722"></span><span class="tit">账号信息</span><span class="arrow0"></span><span class="arrow1"></span></a></span>
+                            </li>
+                            <!--/账号信息-->
+                            <!--财务信息-->
+                            <li class="ul2-li">
+                                <span class="ul2-tit"><a href="/exg/fininfo/menu" title=""><span class="icon icon23 icon-uniE723"></span><span class="tit">财务信息</span><span class="arrow0"></span><span class="arrow1"></span></a></span>
+                            </li>
+                            <!--/财务信息-->
+                            <!--修改密码-->
+                            <li class="ul2-li">
+                                <span class="ul2-tit"><a href="//passport.baidu.com/v2/account/password" title=""><span class="icon icon24 icon-uniE724"></span><span class="tit">修改密码</span><span class="arrow0"></span><span class="arrow1"></span></a></span>
+                            </li>
+                            <!--/修改密码-->
+                            <!--资质信息-->
+                            <li class="ul2-li">
+                                <span class="ul2-tit"><a href="/pass/qualify" title=""><span class="icon icon26 icon-uniE726"></span><span class="tit">资质信息</span><span class="arrow0"></span><span class="arrow1"></span></a></span>
+                            </li>
+                            <!--/资质信息-->
+                            <!--积分商城-->
+                            <li class="ul2-li">
+                                <span class="ul2-tit"><a href="/pass/mall" title=""><span class="icon icon1 icon-uniE701"></span><span class="tit">积分商城</span><span class="arrow0"></span><span class="arrow1"></span></a></span>
+                            </li>
+                            <!--/积分商城-->
+                            <!--开发者认证-->
+                            <li class="ul2-li">
+                                <span class="ul2-tit"><a href="/pass/privilege" title=""><span class="icon icon31 icon-uniE731"></span><span class="tit">开发者认证</span><span class="arrow0"></span><span class="arrow1"></span></a></span>
+                            </li>
+                            <!--/开发者认证-->
+                        </ul>
+                    </li>
+                    <!--/用户账号-->
+                    <!--通知和问题-->
+                    <li class="ul1-li" data-type="6">
+                        <ul class="ul2">
+                            <!--通知中心-->
+                            <li class="ul2-li">
+                                <span class="ul2-tit"><a href="/pass/msg" title=""><span class="icon icon36 icon-uniE736"></span><span class="tit">通知中心</span><span class="arrow0"></span><span class="arrow1"></span></a></span>
+                            </li>
+                            <!--/通知中心-->
+                            <!--问题与反馈-->
+                            <li class="ul2-li">
+                                <span class="ul2-tit"><a href="/pass/faq" title=""><span class="icon icon37 icon-uniE737"></span><span class="tit">问题与反馈</span><span class="arrow0"></span><span class="arrow1"></span></a></span>
+                            </li>
+                            <!--/问题与反馈-->
+                        </ul>
+                    </li>
+                    <!--/通知和问题-->
+                </ul>
+                
+
+            </div>
+        </div>
+    </div>
+    <!--/mnav-->
+
+    <div class="hidebar"></div>
+
+<script type="text/javascript">
+    if(location.href.indexOf('/index.php') > 0)
+        location.href = '/';
+</script>
+<!--
+<div class="slide">
+    <div class="brief">已累计为开发者上线：</div>
+    inline[../../widget/number/rollnumber.html]
+    <div class="join-warper">
+        <div class="join-breathe-out"></div>
+        <div class="join-breathe-in"></div>
+        <a class="join" href="#0" data-href="/apps">加入</a>
+    </div>
+</div>
+-->
+<!--wrap-->
+<div class="wrap">
+<!--mod-tab0-->
+<div class="mod-tab0-box">
+<div class="mod-tab0 js-tab0">
+    <!--gb-tab-pn-->
+    <ul class="gb-tab-pn">
+        
+                    <li class="tab-con">
+                <span class="pic"><a style="background-image:url(https://gdown.baidu.com/img/banners/d00627eef2a6394762c5472191bff9ab.jpg)" href="/impel/showBanner?mainkey=service" target="_blank"></a></span>
+            </li>
+                    <li class="tab-con">
+                <span class="pic"><a style="background-image:url(https://gdown.baidu.com/img/banners/0789eb915ecfedca51d57f138e0e1684.jpg)" href="/impel/showBanner?mainkey=gameshow" target="_blank"></a></span>
+            </li>
+                    <li class="tab-con">
+                <span class="pic"><a style="background-image:url(https://gdown.baidu.com/img/banners/0c0c953c85a79c9e43486dc6c90accc4.jpg)" href="/impel/showBanner?mainkey=intro_sdlm" target="_blank"></a></span>
+            </li>
+                    <li class="tab-con">
+                <span class="pic"><a style="background-image:url(https://gdown.baidu.com/img/banners/e293de3c845260d8cf946de055119eb2.jpg)" href="/impel/showBanner?mainkey=introkeyword" target="_blank"></a></span>
+            </li>
+                    <li class="tab-con">
+                <span class="pic"><a style="background-image:url(https://gdown.baidu.com/img/banners/e49e0fd9199c5d2d7e7450fb98eb13a2.jpg)" href="/impel/showBanner?mainkey=appshow" target="_blank"></a></span>
+            </li>
+                    <li class="tab-con">
+                <span class="pic"><a style="background-image:url(https://gdown.baidu.com/img/banners/8f17abe2245d12b08dd11dcb739c5624.jpg)" href="/impel/showBanner?mainkey=abtest" target="_blank"></a></span>
+            </li>
+                    <li class="tab-con">
+                <span class="pic"><a style="background-image:url(https://gdown.baidu.com/img/banners/924ca2489186c7cafba9055b164150f6.png)" href="/impel/showBanner?mainkey=baidu_game" target="_blank"></a></span>
+            </li>
+                    <li class="tab-con">
+                <span class="pic"><a style="background-image:url(https://ascdn.baidu.com/devplat/static/impel/img/banner-gray2_f5a2e86.jpg)" href="/impel/showBanner?mainkey=gray" target="_blank"></a></span>
+            </li>
+                <!--
+        <li class="tab-con">
+            <span class="pic"><a class="nzdpd2015" href="/impel/nzdpd2015" target="_blank"></a></span>
+        </li>-->
+    </ul>
+    <!--/gb-tab-pn--> 
+	<!--gb-tab-->
+    <div class="gb-tab"></div>
+    <!--/gb-tab-->
+	<a class="btn-prev" href="javascript:;">&lt;</a>
+	<a class="btn-next" href="javascript:;">&gt;</a>
+</div>
+</div>
+<!--/mod-tab0-->
+<!--mod-tool0-->
+<div class="mod-tool0">
+<div class="mod-tool0-in">
+    <!--mod-notice0-->
+    <div class="mod-notice0">
+        <div class="mod-hd">
+            <span class="tit">平台公告</span>
+        </div>
+        <div class="mod-bd">
+            <!--mod-tab1-->
+            <div class="mod-tab1 js-tab1">
+            
+                <!--gb-tab-pn-->
+                <div class="gb-tab-pn">
+                                        <div class="tab-con">
+                    <div class="time">
+                    <span class="month">Feb</span>
+                    <span class="day">21</span>
+                    </div>
+                    <div class="txt">
+                    <span class="tit"><a href="http://mp.weixin.qq.com/s?__biz=MzA5NDQxNzQwNQ==&mid=2654966794&idx=1&sn=381b46fbb487461142f49a1b3b628df5&chksm=8b85cc98bcf2458ec00299bd4b91cadbe0d697ff59d1e6452e7c47e3b0568feb63e7fdf4b669#rd" title="" target="_blank">关于移动网络游戏实名制要求的公告</a></span>
+                    <span class="con">按文化部通知：网络游戏运营企业应当要求网络游戏用户使用有效身份证件进行实名注册，并保存用户注册信息；请在您的移动网络游戏中提供可供用户使用有效身份证件进行实名注册的功能。公告详情可点击阅读。</span>
+                    </div>
+                    </div>
+                                        <div class="tab-con">
+                    <div class="time">
+                    <span class="month">Feb</span>
+                    <span class="day">15</span>
+                    </div>
+                    <div class="txt">
+                    <span class="tit"><a href="http://mp.weixin.qq.com/s?__biz=MzA5NDQxNzQwNQ==&mid=2654966792&idx=1&sn=113c1db4eac4b5a15aead7661bee3d02&chksm=8b85cc9abcf2458c1a630b00f06c1574e60ffb9be4805e56af7790846e9c2afebbc0d13ed78e#rd" title="" target="_blank">关于移动游戏提交版号等资质的公告</a></span>
+                    <span class="con">为贯彻落实文化部及国家新闻出版广电总局对移动游戏的相关部署，加强移动网络游戏管理，请尽快按要求对应提供网络文化经营许可证、游戏备案许可、游戏版号，发送至邮箱 ext_app_qual@baidu.com</span>
+                    </div>
+                    </div>
+                                        <div class="tab-con">
+                    <div class="time">
+                    <span class="month">Jan</span>
+                    <span class="day">22</span>
+                    </div>
+                    <div class="txt">
+                    <span class="tit"><a href="http://mp.weixin.qq.com/s?__biz=MzA5NDQxNzQwNQ==&mid=2654966785&idx=1&sn=074eb0961998dc4cb7ffdba56b0ff173&chksm=8b85cc93bcf24585e526ee403f83c067662021008c0d976122622af3c93371fa381b9aaf31ee#rd " title="" target="_blank">百度开发者平台软件审核春节放假安排</a></span>
+                    <span class="con">百度开发者平台2017春节放假时间为：1月27日-2月2日，为避免节假日软件审核积压，导致应用延时上线，如您节前有软件审核需求，建议您在1月26日前提交，审核人员将尽最大努力安排审核；节后可正常提交审核</span>
+                    </div>
+                    </div>
+                                        <div class="tab-con">
+                    <div class="time">
+                    <span class="month">Oct</span>
+                    <span class="day">14</span>
+                    </div>
+                    <div class="txt">
+                    <span class="tit"><a href="http://mp.weixin.qq.com/s?__biz=MzA5NDQxNzQwNQ==&mid=507483051&idx=1&sn=d91134c44c71a70d4326867e0760b7af&chksm=0b85cb393cf2422f23a11fe3a7d21f79a18caba984f5ebcb0ce0f6d7e94d5b916546f99d219b&mpshare=1&scene=1&srcid=1014iu698l8b045GoLww7Nvw#wechat_redirect" title="" target="_blank">关于落实《移动游戏出版服务管理的通知》等相关工作的公告</a></span>
+                    <span class="con">根据国家新闻出版广电总局的相关政策，我司为贯彻落实总局对移动游戏的最新要求和出版工作的相关部署，公告内容请点击详细阅读。为创造健康的游戏行业，请合作伙伴能配合完成，感谢！</span>
+                    </div>
+                    </div>
+                                        <div class="tab-con">
+                    <div class="time">
+                    <span class="month">Aug</span>
+                    <span class="day">15</span>
+                    </div>
+                    <div class="txt">
+                    <span class="tit"><a href="http://mp.weixin.qq.com/s?__biz=MzA5NDQxNzQwNQ==&mid=507482988&idx=1&sn=6312db09c5ec047afd53b125dd86835b&scene=19#wechat_redirect" title="" target="_blank">为了避免影响应用更新，请尽快完善开发者信息</a></span>
+                    <span class="con">根据相关法律法规要求，请您将账号信息内的必填项补充完整，8月18日后开发者账号信息不全，将无法提交和更新应用。</span>
+                    </div>
+                    </div>
+                                        <div class="tab-con">
+                    <div class="time">
+                    <span class="month">Aug</span>
+                    <span class="day">04</span>
+                    </div>
+                    <div class="txt">
+                    <span class="tit"><a href="http://mp.weixin.qq.com/s?__biz=MzA5NDQxNzQwNQ==&mid=507482982&idx=1&sn=e8cf51ca0c52c405f42368aca64e764e&scene=19#wechat_redirect" title="" target="_blank">移动游戏出版资质(版号)办理指引</a></span>
+                    <span class="con">国家新闻出版广电总局办公厅于2016年5月24日下发《关于移动游戏出版服务管理的通知》，未经国家新闻出版广电总局批准的移动游戏，不得上网出版运营。百度开发者平台为加强免费游戏，独代和联合发行游戏的管理，现做以下指引及说明，请点击查看详情。</span>
+                    </div>
+                    </div>
+                                        <div class="tab-con">
+                    <div class="time">
+                    <span class="month">Jun</span>
+                    <span class="day">16</span>
+                    </div>
+                    <div class="txt">
+                    <span class="tit"><a href="http://mp.weixin.qq.com/s?__biz=MzA5NDQxNzQwNQ==&mid=507482853&idx=1&sn=3c425785a505ab0ce87f191387f6220a#rd" title="" target="_blank">游戏联运服务新增IP段</a></span>
+                    <span class="con">尊敬的联运游戏开发者，您好！<br/>为了更好保障网游服务，百度新增了一组服务器。如果您的游戏服务器设置了“IP白名单”保护机制，为确保业务的正常运行，请及时添加IP地址段到白名单中，感谢您的理解与配合！</span>
+                    </div>
+                    </div>
+                                        <div class="tab-con">
+                    <div class="time">
+                    <span class="month">May</span>
+                    <span class="day">25</span>
+                    </div>
+                    <div class="txt">
+                    <span class="tit"><a href="http://mp.weixin.qq.com/s?__biz=MzA5NDQxNzQwNQ==&mid=507482793&idx=1&sn=8e23eb7c112340b1f66084e1246a20b2#rd" title="" target="_blank">关于文网文和文化部备案的公告</a></span>
+                    <span class="con">应文化部要求，为加强移动网络游戏管理，现要求所有运营移动网络游戏的单位在2016年6月1日前提供《网络文化经营许可证》及文化部备案号。</span>
+                    </div>
+                    </div>
+                                        <div class="tab-con">
+                    <div class="time">
+                    <span class="month">May</span>
+                    <span class="day">25</span>
+                    </div>
+                    <div class="txt">
+                    <span class="tit"><a href="http://mp.weixin.qq.com/s?__biz=MzA5NDQxNzQwNQ==&mid=507482792&idx=1&sn=18fbb192939ad21f7921ad240585f2c8#rd" title="" target="_blank">关于盗版小说类应用内容清查专项行动公告</a></span>
+                    <span class="con">为加大对正版内容的保护力度,百度手机助手已经对未获授权的所有小说类应用进行了下架处理，即日起所有小说类应用需提供版权证明文件才可上架，请开发者尽快提交相关文件！</span>
+                    </div>
+                    </div>
+                                        <div class="tab-con">
+                    <div class="time">
+                    <span class="month">May</span>
+                    <span class="day">20</span>
+                    </div>
+                    <div class="txt">
+                    <span class="tit"><a href="http://dev.mgame.baidu.com/news/detail/id/23" title="" target="_blank">百度游戏网游联运协议续签公告</a></span>
+                    <span class="con">贵方与百度游戏签署的网游联运协议有效期将届满，如不同意续签请尽快与百度游戏联系，如到期未联系，协议将自动延续壹年。</span>
+                    </div>
+                    </div>
+                                        <div class="tab-con">
+                    <div class="time">
+                    <span class="month">Mar</span>
+                    <span class="day">25</span>
+                    </div>
+                    <div class="txt">
+                    <span class="tit"><a href="http://mp.weixin.qq.com/s?__biz=MzA5NDQxNzQwNQ==&mid=406249568&idx=1&sn=510b27a4308e898b5a7b0773039b25b0#rd" title="" target="_blank">有关新广告法的重要通知</a></span>
+                    <span class="con">应国家新广告法相关规定，应用描述（一句话简介、应用描述、版本更新介绍）信息中不得使用极限词汇。建议您及时核对应用描述内容并进行修改。3月29日后，应用描述中若涉及广告禁止用词，软件将无法提交，感谢您的理解与配合！</span>
+                    </div>
+                    </div>
+                                        <div class="tab-con">
+                    <div class="time">
+                    <span class="month">Nov</span>
+                    <span class="day">12</span>
+                    </div>
+                    <div class="txt">
+                    <span class="tit"><a href="http://mp.weixin.qq.com/s?__biz=MzA5NDQxNzQwNQ==&mid=400437244&idx=1&sn=9792899602b442cd49cf21090f812fdc#rd" title="" target="_blank">百度自更新SDK全新上线，有奖公测！</a></span>
+                    <span class="con">参加百度自更新SDK公测，节约开发成本、提供用户体验，挣积分，抢运营资源。快来体验！</span>
+                    </div>
+                    </div>
+                                        <div class="tab-con">
+                    <div class="time">
+                    <span class="month">Oct</span>
+                    <span class="day">23</span>
+                    </div>
+                    <div class="txt">
+                    <span class="tit"><a href="http://mp.weixin.qq.com/s?__biz=MzA5NDQxNzQwNQ==&mid=400111498&idx=1&sn=15f646cd48cf260e02b6a8c3b4d7e650#rd" title="" target="_blank">有关《审核规范》部分内容调整公告</a></span>
+                    <span class="con">为规范平台的应用，确保用户安全，应监管部门要求，百度近期对违规、恶意软件与开发者进行处理，净化移动互联网环境，同时相应调整开发者文档《审核规范》部分内容</span>
+                    </div>
+                    </div>
+                                        <div class="tab-con">
+                    <div class="time">
+                    <span class="month">Sep</span>
+                    <span class="day">25</span>
+                    </div>
+                    <div class="txt">
+                    <span class="tit"><a href="http://mp.weixin.qq.com/s?__biz=MzA5NDQxNzQwNQ==&mid=208096591&idx=1&sn=93d1fb755576409c2f04f7bcdc2970b6#rd" title="" target="_blank">网游SDK更新通知</a></span>
+                    <span class="con">近期银联SDK v3.1.0以下版本将不再提供服务，为避免影响用户充值，自2015年10月19日（含）起提交审核的游戏请使用新版SDK，未接入新版SDK将无法通过审核</span>
+                    </div>
+                    </div>
+                                        <div class="tab-con">
+                    <div class="time">
+                    <span class="month">Aug</span>
+                    <span class="day">07</span>
+                    </div>
+                    <div class="txt">
+                    <span class="tit"><a href="http://mp.weixin.qq.com/s?__biz=MzA5NDQxNzQwNQ==&mid=207384699&idx=1&sn=5cd45af5b0da2e048c447a7a65c824c9#rd" title="" target="_blank">百度账号升级公告</a></span>
+                    <span class="con">百度账号的userid自然增长即将超过int32类型表示范围（21.47亿），截止至2015年8月18日00:00时，百度账号升级完毕···</span>
+                    </div>
+                    </div>
+                                        <div class="tab-con">
+                    <div class="time">
+                    <span class="month">Mar</span>
+                    <span class="day">26</span>
+                    </div>
+                    <div class="txt">
+                    <span class="tit"><a href="http://digi.163.com/15/0326/18/ALLFD0CB001618JV.html" title="" target="_blank">百度“金熊掌”第二季90后专场启示录..</a></span>
+                    <span class="con">在近两年的移动互联网创业大潮中，90后的身影越来越多，马佳佳、余佳文、陈安妮们来势汹汹...</span>
+                    </div>
+                    </div>
+                                        <div class="tab-con">
+                    <div class="time">
+                    <span class="month">Oct</span>
+                    <span class="day">18</span>
+                    </div>
+                    <div class="txt">
+                    <span class="tit"><a href="http://mp.weixin.qq.com/s?__biz=MzA5NDQxNzQwNQ==&mid=200900302&idx=1&sn=576109549a50834ffd4290ee93d9d5a5#rd" title="" target="_blank">“金熊掌奖”评选报名启动啦！</a></span>
+                    <span class="con">梦想从这里腾飞！“金熊掌奖”评选报名开始啦！ 团队人数20人以下，无A轮融资，并计划A轮....</span>
+                    </div>
+                    </div>
+                                        <div class="clear"></div>
+                </div>
+                <!--/gb-tab-pn--> 
+                <!--gb-tab-->
+                <div class="gb-tab"></div>
+                <!--/gb-tab-->
+                <div class="mod-btn">
+                    <a class="btn-prev" href="javascript:;">&lt;</a>
+                    <a class="btn-next" href="javascript:;">&gt;</a>
+                </div>
+            </div>
+            <!--/mod-tab1-->
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!--/mod-notice0-->
+    <!--mod-entry0-->
+    <div class="mod-entry0">
+    	<a class="btn btn-app" data-href="/apps/center/1" href="javascript:;">发布应用</a>
+        <a class="btn btn-center" data-href="/apps/" href="javascript:;">管理中心</a>
+    </div>
+    <!--/mod-entry0-->
+</div>
+</div>
+<!--/mod-tool0-->
+
+<!--mod-service0-->
+<div class="mod-con0 mod-service0">
+<div class="mod-con0-in">
+    <div class="mod-hd">
+        <h2>您可以得到什么服务</h2>
+    </div>
+    <div class="mod-bd">
+        <ul class="list-service0">
+            <li>
+                <a href="javascript:;" data-href="/apps">
+                <span class="logo"><img src="https://ascdn.bdstatic.com/devplat/static/index/img/icon-168x168-0_3b86543.png" width="168" height="168" /></span>
+                <span class="tit">三端分发</span>
+                <span class="intro">一次上传，多渠道应用分发，百度、91助手、安卓市场。国内最大最优质。</span>
+                </a>
+            </li>
+            <li>
+                <a href="/game">
+                <span class="logo"><img src="https://ascdn.bdstatic.com/devplat/static/index/img/icon-168x168-1_de97cd1.png" width="168" height="168" /></span>
+                <span class="tit">联运游戏</span>
+                <span class="intro">接入百度移动游戏平台，免费分享海量游戏用户群，享受长期稳定的移动游戏全产业链支持。</span>
+                </a>
+            </li>
+            <li>
+                <a href="/index/appx">
+                <span class="logo"><img src="https://ascdn.bdstatic.com/devplat/static/index/img/icon-168x168-6_fc8177e.png" width="168" height="168" /></span>
+                <span class="tit">广告联盟</span>
+                <span class="intro">便捷的流量变现渠道，一个SDK支持广告变现、交叉换量两项业务，2015年广告收益100%分成。</span>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;" data-href="/union/servicelist">
+                <span class="logo"><img src="https://ascdn.bdstatic.com/devplat/static/index/img/icon-168x168-8_37f0e6f.png" width="168" height="168" /></span>
+                <span class="tit">发布优惠</span>
+                <span class="intro">发布应用优惠券，品牌曝光、下载量双提升。</span>
+                </a>
+            </li>
+            <li>
+                <a href="/index/mallintro">
+                <span class="logo"><img src="https://ascdn.bdstatic.com/devplat/static/index/img/icon-168x168-2_4d3c834.png" width="168" height="168" /></span>
+                <span class="tit">积分商城</span>
+                <span class="intro">免费乐淘积分，即可获取多端分发位置和流量。</span>
+                </a>
+            </li>
+            <li>
+                <a href="/impel/showBanner?mainkey=gray">
+                <span class="logo"><img src="https://ascdn.bdstatic.com/devplat/static/index/img/icon-168x168-9_4579f4a.png" width="168" height="168" /></span>
+                <span class="tit">灰度发布</span>
+                <span class="intro">定向发布，灵活可控。提早获得用户反馈，有效提升应用质量。</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+<!--/mod-service0-->
+
+<!--mod-coop0-->
+<div class="mod-con0 mod-coop0">
+<div class="mod-con0-in">
+    <div class="mod-hd">
+        <h2>专业打造优质开发者合作</h2>
+    </div>
+    <div class="mod-bd js-layer-panel0">
+        <div class="mod-tit"><i></i>百度开发者平台</div>
+        <ul class="list-coop0">
+            <!--item0-->
+            <li class="item item0">
+                <span class="bg"><img src="https://ascdn.bdstatic.com/devplat/static/index/img/bg-circle1_801be65.png" width="136" height="136" /></span>
+                <span class="item-tit">全民奇迹</span>
+                <span class="item-tag">首发破千万收入</span>
+                <!--layer-con0-->
+                <div class="layer-con0">
+                    <div class="pic"><img src="https://ascdn.bdstatic.com/devplat/static/index/img/qmqj_a542ecd.png" width="80" height="80" /></div>
+                    <div class="txt">
+                        <span class="item-tit"><a href="#" title="" target="_blank">全民奇迹</a></span>
+                        <span class="item-tag">上海悦腾网络科技有限公司</span>
+                        <span class="item-intro">
+                            <span>接入百度联运游戏</span>
+                            <span>游戏上线首日，百助贡献收入破千万，占比游戏大盘收入30%，雄踞各渠道之首。</span>
+                        </span>
+                    </div>
+				</div>
+                <!--/layer-con0-->
+            </li>
+            <!--/item0-->
+            <!--item1-->
+            <li class="item item1">
+                <span class="bg"><img src="https://ascdn.bdstatic.com/devplat/static/index/img/bg-circle4_c2567eb.png" width="136" height="136" /></span>
+                <span class="item-tit">太极熊猫</span>
+                <span class="item-tag">苏州蜗牛数字科技股份有限公司</span>
+                <!--layer-con0-->
+                <div class="layer-con0">
+                    <div class="pic"><img src="https://ascdn.bdstatic.com/devplat/static/index/img/tjxm_12ffc7e.png" width="80" height="80" /></div>
+                    <div class="txt">
+                        <span class="item-tit">太极熊猫</span>
+                        <span class="item-tag">现象级产品</span>
+                        <span class="item-intro">
+                            <span>接入百度联运游戏</span>
+                            <span>现象级产品，仅安卓渠道当天收入突破150万，百助占比30%，居全渠道第一。</span>
+                        </span>
+                    </div>
+				</div>
+                <!--/layer-con0-->
+            </li>
+            <!--/item1-->
+            <!--item2-->
+            <li class="item item2">
+                <span class="bg"><img src="https://ascdn.bdstatic.com/devplat/static/index/img/bg-circle0_578a15c.png" width="136" height="136" /></span>
+                <span class="item-data">
+                    <span class="data-tit">征途</span>
+                    <span class="data-num">500万/收入</span>
+                </span>
+                <span class="item-tit">征途</span>
+                <!--layer-con0-->
+                <div class="layer-con0">
+                    <div class="pic"><img src="https://ascdn.bdstatic.com/devplat/static/index/img/zt_06ab082.png" width="80" height="80" /></div>
+                    <div class="txt">
+                        <span class="item-data">
+                            <span class="data-tit">品牌曝光机会</span>
+                            <span class="data-num">公测2天，500万/收入</span>
+                        </span>
+                        <span class="item-tit">征途</span>
+                        <span class="item-intro">
+                            <span>接入百度联运游戏</span>
+                            <span>国内神级游戏开发者，高居新游期待第一名，公测2天，百助收入500W，多款手游产品在业内影响巨大，潜力无限。</span>
+                        </span>
+                    </div>
+				</div>
+                <!--/layer-con0-->
+            </li>
+            <!--/item2-->
+            <!--item3-->
+            <li class="item item3">
+                <span class="bg"><img src="https://ascdn.bdstatic.com/devplat/static/index/img/bg-circle3_bfd5708.png" width="136" height="136" /></span>
+                <span class="item-tit">途牛旅游</span>
+                <span class="item-tag">品牌曝光机会</span>
+                <!--layer-con0-->
+                <div class="layer-con0">
+                    <div class="pic"><img src="https://ascdn.bdstatic.com/devplat/static/index/img/tnly_4c24f2d.png" width="80" height="80" /></div>
+                    <div class="txt">
+                        <span class="item-tit">途牛旅游</span>
+                        <span class="item-tag">品牌曝光机会</span>
+                        <span class="item-intro">
+                            <span>inApp首批合作方</span>
+                            <span>inApp能将途牛App里丰富的旅游线路、特价门票内容通过搜索的场景直接呈现在用户面前，让用户能迅速获取途牛app的优质资源，享受最佳的服务体验。</span>
+                        </span>
+                    </div>
+				</div>
+                <!--/layer-con0-->
+            </li>
+            <!--/item3-->
+            <!--item4-->
+            <li class="item item4">
+                <span class="bg"><img src="https://ascdn.bdstatic.com/devplat/static/index/img/bg-circle4_c2567eb.png" width="136" height="136" /></span>
+                <span class="item-tit">爱奇艺视频</span>
+                <span class="item-tag">600W+/周</span>
+                <!--layer-con0-->
+                <div class="layer-con0">
+                    <div class="pic"><img src="https://ascdn.bdstatic.com/devplat/static/index/img/aiqiyi_d2a743c.png" width="80" height="80" /></div>
+                    <div class="txt">
+                        <span class="item-tit">爱奇艺视频</span>
+                        <span class="item-tag">金牌开发者</span>
+                        <span class="item-intro">
+                            <span>inApp首批合作方</span>
+                            <span>百度、91、安卓联合首发 周下载量已超百万。</span>
+                        </span>
+                    </div>
+				</div>
+                <!--/layer-con0-->
+            </li>
+            <!--/item4-->
+            <!--item5-->
+            <li class="item item5">
+                <span class="bg"><img src="https://ascdn.bdstatic.com/devplat/static/index/img/bg-circle3_bfd5708.png" width="136" height="136" /></span>
+                <span class="item-tit">野兽骑行</span>
+                <span class="item-tag">草根创业</span>
+                <!--layer-con0-->
+                <div class="layer-con0">
+                    <div class="pic"><img src="https://ascdn.bdstatic.com/devplat/static/index/img/ysqx_a70fd90.png" width="80" height="80" /></div>
+                    <div class="txt">
+                        <span class="item-tit">野兽骑行</span>
+                        <span class="item-tag">草根创业</span>
+                        <span class="item-intro">
+                            <span>骑行记录软件，凭借产品的实用性以及软硬结合的统一服务获得金熊掌奖，上线3天即获得1w下载量，创始人2013年开始创业，涉足于智能硬件领域。 快按钮打破点名时间记录成为13年众筹获得支持最多的硬件。</span>
+                        </span>
+                    </div>
+				</div>
+                <!--/layer-con0-->
+            </li>
+            <!--/item5-->
+            <!--item6-->
+            <li class="item item6">
+                <span class="bg"><img src="https://ascdn.bdstatic.com/devplat/static/index/img/bg-circle2_030fe63.png" width="136" height="136" /></span>
+                <span class="item-tit">最右</span>
+                <span class="item-tag">90后创业</span>
+                <!--layer-con0-->
+                <div class="layer-con0">
+                    <div class="pic"><img src="https://ascdn.bdstatic.com/devplat/static/index/img/zy_2113dd7.png" width="80" height="80" /></div>
+                    <div class="txt">
+                        <span class="item-tit">最右</span>
+                        <span class="item-tag">90后创业</span>
+                        <span class="item-intro">
+                            <span>金熊掌活动</span>
+                            <span>神评论人气社区，凭借极致的交互设计体验和吐槽功能的创新性获得金熊掌奖，日新增超过1w，创始人典型90后，初次创业。</span>
+                        </span>
+                    </div>
+				</div>
+                <!--/layer-con0-->
+            </li>
+            <!--/item6-->
+            <!--item7-->
+            <li class="item item7">
+                <span class="bg"><img src="https://ascdn.bdstatic.com/devplat/static/index/img/bg-circle5_a550895.png" width="136" height="136" /></span>
+                <span class="item-tit">勿忘我</span>
+                <span class="item-tag">二次元文化</span>
+                <!--layer-con0-->
+                <div class="layer-con0">
+                    <div class="pic"><img src="https://ascdn.bdstatic.com/devplat/static/index/img/www_1a7c81a.png" width="80" height="80" /></div>
+                    <div class="txt">
+                        <span class="item-tit">勿忘我</span>
+                        <span class="item-tag">二次元文化</span>
+                        <span class="item-intro">
+                            <span>金熊掌活动</span>
+                            <span>90后年轻人的恋爱APP，凭借对90后二次元文化需求的精准满足获得金熊掌奖，创始人有着 7年互联网从业经验，资深产品经理，运营专家。曾担任“推他”轻博客 移动客户端，龙之谷游戏社区项目负责人，糖果社区产品经理。离开盛大后，跟随盛大总裁凌海创业，负责移动app “抬杠”。</span>
+                        </span>
+                    </div>
+				</div>
+                <!--/layer-con0-->
+            </li>
+            <!--/item7-->
+            <!--item8-->
+            <li class="item item8">
+                <span class="bg"><img src="https://ascdn.bdstatic.com/devplat/static/index/img/bg-circle1_801be65.png" width="136" height="136" /></span>
+                <span class="item-data">
+                    <span class="data-tit">卧虎藏龙</span>
+                    <span class="data-num">过100万/天</span>
+                </span>
+                <span class="item-tit">卧虎藏龙</span>
+                <!--layer-con0-->
+                <div class="layer-con0">
+                    <div class="pic"><img src="https://ascdn.bdstatic.com/devplat/static/index/img/whcl_284e8f1.jpg" width="80" height="80" /></div>
+                    <div class="txt">
+                        <span class="item-data">
+                            <span class="data-tit">品牌曝光机会</span>
+                            <span class="data-num">过100万/天</span>
+                        </span>
+                        <span class="item-tit">卧虎藏龙</span>
+                        <span class="item-intro">
+                            <span>接入百度联运游戏</span>
+                            <span>开服当日2万人排队，收入当天过百万，备受行业瞩目。</span>
+                        </span>
+                    </div>
+				</div>
+                <!--/layer-con0-->
+            </li>
+            <!--/item8-->
+            <!--item9-->
+            <li class="item item9">
+                <span class="bg"><img src="https://ascdn.bdstatic.com/devplat/static/index/img/bg-circle5_a550895.png" width="136" height="136" /></span>
+                <span class="item-tit">魔域口袋版</span>
+                <span class="item-tag">福建网龙计算机网络信息技术有限公司</span>
+                <!--layer-con0-->
+                <div class="layer-con0">
+                    <div class="pic"><img src="https://ascdn.bdstatic.com/devplat/static/index/img/mykdb_632538d.png" width="80" height="80" /></div>
+                    <div class="txt">
+                        <span class="item-tit">魔域口袋版</span>
+                        <span class="item-tag">福建网龙计算机网络信息技术有限公司</span>
+                        <span class="item-intro">
+                            <span>接入百度联运游戏</span>
+                            <span>国内神级游戏开发者，多款手游产品在业内影响巨大，潜力无限。</span>
+                        </span>
+                    </div>
+				</div>
+                <!--/layer-con0-->
+            </li>
+            <!--/item9-->
+        </ul>
+        <div class="layer-panel0">
+        </div>
+    </div>
+</div>
+</div>
+<!--/mod-coop0-->
+
+<!--mod-activity0-->
+<div class="mod-con0 mod-activity0">
+<div class="mod-con0-in">
+    <div class="mod-hd">
+        <h2>开发者活动</h2>
+    </div>
+    <div class="mod-bd">
+        <!--list-activity0 活动的容器 -->
+        <ul class="list-activity0">
+                    <li>
+                <div class="pic"><a href="http://app.baidu.com/index/urban_schedule_detail/11" title="" target="_blank">
+                        <img src="https://ascdn.bdstatic.com/devplat/cityunion.jpg" width="303" height="113" /></a></div>
+            <div class="txt">
+            <span class="tit"><a href="http://app.baidu.com/index/urban_schedule_detail/11" title="" target="_blank">城市联盟8月10日北京站举办详情</a></span>
+            <span class="con">城市联盟北京站第二公开课于8月10日开课，北京区第二场开发者线下业务培训会暨城市联盟公益活动招募启动会。</span>
+            </div>
+            </li>
+                    <li>
+                <div class="pic"><a href="/index/golden" title="" target="_blank">
+                        <img src="https://ascdn.bdstatic.com/devplat/static/pic-bear0.jpg" width="303" height="113" /></a></div>
+            <div class="txt">
+            <span class="tit"><a href="/index/golden" title="" target="_blank">金熊掌</a></span>
+            <span class="con">“金熊掌”旨在扶持微小开发者，我们提供从渠道资源、市场传播和基础服务相结合的最顶级的一站式服务体验。</span>
+            </div>
+            </li>
+                    <li>
+                <div class="pic"><a href="http://app.baidu.com/index/urban_index" title="" target="_blank">
+                        <img src="https://ascdn.bdstatic.com/devplat/cityunionurban.jpg" width="303" height="113" /></a></div>
+            <div class="txt">
+            <span class="tit"><a href="http://app.baidu.com/index/urban_index" title="" target="_blank">城市联盟</a></span>
+            <span class="con">以城市为单位，通过城市经理人为地区的开发者提供管家式服务。通过城市联盟，开发者可以最大化的与百度手机助手形成新的合作关系，提高开发者在百度手机助手获取用户的能力。</span>
+            </div>
+            </li>
+                </ul>
+        <!--/list-activity0-->
+    </div>
+</div>
+</div>
+<!--/mod-activity0-->
+
+</div>
+<!--/wrap-->
+<div class="footer">
+    <div class="logo"></div>
+    <div class="links">
+        <a href="http://www.baidu.com/" target="_blank">百度</a>
+        &nbsp;<span>|</span>&nbsp;
+        <a href="http://yun.baidu.com/" target="_blank">百度云</a>
+        &nbsp;<span>|</span>&nbsp;
+        <a href="http://shouji.baidu.com/" target="_blank">百度手机助手</a>
+        &nbsp;<span>|</span>&nbsp;
+        <a href="http://www.hiapk.com/" target="_blank">安卓网</a>
+        &nbsp;<span>|</span>&nbsp;
+        <a href="http://ai.baidu.com/" target="_blank">百度大脑</a>
+    </div>
+    <div class="declare">
+        <a href="mailto:ext_opengame-union@baidu.com">游戏联运咨询：ext_opengame-union@baidu.com</a>&nbsp;&nbsp;
+        <a href="mailto:ext_app_support@baidu.com">其他问题反馈：ext_app_support@baidu.com</a>&nbsp;&nbsp;
+        联系电话：0591-38709191&nbsp;&nbsp;
+        联系微信：baidudev2014
+    </div>
+    <div class="declare">&copy;2016 Baidu <a href="http://www.baidu.com/duty/" target="_blank">使用百度前必读</a>&nbsp;<span>|</span>&nbsp;京ICP证030173号</div>
+</div>
+<iframe class="iframe-tongji" width="0" height="0" border="0"></iframe>
+</body>
+<script type="text/javascript" src="https://ascdn.bdstatic.com/devplat/static/pkg/lib_ec91999.js"></script><script type="text/javascript" src="https://ascdn.bdstatic.com/devplat/widget/header/header_index_de1f178.js"></script><script type="text/javascript" src="https://ascdn.bdstatic.com/devplat/widget/header/header_autoheight_0ee8794.js"></script><script type="text/javascript" src="https://ascdn.bdstatic.com/devplat/widget/header/header_wsideh_ddefc98.js"></script><script type="text/javascript" src="https://ascdn.bdstatic.com/devplat/widget/header/header_manage_201607_2c871a0.js"></script><script type="text/javascript" src="https://ascdn.bdstatic.com/devplat/static/index/index_938fba4.js"></script>
+<script type="text/javascript">
+    // 线上才进行统计
+    if(document.domain.toLowerCase() == "app.baidu.com") {
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fe2ee93d5023fa3ad0198e989e39b4a55' type='text/javascript'%3E%3C/script%3E"));
+    }
+</script>
+</html>
+
+
+
+<!--30238331660405284874030808-->
+<script> var _trace_page_logid = 3023833166; </script>

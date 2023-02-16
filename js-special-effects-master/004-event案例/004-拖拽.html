@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: rgba(0,0,0,.3);
+        }
+        i {
+            font-style: normal;
+        }
+
+        .dialog {
+            width: 400px;
+            height: 300px;
+            border: 5px solid #eee;
+            box-shadow: 2px 2px 2px 2px #666;
+            background-color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .dialog .dialog-header {
+            width: 100%;
+            height: 25px;
+            background-color: #7c9299;
+            border-bottom: 1px solid #369;
+            line-height: 25px;
+            color: white;
+            cursor: move;
+            position: relative;
+        }
+
+        .dialog .dialog-header .close {
+            position: absolute;
+            right: 0;
+            cursor: pointer;
+        }
+
+        .dialog .dialog-body {
+            padding: 15px;
+        }
+    </style>
+    <script>
+        /*
+        需求:
+        `   1.在指定位置,按住鼠标左键移动对话框
+        技术点:
+            1.鼠标按下事件,触发事件
+            2.鼠标移动事件,更改dailog的位置
+        */
+        window.onload = function () {
+            // 1.获取元素
+            var close = document.getElementById('close');
+            var dialog = document.getElementById('dialog');
+            var header = document.getElementById('dialog-header');
+
+            // 2.关闭dialog
+            close.onclick = function () {
+                dialog.style.display = 'none';
+            }
+            // 3.鼠标按下事件
+            header.onmousedown = function (e) {
+                // (1)获取事件对象
+                var event = e || window.event;
+                // (2)获取pageX 和 pageY
+                var pageX = event.pageX || (scroll().left + event.clientX);
+                var pageY = event.pageY || (scroll().top + event.clientY);
+                // 获取鼠标点击的点在盒子中的位置
+                // 将来移动的时候减去, 保证鼠标在盒子的点击的地方
+                var x = pageX - dialog.offsetLeft;
+                var y = pageY - dialog.offsetTop;
+                // console.log('鼠标按下');
+                // 4.鼠标移动事件
+                document.onmousemove = function (e) {
+                    console.log('移动');
+                    var event = e || window.event;
+                    var xx = event.pageX || (scroll().left + event.clientX);
+                    var yy = event.pageY || (scroll().top + event.clientY);
+                    // 关键代码,没有下面两行代码 就会出现问题
+                    // 也就是往鼠标停留在点击的地方
+                    var left = xx - x;// 一定要减去鼠标在点击区域中的坐标值x
+                    var top = yy - y;// 一定要减去鼠标在点击区域中的坐标值y
+                    dialog.style.left = left + 'px';
+                    dialog.style.top = top + 'px';
+                    //禁止文本选中（选中后取消）  下面这个代码也需要 否则也会出现bug
+                    window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+                }
+            }
+            // 5.鼠标弹起事件
+            // 这个地方的事件源可以是 header
+            // 也可以是 document
+            header.onmouseup = function () {
+                console.log('解绑');
+                // 6.解绑onmousemove事件
+                document.onmousemove = null;
+            }
+        }
+        function scroll() {
+            return {
+                top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop,
+                left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="dialog" id="dialog">
+        <div class="dialog-header" id="dialog-header">
+            <span class="dailog-title">确定删除该条信息</span>
+            <i class="close" id="close">【关闭】</i>
+        </div>
+        <div class="dialog-body" id="dialog-body">
+            <div class="dialog-content">
+                好好学习 天天向上
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

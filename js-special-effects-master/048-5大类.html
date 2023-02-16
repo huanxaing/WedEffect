@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.预定义类
+        // . 匹配非空字符 [^\n\r]	 
+        // 也就是 除了换行和回车之外的任意字符（“  ” 不是非空字符）
+        console.log(/./.test('')); // false
+        console.log(/./.test(' ')); // true
+        console.log(/./.test('\n')); // false
+        console.log(/./.test('\r')); // false
+        console.log(/./.test('aaa'));  // true
+
+        // \d: 匹配数字 [0-9]
+        console.log(/\d/.test(11));  // true
+        // \D: 匹配非数字 [^0-9]	
+        console.log(/\D/.test('aaa'))// true
+
+        // \w: 匹配 [a-zA-Z_0-9]
+        console.log(/\w/.test('aaa'))// true
+        console.log(/\w/.test(123));  // true
+        // \W : 反面 [^a-zA-Z_0-9]	
+        console.log(/\W/.test('$'));  // true
+
+        // /s : 匹配空白字符  [ \t\n\x0B\f\r]
+        console.log(/\s/.test(''));  // false
+        console.log(/\s/.test(' '));  // true
+        // /S :反面 非空白字符 [^ \t\n\x0B\f\r]
+        console.log(/\S/.test(''));  // false
+        console.log(/\S/.test(' ')); // false
+
+        // 2.简单类
+        // 正则：//中什么特殊符号都不写，和[]的加入
+        // 一句话，只要完整包含了qiaofeng 就可以了（有他就行）
+        console.log(/qiaofeng/.test('qiaofeng'));// true
+        console.log(/qiaofeng/.test('qiao'));// fasle
+
+        // []  有其中一个就行了
+        console.log(/[abc]/.test('a')); // true
+        console.log(/[abc]/.test('ab')); // true
+        console.log(/[abc]/.test('abc')); // true
+        console.log(/[abc]/.test('d')); // false
+
+        // 3.负向类   
+        // 规则: 
+        // 1.不够和正好 返回false
+        // 2.多了或没有  返回true
+        // 注意: ^ 一定要写在 [] 里面
+        console.log(/[^abc]/.test('abc')); // false
+        console.log(/[^abc]/.test('ac')); // false
+        console.log(/[^abc]/.test('ab')); // false
+        console.log(/[^abc]/.test('abcd')); // true
+        console.log(/[^abc]/.test('mm')); // true
+
+        // 4.范围类
+        console.log(/[a-c]/.test('c')); // true
+        console.log(/[a-c]/.test('d')); // false
+        // 范围类取反操作
+        console.log(/[^a-c]/.test('c')); // false
+        console.log(/[^a-c]/.test('d')); // true
+
+
+        // 5.组合类
+        console.log(/[a-c1-4]/.test(1)); // true
+        console.log(/[a-c1-4]/.test('a2')); // true
+        console.log(/[a-c1-4]/.test(8)); // false 
+
+    </script>
+</body>
+</html>

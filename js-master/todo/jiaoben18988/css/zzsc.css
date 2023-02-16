@@ -1,0 +1,11 @@
+button{border:1px solid #ccc;cursor:pointer;display:block;margin:auto;position:relative;top:100px;}
+
+#forkongithub a{background:#000;color:#fff;text-decoration:none;font-family:arial, sans-serif;text-align:center;font-weight:bold;padding:5px 40px;font-size:1rem;line-height:2rem;position:relative;transition:0.5s;}
+#forkongithub a:hover{background:#060;color:#fff;}
+#forkongithub a::before,#forkongithub a::after{content:"";width:100%;display:block;position:absolute;top:1px;left:0;height:1px;background:#fff;}
+#forkongithub a::after{bottom:1px;top:auto;}
+@media screen and (min-width:800px){#forkongithub{position:absolute;display:block;top:0;right:0;width:200px;overflow:hidden;height:200px;}
+#forkongithub a{width:200px;position:absolute;top:60px;right:-60px;transform:rotate(45deg);-webkit-transform:rotate(45deg);box-shadow:4px 4px 10px rgba(0,0,0,0.8);}}
+
+
+#newsPanel{position:absolute;left:0;top:0;background:#fff;border:1px #000 solid;padding:10px;width:300px;font-size:14px;}#newsPanel .arrow{position:absolute;width:0;height:0;border:15px dashed transparent;border-right:15px solid #000;top:50%;margin-top:-15px;margin-left:-40px;}#newsPanel .arrow2{position:absolute;width:0;height:0;border:15px dashed transparent;border-right:15px solid #fff;top:50%;margin-top:-15px;margin-left:-39px;}#newsPanel ul,#newsPanel li{margin:0;padding:0;}#newsPanel li{list-style:none;display:block;margin-top:4px;margin-bottom:4px;width:280px;height:16px;overflow:hidden;text-overflow:ellipsis;}#newsPanel a{text-decoration:none;}#newsPanel .close{position:absolute;right:10px;top:0;width:10px;height:10px;font-size:20px;cursor:pointer;}

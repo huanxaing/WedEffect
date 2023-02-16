@@ -1,0 +1,62 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+	<include file="Public:head" />
+</head>
+<body>
+	<div class="wrap">
+		<div class="header">
+			<include file="Public:header" />
+		</div>
+		<div class="main">
+			<div class="inner">
+				<div class="left">
+					<include file="Public:sidebar" />
+				</div>
+				<div class="right">
+					<div class="article">
+						<div class="title"><strong>{$catname}</strong><span class="right f12">{$location}</span></div>
+						<if condition="$exist eq true">
+					<!-- 	<ol class="news">
+							<volist name="list" id="vo">
+								<li><a href="{$vo.url}">
+									<h3>{$vo.title}</h3>
+									<p>{$vo.content|strip_tags|mb_substr=0,80,'UTF-8'}...</p>
+								</a></li>
+							</volist>
+						</ol> -->
+							<ul class="news_two_ul">
+								<volist name="list" id="vo">
+						        <li>
+						            <div class="news_two_box wow slideInUp" style="visibility: visible; animation-name: slideInUp;">
+						                <a href="{$vo.url}" target="_blank" class="news_two_img">
+						                <img src="__ROOT__/__UPLOAD__/m_{$vo.img}" alt="{$vo.title}"> </a>
+						                <a href="{$vo.url}" target="_blank" class="news_two_txt">
+						                    <span>{$vo.title}</span>
+						                    <i>{$vo.content|strip_tags|mb_substr=0,80,'UTF-8'}...</i>
+						                </a>
+						                <p class="news_two_date">
+						                    <span>{$vo.time|strip_tags|mb_substr=5,6,'utf-8'}</span>
+						                    <i>{$vo.time|strip_tags|mb_substr=0,4,'utf-8'}</i>
+						                </p>
+						            	
+						            </div>
+						        </li>
+						        </volist>
+						    </ul>
+						<div class="page clear right">
+							{$page}
+						</div>
+						<else />
+							<b class="rel_center" style="width:100px;margin:100px 0 100px -50px;display:block;color:#da020d;">暂无相关文章...</b>
+						</if>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<include file="Public:footer" />
+		</div>
+	</div>
+</body>	
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 在chrome中测试的:
+        // 没有DTD:
+        // document.body.clientWidth = 1366
+        // document.body.clientHeight = 150
+
+        // document.documentElement.clientWidth = 1366
+        // document.documentElement.clientHeight = 150
+
+        // window.innerWidth = 1366
+        // window.innerHeight = 150
+        // 有DTD
+        // document.body.clientWidth = 1350
+        // document.body.clientHeight = 0
+
+        // document.documentElement.clientWidth = 1366
+        // document.documentElement.clientHeight = 150
+
+        // window.innerWidth = 1366
+        // window.innerHeight = 150
+
+        // console.log(document.body.clientWidth + ',' + document.body.clientHeight);
+        // console.log(document.documentElement.clientWidth + ',' + document.documentElement.clientHeight);
+
+        // console.log(window.innerWidth + ',' + window.innerHeight);
+        document.write(client().width+','+client().height);
+        // 获取浏览器可视区的宽度和高度 兼容性
+        function client() {
+            // 注意:window.innerWidth有可能值为0 ,0就是false
+            if (window.innerWidth !== undefined) {
+                console.log(1)
+                return {
+                    width: window.innerWidth,
+                    height: window.innerHeight
+                }
+            } else if (document.compatMode === 'CSS1Compat') {
+                console.log(2);
+                // 有DTD声明
+                return {
+                    width: document.documentElement.clientWidth,
+                    height: document.documentElement.clientHeight
+                }
+            } else {
+                console.log(3);
+                return {
+                    width: document.body.clientWidth,
+                    height: document.body.clientHeight
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

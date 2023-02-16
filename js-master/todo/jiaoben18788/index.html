@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>可暂停自动播放jQuery焦点图</title>
+<link rel="stylesheet" type="text/css" href="css/zzsc.css" />
+<script type="text/javascript" src="js/jquery.1.7.1.js"></script>
+<script src="js/jquery.jcarousellite.js"  type="text/javascript" ></script>
+<script language="javascript" type="text/javascript" src="js/jquery.easing.js"></script>
+<script type="text/javascript">
+ $(document).ready( function(){						 
+		var buttons = { previous:$('#jslidernews1 .button-previous') ,
+						next:$('#jslidernews1 .button-next') };
+		 $obj = $('#jslidernews1').lofJSidernews( { interval : 8000,
+											 	easing			: 'easeInOutQuad',
+												duration		: 1200,
+												auto		 	: true,
+												maxItemDisplay  : 3,
+												startItem:0,
+												navPosition     : 'horizontal', 
+												navigatorHeight : null,
+												navigatorWidth  : null,
+												mainWidth:638,
+												buttons:buttons} );
+	});
+</script>
+
+</head>
+
+<body>
+
+<div id="jslidernews1" class="lof-slidecontent">
+<div class="preload"><div></div></div>
+<div  class="button-previous">上一个</div>
+<div  class="button-next">下一个</div>
+<!-- MAIN CONTENT --> 
+<div class="main-slider-content">
+<ul class="sliders-wrap-inner">
+<li><a href="http://sc.admin5.com/" target="_blank"><img src="images/1636967813394.jpg" title="12.9-12.15本周新人优秀模特推荐" /></a></li>
+
+<li><a href="http://sc.admin5.com/" target="_blank"><img src="images/765787183344.jpg" title="苏雪儿" /></a></li>
+
+<li><a href="http://sc.admin5.com/" target="_blank"><img src="images/1619554683751.jpg" title="Colin" /></a></li>
+
+<li><a href="http://sc.admin5.com/" target="_blank"><img src="images/3355627347793.jpg" title="邓晓梅" /></a></li>
+
+<li><a href="http://sc.admin5.com/" target="_blank"><img src="images/4417870791139.jpg" title="梦想8090" /></a></li>
+
+<li><a href="http://sc.admin5.com/" target="_blank"><img src="images/7060495233673.jpg" title="冠军" /></a></li>
+
+</ul>  	
+</div>
+<!-- buttn -->
+<div class="navigator-content">
+<div class="button-control"><span></span></div>	
+<div class="navigator-wrapper">
+<ul class="navigator-wrap-inner">
+<li><span>1</span></li>
+<li><span>2</span></li>
+<li><span>3</span></li>
+<li><span>4</span></li>
+<li><span>5</span></li>
+<li><span>6</span></li>         		
+</ul>
+</div>
+
+</div> 
+<!----------------- END OF NAVIGATOR --------------------->
+</div>
+<div style="text-align:center;clear:both"><br>
+</div>
+</body>
+</html>

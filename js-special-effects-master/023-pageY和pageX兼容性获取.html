@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            height: 5000px;
+            width: 5000px;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    document.onclick = function (e) {
+        var event = e || window.event;
+        var pageY = event.pageY || (scroll().top + event.clientY);
+        var pageX = event.pageX || (scroll().left + event.clientX);
+        console.log(pageY);
+        console.log(pageX);
+    }
+    function scroll() {
+        return {
+            top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop,
+            left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft 
+        }
+    }
+</script>
+
+</html>

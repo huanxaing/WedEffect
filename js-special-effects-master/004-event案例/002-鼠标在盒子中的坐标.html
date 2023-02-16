@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: steelblue;
+            margin: 200px auto;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        鼠标在当前盒子中的x坐标:<span id="xBox"></span>
+        <br>
+        鼠标在当前盒子中的x坐标:<span id="yBox"></span>
+    </div>
+    <script>
+        var div = document.getElementsByTagName('div')[0];
+        var xBox = document.getElementById('xBox');
+        var yBox = document.getElementById('yBox');
+        div.onmousemove = function (e) {
+            var event = e || window.event;
+            var pageX = event.pageX || (scroll().left + event.clientX);
+            var pageY = event.pageY || (scroll().top + event.clientY);
+            // 求出: 鼠标点击的点在盒子中的坐标值
+            var x = pageX - div.offsetLeft;
+            var y = pageY - div.offsetTop;
+            xBox.innerHTML = x;
+            yBox.innerHTML = y;
+        }
+        function scroll() {
+            return {
+                top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop,
+                left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft
+            }
+        }
+    </script>
+</body>
+
+</html>

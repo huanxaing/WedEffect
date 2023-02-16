@@ -1,0 +1,518 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery产品树形介绍页特效 - 网站源码</title>
+<script type="text/javascript" src="Js/jquery-1.10.2.min.js"></script>
+<script src="Js/index.js"></script>
+<script src="Js/scollIt.js"></script>
+</head>
+<style>
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td {
+margin: 0;
+padding: 0;
+border: 0;
+}
+body {
+line-height: 20px;
+font-family: "Microsoft Yahei", arial, tahoma, verdana;
+color: #000;
+font-size: 14px;
+background: #F4F4F4;
+}
+p {
+line-height: 20px;
+}
+* {
+padding-bottom: 0px;
+margin: 0px;
+padding-left: 0px;
+padding-right: 0px;
+padding-top: 0px;
+}
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, input, button, textarea, p, blockquote, th, td, form {
+margin: 0;
+padding: 0;
+}
+ol, ul {
+list-style: none outside none;
+vertical-align: top;
+}
+.index_tree {
+position: relative;
+height: 653px;
+background: url(images/tree_bg.jpg) center center;
+background-repeat: no-repeat;
+margin-top: 20px;
+}
+.contain {
+margin: 0px auto;
+width: 1100px;
+}
+.index_tree .tit {
+text-align: center;
+font-size: 19px;
+color: #f93066;
+font-weight: bold;
+}
+.index_tree .category li {
+position: relative;
+}
+.index_tree .category div.taste {
+top: 3px;
+left: 323px;
+width: 54px;
+height: 54px;
+line-height: 54px;
+font-size: 16px;
+z-index: 5;
+}
+.index_tree .category div.nutrition {
+top: 168px;
+left: 213px;
+width: 52px;
+height: 52px;
+line-height: 52px;
+font-size: 16px;
+z-index: 7;
+}
+.index_tree .category div.taste, .index_tree .category div.cate, .index_tree .category div.nutrition, .index_tree .category div.grow, .index_tree .category div.add, .index_tree .category div.weather, .index_tree .category div.size, .index_tree .category div.col {
+position: absolute;
+text-align: center;
+display: block;
+color: #fff;
+font-weight: bold;
+background-color: #f93066;
+border-radius: 135px;
+border-top-left-radius: 135px;
+border-top-right-radius: 135px;
+border-bottom-left-radius: 135px;
+border-bottom-right-radius: 135px;
+}
+.index_tree .category div.grow {
+top: 145px;
+left: 354px;
+width: 66px;
+height: 66px;
+line-height: 66px;
+font-size: 17px;
+z-index: 8;
+}
+.cate_add p, .cate_grow p {
+width: 240px;
+margin: 0px auto;
+}
+.foo-title {
+cursor: pointer;
+}
+.cate_nutrition p {
+width: 165px;
+margin: 0px auto;
+}
+.cate_content {
+position: absolute;
+z-index: 20;
+background: url(images/tree_single_bg.png);
+_background: url(images/tree_single_bg.gif);
+background-repeat: no-repeat;
+cursor: pointer;
+}
+.cate_grow {
+display: none;
+top: 240px;
+left: 217px;
+width: 364px;
+height: 364px;
+background-position: -8px -416px;
+}
+.cate_nutrition {
+display: none;
+top: 300px;
+left: 95px;
+width: 254px;
+height: 254px;
+background-position: -62px -1145px;
+}
+.cate_taste {
+display: none;
+top: 240px;
+left: 235px;
+width: 254px;
+height: 254px;
+background-position: -62px -1145px;
+}
+.cate_content p.ptit {
+line-height: 40px;
+font-weight: bold;
+font-size: 24px;
+text-align: center;
+padding-top: 10px;
+border-bottom: 1px solid #ffffff;
+}
+.cate_taste p {
+width: 180px;
+margin: 0px auto;
+}
+.cate_content p {
+padding-left: 5px;
+color: #ffffff;
+z-index: 30;
+}
+.cate_content p.p1 {
+line-height: 25px;
+font-weight: bold;
+font-size: 15px;
+text-align: center;
+border-bottom: 1px solid #ffffff;
+}
+.index_tree .category div.cate {
+top: 48px;
+left: 224px;
+width: 66px;
+height: 66px;
+line-height: 66px;
+font-size: 17px;
+z-index: 6;
+}
+.cate_cate {
+display: none;
+top: 240px;
+left: 80px;
+width: 364px;
+height: 364px;
+background-position: -8px -416px;
+}
+.index_tree .category div.add {
+top: 91px;
+left: 522px;
+width: 62px;
+height: 62px;
+line-height: 62px;
+font-size: 17px;
+z-index: 9;
+}
+.cate_add {
+display: none;
+top: 240px;
+left: 372px;
+width: 379px;
+height: 379px;
+background-position: 0px -12px;
+}
+.cate_cate p, .cate_cate div.cate_cate_img {
+width: 220px;
+margin: 0px auto;
+}
+.index_tree .category div.weather {
+top: 57px;
+right: 363px;
+width: 66px;
+height: 66px;
+line-height: 66px;
+font-size: 17px;
+z-index: 10;
+}
+.cate_weather {
+display: none;
+top: 240px;
+left: 524px;
+width: 379px;
+height: 379px;
+background-position: 0px -12px;
+}
+.cate_weather p {
+width: 252px;
+margin: 0px auto;
+}
+.index_tree .category div.size {
+top: 166px;
+right: 355px;
+width: 55px;
+height: 55px;
+line-height: 55px;
+font-size: 16px;
+z-index: 11;
+}
+.cate_size {
+display: none;
+top: 240px;
+left: 555px;
+width: 314px;
+height: 314px;
+background-position: -32px -805px;
+}
+.cate_size p, .cate_size > div.cate_size_img {
+width: 180px;
+margin: 0px auto;
+}
+.cate_size > div.cate_size_img > div > img {
+padding-bottom: 10px;
+}
+.cate_size_img > div {
+margin-top: 20px;
+}
+.cate_size > div.cate_size_img > div > p {
+width: 83px;
+}
+.index_tree .category div.col {
+top: 151px;
+right: 206px;
+width: 66px;
+height: 66px;
+line-height: 66px;
+font-size: 17px;
+z-index: 12;
+}
+.cate_col {
+display: none;
+top: 240px;
+left: 750px;
+width: 254px;
+height: 254px;
+background-position: -62px -1145px;
+}
+.cate_col p {
+width: 160px;
+margin: 0px auto;
+}
+.cate_content p.p3 {
+text-align: center;
+}
+.cate_content p.p4 {
+background-color: #fd0045;
+}
+.cate_content p.p5 {
+background-color: #c10e09;
+}
+.cate_content p.p4, .cate_content p.p5 {
+margin: 10px auto;
+border: 2px solid #ffffff;
+width: 62px;
+height: 15px;
+}
+div.cate_cate_img > div {
+padding-bottom: 8px;
+overflow: hidden;
+margin-top: 10px;
+border-bottom: 1px solid #ffffff;
+}
+.fl {
+float: left;
+}
+img {
+border: 0;
+}
+img {
+border: 0 none;
+vertical-align: top;
+display: block;
+-ms-interpolation-mode: bicubic;
+border-right-width: 0px;
+border-top-width: 0px;
+border-bottom-width: 0px;
+border-left-width: 0px;
+}
+.fr {
+float: right;
+}
+div.cate_cate_img > div > div > p {
+width: 90px;
+}
+strong {
+font-weight: bold;
+}
+address, caption, cite, code, dfn, em, strong, th, var, i {
+font-style: normal;
+font-weight: normal;
+}
+</style>
+<body>
+<div class="index_tree">
+        <div class="contain">
+            <p class="tit">
+                果来果趣 果实属性标签之大樱桃篇 Code by P丶
+            </p>
+            <ul class="category">
+                <li>
+                    <div class="taste foo-title" style="width: 54px; height: 54px; opacity: 1; margin-top: 0px; margin-left: 0px; border-top-left-radius: 135px; border-top-right-radius: 135px; border-bottom-right-radius: 135px; border-bottom-left-radius: 135px; font-size: 16px;">
+                        口感
+                    </div>
+                    <div class="cate_content cate_taste" style="display: none;">
+                        <p class="ptit">
+                            口感
+                        </p>
+                        <p class="p1">
+                            大红灯：果肉较硬，淡黄色，肉嫩多汁，酸甜适口（略偏酸）
+                        </p>
+                        <p class="p1">
+                            美早：肉质脆而不软，肥厚多汁，口味甜酸（偏甜）。
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="cate foo-title" style="width: 66px; height: 66px; opacity: 1; margin-top: 0px; margin-left: 0px; border-top-left-radius: 135px; border-top-right-radius: 135px; border-bottom-right-radius: 135px; border-bottom-left-radius: 135px; font-size: 17px;">
+                        品种
+                    </div>
+                    <div class="cate_content cate_cate" style="display: none;">
+                        <p class="ptit">
+                            品种
+                        </p>
+                        <div class="cate_cate_img">
+                            <div>
+                                <img class="fl" src="images/tree_cate_hongdeng.jpg">
+                                <div class="fr">
+                                    <p>
+                                        <strong>大红灯</strong>
+                                    </p>
+                                    <p>
+                                        果型肾脏形，肉质肥厚，果柄粗短；外观美
+                                    </p>
+                                </div>
+                            </div>
+                            <div>
+                                <img class="fl" src="images/tree_cate_meizao.jpg">
+                                <div class="fr">
+                                    <p>
+                                        <strong>美早</strong>
+                                    </p>
+                                    <p>
+                                        果型心形，个大而整齐，顶端稍平，果柄极其短粗。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <p></p>
+                    </div>
+                </li>
+                <li>
+                    <div class="nutrition foo-title" style="width: 52px; height: 52px; opacity: 1; margin-top: 0px; margin-left: 0px; border-top-left-radius: 135px; border-top-right-radius: 135px; border-bottom-right-radius: 135px; border-bottom-left-radius: 135px; font-size: 16px;">
+                        营养
+                    </div>
+                    <div class="cate_content cate_nutrition" style="display:none;">
+                        <p class="ptit">
+                            营养
+                        </p>
+                        <p class="p1">
+                            —每百克鲜果肉中，含碳水化合物8克，蛋白质1.2克，钙6毫克，磷3 毫克，铁5.9毫克（水果首位），以及多种维生素。
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="grow foo-title" style="width: 66px; height: 66px; opacity: 1; margin-top: 0px; margin-left: 0px; border-top-left-radius: 135px; border-top-right-radius: 135px; border-bottom-right-radius: 135px; border-bottom-left-radius: 135px; font-size: 17px;">
+                        栽培
+                    </div>
+                    <div class="cate_content cate_grow" style="display: none;">
+                        <p class="ptit">
+                            栽培
+                        </p>
+                        <p class="p1">
+                            果来果趣"品牌大樱桃栽培标准
+                        </p>
+                        <p>
+                            果来果趣"品牌大樱桃的栽培是由专业的果蔬种植专家根据气候、土壤、阳光、水量等实际情况，为"果来果趣"量身定制的最专业、最合适的大樱桃栽培解决方案：ph~6.3的中性沙壤土，加密排水沟，树行间距40米，树坑深75cm、宽95cm，株行距3×4米，自由纺缍形树形管理，秋季9月平整地，以农家土杂肥为主的定时定量的科学施肥策略，不洒农药，定期浇水5次/年，人工授粉与放蜂授粉相结合。
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="add foo-title" style="width: 62px; height: 62px; opacity: 1; margin-top: 0px; margin-left: 0px; border-top-left-radius: 135px; border-top-right-radius: 135px; border-bottom-right-radius: 135px; border-bottom-left-radius: 135px; font-size: 17px;">
+                        产地
+                    </div>
+                    <div class="cate_content cate_add" style="display: none;">
+                        <p class="ptit">
+                            果源
+                        </p>
+                        <p class="p1">
+                            烟台福山"果来果趣"大樱桃基地
+                        </p>
+                        <p>
+                            果来果趣"的大樱桃种植基地位于烟台市福山区，真正的做到原产地直供。福山区大樱桃现有面积10万余亩，占全国栽植面积的40%；产量1600万公斤，占全国的60%。全国面积最大、产量最高、品质最优的大樱桃商品基地。1996年中国农业特产命名委员会授予福山区"中国大樱桃之乡"称号；1997年和1999年福山大樱桃连续荣获"中国名牌产品"称号；2003年被中国优质农产品开发服务协会授予"中国大樱桃之乡"称号；
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="weather foo-title" style="width: 66px; height: 66px; opacity: 1; margin-top: 0px; margin-left: 0px; border-top-left-radius: 135px; border-top-right-radius: 135px; border-bottom-right-radius: 135px; border-bottom-left-radius: 135px; font-size: 17px;">
+                        气候
+                    </div>
+                    <div class="cate_content cate_weather" style="display: none;">
+                        <p class="ptit">
+                            气候
+                        </p>
+                        <p class="p1">
+                            温带东亚季风型大陆半湿润性气候
+                        </p>
+                        <p>
+                            大樱桃喜温喜光，怕涝怕旱，忌风忌冻，多生于山坡阳处或沟边。适合于海拔300-600米，年平均气温10-13摄氏度以上，早春气温变化不剧烈，夏季凉爽干燥，雨量适中，光照充足的地区栽培。"果来果趣"大樱桃种植基地平均海拔500米，年温适中，雨量充沛，无霜期长，终霜期早，年平均气温12度左右，降雨700余毫米，无霜期250天，十分适宜大樱桃栽培。因此，"果来果趣"大樱桃种植基地出产的大樱桃是最优质烟台大樱桃。
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="size foo-title" style="width: 55px; height: 55px; opacity: 1; margin-top: 0px; margin-left: 0px; border-top-left-radius: 135px; border-top-right-radius: 135px; border-bottom-right-radius: 135px; border-bottom-left-radius: 135px; font-size: 16px;">
+                        规格
+                    </div>
+                    <div class="cate_content cate_size">
+                        <p class="ptit">
+                            规格
+                        </p>
+                        <div class="cate_size_img">
+                            <div class="fl">
+                                <img src="images/tree_dahongzao.jpg">
+                                <p>
+                                    大红灯
+                                </p>
+                                <p>
+                                    平均直径26.83mm重9.6g
+                                </p>
+                            </div>
+                            <div class="fr">
+                                <img src="images/tree_meizao.jpg">
+                                <p>
+                                    美早
+                                </p>
+                                <p>
+                                    平均直径27.48mm重11.2g
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="col foo-title" style="width: 66px; height: 66px; opacity: 1; margin-top: 0px; margin-left: 0px; border-top-left-radius: 135px; border-top-right-radius: 135px; border-bottom-right-radius: 135px; border-bottom-left-radius: 135px; font-size: 17px;">
+                        色泽
+                    </div>
+                    <div class="cate_content cate_col" style="display: none;">
+                        <p class="ptit">
+                            色泽
+                        </p>
+                        <p class="p3">
+                            大红灯
+                        </p>
+                        <p class="p3">
+                            果皮亮红色
+                        </p>
+                        <p class="p4"></p>
+                        <p class="p3">
+                            <strong>美早</strong>
+                        </p>
+                        <p class="p3">
+                            <strong>果皮深紫红色</strong>
+                        </p>
+                        <p class="p5"></p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+<script type="text/javascript">
+        $(function () {
+            // let's roll!
+            $.scrollIt();
+            $.fooTree();
+            service_hide_f();
+        });
+    </script>
+
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+</div>
+
+</body>
+</html>

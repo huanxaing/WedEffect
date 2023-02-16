@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: #ccc;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <button type="button">400</button>
+    <div></div>
+</body>
+<script>
+    var btn = document.getElementsByTagName('button')[0];
+    var div = document.getElementsByTagName('div')[0];
+    var timer = null
+    btn.onclick = function () {
+        // 要使用定时器前,必须先清楚掉定时器,确保每次点击时,
+        // 只开启一个定时器
+        timer = setInterval(function () {
+            var target = 400;   // 要达到的目的地
+            var step = (target - div.offsetLeft) / 10;
+            div.style.left = div.offsetLeft + step + 'px';
+            // 检测 定时器有没有关闭
+            console.log(1);
+            if (Math.abs(target - div.offsetLeft) < Math.abs(step)) {
+                div.style.left = target + 'px';
+                clearInterval(timer);
+            }
+        }, 30);
+    }
+</script>
+
+</html>

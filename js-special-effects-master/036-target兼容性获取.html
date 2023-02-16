@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        document.onclick = function (e) {
+            var event = e || window.event;
+            // chrome FF IE9(含)+ 既可以用target 也能用srcElement
+            // IE6/7/8 只能使用srcElement
+            // console.log(event.target);
+            // console.log(event.srcElement);
+            var target = event.target ? event.target : event.srcElement;
+            console.log(target);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,jQuery图片滚动特效,javascript图片滚动特效">
+<meta name="Description" content="SuperSlide 致力于解决网站大部分特效展示问题，使网站代码规范整洁，方便维护更新。网站上常用的“焦点图/幻灯片”、“Tab标签切换”、“图片滚动”、“无缝滚动”等等只需要一个SuperSlide即可解决！还可以多个SuperSlide组合创造更多效果">
+<title>SuperSlide - 图片滚动特效-左</title>
+<script type="text/javascript" src="jquery1.42.min.js"></script><script type="text/javascript" src="jquery.SuperSlide.2.1.1.js"></script>
+</head>
+
+<body>
+
+
+
+		<style type="text/css">
+		/* css 重置 */
+		*{margin:0; padding:0; list-style:none; }
+		body{ background:#fff; font:normal 12px/22px 宋体;  }
+		img{ border:0;  }
+		a{ text-decoration:none; color:#333;  }
+
+		/* 本例子css */
+		.picScroll-left{ width:222px; height: 361px;  border-radius: 10px; overflow:hidden; position:relative;  }
+		.picScroll-left .hd{ overflow:hidden;  height:30px;  padding:0 10px; position: relative;  top: -54px; }
+		
+		.picScroll-left .hd ul{ float:left; overflow:hidden; zoom:1;  zoom:1; }
+		.picScroll-left .hd ul li{ float:left;  width:11px; height:11px; overflow:hidden; margin-right:5px; text-indent:-999px; cursor:pointer; border:2px solid #ccc;border-radius: 50%;}
+		.picScroll-left .hd ul li.on{ background: #fff; border-color: #fff; }
+		.picScroll-left .bd{
+			position: relative;
+		}
+		.picScroll-left .bd h3{ 
+			height: 45px; 
+			background:rgba(1,40,83,.6); 
+			color: #fff;
+			line-height: 45px; 
+			font-size: 20px;
+			font-family: 黑体;
+			position: absolute;
+			top:0;
+			left: 0;
+			z-index: 99;
+			width: 100%;
+			padding-left: 20px;
+		}
+		.picScroll-left .bd h3 small{
+			font-size: 14px;
+			color: #ffffff;
+			text-transform: uppercase;
+			font-family: "microsoft yahei";
+		}
+		.picScroll-left .bd ul{ overflow:hidden; zoom:1; }
+		.picScroll-left .bd ul li{  float:left; _display:inline; overflow:hidden; text-align:center;  }
+		.picScroll-left .bd ul li .pic{ text-align:center; }
+		.picScroll-left .bd ul li .pic img{ width:222px; height:361px; display:block;  }
+		.picScroll-left .bd ul li .pic a:hover img{ border-color:#999;  }
+		.picScroll-left .bd ul li .title{ line-height:24px;   }
+
+		</style>
+
+		<div class="picScroll-left">
+			
+			<div class="bd">
+				<h3>师资力量 <small>Teachers</small></h3>
+				<ul class="picList">
+					<li>
+						<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic1.jpg" /></a></div>
+						
+					</li>
+					<li>
+						<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic2.jpg" /></a></div>
+						
+					</li>
+					<li>
+						<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic3.jpg" /></a></div>
+						
+					</li>
+					<li>
+						<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic4.jpg" /></a></div>
+						<div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图4</a></div>
+					</li>
+					<li>
+						<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic5.jpg" /></a></div>
+						<div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图5</a></div>
+					</li>
+					<li>
+						<div class="pic"><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic6.jpg" /></a></div>
+						<div class="title"><a href="http://www.SuperSlide2.com" target="_blank">效果图6</a></div>
+					</li>
+				</ul>
+			</div>
+			<div class="hd">
+				
+				<ul></ul>
+				
+				
+			</div>
+		</div>
+
+		<script type="text/javascript">
+		jQuery(".picScroll-left").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"left",autoPlay:true,vis:1	,trigger:"click"});
+		</script>
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>
+

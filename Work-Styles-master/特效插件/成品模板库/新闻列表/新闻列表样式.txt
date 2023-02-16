@@ -1,0 +1,28 @@
+<ol class="news">
+	<volist name="list" id="vo">
+		<li><a href="{$vo.url}">
+			<h3>{$vo.title}</h3>
+			<p>{$vo.content|strip_tags|mb_substr=0,80,'UTF-8'}...</p>
+		</a></li>
+	</volist>
+</ol>
+
+
+.news li{
+	margin: 0 10px 0;
+    padding: 10px 10px 0 10px;
+    border-bottom: 1px dotted #ccc;
+}
+.news li h3{
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+.news li p{
+	font-size: 14px;
+	    color: #848282;
+	    line-height: 22px;
+	    padding-left: 20px;
+}
+.news li:hover{
+	background: #f0f0f0;
+}

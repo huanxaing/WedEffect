@@ -1,0 +1,135 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{margin:0; padding:0; font-family:"Microsoft YaHei";}
+body{ background:#fff; line-height:24px; font-size:14px; color:#333;}
+a{color:#333;  text-decoration:none;}
+a:hover{color:#ff0000; text-decoration:none; font-weight: 700;}
+img{border:none;max-width: 100%;}
+li,ul{list-style-type:none;}
+.clear{ clear:both;}
+.wrap{ width: 1200px; margin:0 auto;}
+.top{width: 100%; position: relative;}
+.main{ width: 100%; }
+/*header*/
+.header{ width: 1200px; margin:30px auto; overflow: hidden;}
+.header .h-logo{width:340px; float: left;}
+.header .h-tel{width:340px; float: right;}
+/*banner*/
+.banner{width: 100%; height:608px; overflow: hidden;position:relative;}
+.banner img{ width: 100%; height: 608px;}
+#slides { display:block; width:100%; height:608px; list-style:none; padding:0; margin:0; position:relative}
+#slides li { display:block; width:100%; height:100%; list-style:none; padding:0; margin:0; position:absolute}
+#slides li a { display:block; width:100%; height:100%; text-indent:-9999px}
+#pagination { display:block; list-style:none; position:absolute; left:50%; top:420px; z-index:9900;  padding:5px 15px 5px 0; margin:0}
+#pagination li { display:block; list-style:none; width:10px; height:10px; float:left; margin-left:15px; border-radius:5px; background:#f00 }
+#pagination li a { display:block; width:100%; height:100%; padding:0; margin:0;  text-indent:-9999px;}
+#pagination li.current { background:#069538;}
+/*nav*/
+.nav{width: 100%; height:62px; background-color:#069538;overflow: hidden; }
+.nav ul{ width: 1200px; margin:0 auto;}
+.nav ul li a{width: 131px; float: left; text-align: center; color: #fff; display: block; font-size: 16px; line-height: 62px;}
+.nav ul li a:hover{width: 131px; background-color: #fc071e;}
+/*main*/
+/*m-gonggao*/
+.m-gonggao{width: 100%; height: 55px; background: url(../Image/gonggao.png) no-repeat;}
+.m-ggcon{width: 1200px; margin: 0 auto;}
+.m-ggcon h1{ font-size: 24px; font-weight: bold;  float: left; padding-top: 16px; padding-left: 10px; color: #fff;}
+.m-ggcon p{ float: left; margin-left: 40px; padding-top: 15px; display: block; color: #6c6c6c;}
+.m-ggcon p span{margin-left: 30px;}
+/*m-reason*/
+.m-reason{width: 1200px; margin: 30px auto 0px; overflow: hidden;}
+.m-reason .left{width: 673px; float: left;}
+.m-reason .right{width: 525px; float: right;}
+/*m-order*/
+.m-order{width: 100%; height:266px; background: url(../Image/ly2.png) no-repeat; overflow: hidden; margin-top: 10px;}
+.m-order .con{width: 1200px; margin:0 auto;}
+/*m-product*/
+.m-product{ width: 100%; height: 462px; background: url(../Image/cp_bg.png) no-repeat;}
+.tejia_con1 img{max-width:213px; height:241px; vertical-align:top; transition: all 0.3s; opacity: 0.7; margin:0 0 30px 0; }
+
+.tejia_con1 ul li{ width:260px; margin:0 10px; height:241px; padding:0; float:left; position:relative; text-align: center;}
+
+.tejia_con1 ul{width:9999px; position:absolute;}
+.tejia_con1 {position: relative; width:1000px; height:320px; overflow:hidden; padding:40px 0;}
+.tejia_cc1{position:relative; width:1000px; height:320px; margin:0 auto; padding: 0px 100px;}
+
+.bbtn{ display: block; text-align:center;}
+.aleft_l1{ position:absolute; left:0; top:140px; font-size:50px; width: 65px; height:65px; line-height:30px; text-align:center; background: url(../Image/left.png) no-repeat;}
+.aright_r1{ position:absolute; right:0; top:140px; font-size:50px; width: 65px; height:65px; line-height:30px; text-align:center;background: url(../Image/right.png) no-repeat;}
+
+.aleft_l1 i,.aright_r1 i{color:#fff; display:block; border-radius: 50%; transition: all 0.3s;}
+.aleft_l1:hover i,.aright_r1:hover i{color:#333; transform: scaleX(1.5); }
+
+.aleft_l1:hover i{border-left: 2px solid #000;}
+.aright_r1:hover i{border-right: 2px solid #000;}
+
+.cur_pro img{ transform:scale(1.2); opacity: 1;}
+.tejia_con1 h2{ width: 100%; font-size: 18px; text-align: center; color: #fff; font-weight: 300; }
+
+.tejia_con1 .more { text-align: center; padding:10px 0;  }
+
+.tejia_con1 .more a { display: inline-block; padding:8px 15px; border-radius: 10px; margin:0 10px; }
+.tejia_con1 .more .bt1:hover{/*border-radius: 50%;*/ border-bottom: 2px #fff solid; background: none; box-shadow: 0 0 5px #000;} 
+.tejia_con1 .more .bt2:hover{/*border-radius: 50%;*/ border-bottom: 2px #1b1618 solid; background: none; box-shadow: 0 0 5px #000;}
+
+.tejia_con1 .more .bt1 { background: #fff; color: #000;}
+.tejia_con1 .more .bt2 { background: #1b1618; color: #fff;}
+
+/*m-youshi*/
+.m-youshi{ width: 1200px; margin: 0 auto;overflow: hidden;}
+.m-youshi .hd{ text-align: center; margin-top: 50px;}
+.m-youshi .bd{ margin-top: 30px;}
+.m-youshi .bd .left{width: 593px; float: left;}
+.m-youshi .bd .left ul li{ margin-top: 20px;}
+.m-youshi .bd .right{width: 593px; float: right;}
+.m-youshi .bd .right ul li{ margin-top: 20px;}
+/*m-company*/
+.m-company{width: 100%; height: 545px; background: url(../Image/company.png) no-repeat; overflow: hidden; margin-top: 30px;}
+.m-company .left{width: 578px; height: 383px; float: left; padding-top: 42px;}
+.m-company .right{width: 580px;  float: right; padding-top: 70px;}
+.m-company .right h3{font-size: 24px; color: #fff;}
+.m-company .right .m-txt,.m-company .right .m-btn{ margin-top: 20px; color: #fff; font-size: 16px; line-height: 28px;}
+.m-company .right .m-btn a{color: #fff; margin: 0 5px;}
+/*main2*/
+.main2{width: 1200px; margin: 30px auto 0px; overflow:hidden;}
+/*m-news*/
+.m-news{width: 405px; float: left;}
+.m-news .hd h3{float: left; font-size: 16px; font-weight: 700; color: #069538;}
+.m-news .hd a{ float: right;}
+.m-news .bd{ width: 100%; float: left; margin-top: 25px;}
+.m-news .bd ul li{ width: 100%; float: left; background: url(../Image/dot.png) no-repeat 0 center; text-indent: 1em; line-height: 28px;}
+.m-news .bd ul li span{margin-right: 10px;}
+/*m-problem*/
+.m-problem{width: 405px; float: left; margin-left: 40px; overflow: hidden;}
+.m-problem .hd h3{float: left; font-size: 16px; font-weight: 700; color: #069538;}
+.m-problem .hd a{ float: right;}
+.m-problem .bd{ width: 100%; float: left; margin-top: 25px;}
+.m-problem .bd ul li{ width: 100%; float: left; background: url(../Image/dot.png) no-repeat 0 center; text-indent: 1em; line-height: 28px;}
+.m-problem .bd ul li span{margin-right: 10px;}
+/*m-video*/
+.m-video{width: 304px; float: right; overflow: hidden; margin-bottom: 30px;}
+.m-video .hd h3{float: left; font-size: 16px; font-weight: 700; color: #069538;}
+.m-video .hd a{ float: right;}
+.m-video .bd{ width: 100%; float: left; margin-top: 25px;}
+/*footer*/
+.footer{width: 100%; height: 205px; overflow: hidden; background-color: #069538; color: #fff;}
+.footer .left{width: 808px; float: left; padding-top: 58px; line-height: 30px;}
+.footer .left a{ margin: 0px 5px; color: #fff;}
+.footer .right{width: 370px; float: right;}
+.share { width:180px; float: left; padding-top:30px; text-align: left; line-height: 40px; margin-top: 60px;}
+.share_to li { float: left;}
+.share_to li a { box-shadow: 0 0 3px #000; width: 35px; height: 35px; display: block; text-align: center; line-height: 35px; background: #fff; border-radius: 5px; color:#1f191a; margin:0 5px; font-size:25px;}
+.share_to li a:hover {color:#ff0; background: #000;}
+.footer .right .erweima{float: right; margin-top: 28px;}
+/*list*/
+.box{width:100%; background-color: #f7f7f7; padding-top: 20px; overflow: hidden; padding-bottom: 30px;}
+.adr{ border: solid 1px #e0e0e0; height: 40px; padding-left: 20px; padding-top: 20px; background-color: #fff;}
+.b-con{width: 100%; margin-top: 20px;}
+.b-con .b-hd{ font-size: 24px; font-weight: 700; color: #069538;}
+.b-con .b-nav{width: 100%; margin-top: 30px; overflow: hidden;}
+.b-con .b-nav ul li{width: 144px; float: left;; margin-right: 15px; font-size: 18px; }
+.b-con .b-nav ul li a{width: 144px; height: 54px; display: block; background: url(../Image/snav.png)no-repeat; text-align: center; vertical-align:center;color: #069538; padding-top: 10px;}
+.b-con .b-nav ul li a#cur{background: url(../Image/cur.png)no-repeat; color: #fff;}
+.b-con .b-nav ul li a:hover{width: 144px; height: 54px; display: block; background: url(../Image/cur.png)no-repeat; color: #fff; font-weight: normal; padding-top: 10px;}
+.b-con .b-bd{width: 1200px; margin: 10px auto 0px; background-color: #fff; overflow: hidden; padding: 30px; line-height: 26px;}

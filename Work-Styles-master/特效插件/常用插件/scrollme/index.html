@@ -1,0 +1,487 @@
+
+<!DOCTYPE html>
+<html class="html">
+
+<head>
+
+	<meta charset="UTF-8"/>
+
+	<title>ScrollMe - For simple scrolling effects</title>
+	<meta name='description' content='ScrollMe is a jQuery library for adding simple scrolling effects to web pages'>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="css/style.css" media="screen">
+	<script src='js/prefixfree.min.js'></script>
+	<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+	<script src='js/jquery.scrollme.js'></script>
+
+
+</head>
+
+<body>
+
+	<section id="scrollme" class="section section_intro scrollme">
+
+		<div class="wrapper">
+
+			<h1
+				class="fittext animateme"
+				data-when="exit"
+				data-from="0"
+				data-to="0.75"
+				data-opacity="0"
+				data-translatey="-250"
+			>
+				ScrollMe
+			</h1>
+			<h3
+				class="animateme"
+				data-when="exit"
+				data-from="0"
+				data-to="0.75"
+				data-opacity="0"
+				data-translatey="-150"
+			>
+				A jQuery plugin for adding simple scrolling effects to web pages
+			</h3>
+
+		</div><!-- wrapper -->
+
+	</section>
+
+	<header class="header">
+
+		<div class="wrapper">
+
+			<nav class="nav nav_onpage">
+				<ul class="plain clearfix">
+					<li class="nav_item_text"><a href="#about">About</a></li>
+					<li class="nav_item_text"><a href="#usage">Usage</a></li>
+					<li class="nav_item_text"><a href="#options">Options</a></li>
+				</ul>
+			</nav>
+
+			
+
+		</div><!-- wrapper -->
+
+	</header>
+
+	<section class="section">
+
+		<div class="wrapper">
+
+			<h2 id="about">About</h2>
+
+			<div class="columns columns_content">
+
+				<div class="column column_large">
+
+					<h3>ScrollMe is a jQuery plugin for adding simple scrolling effects to web pages.</h3>
+
+					<p>As you scroll down the page ScrollMe can scale, rotate, translate and change the opacity of elements on the page. It's easy to set up and not a single line of javascript is required.</p>
+					<p>Why just these properties? Because  browsers can animate them quickly , keeping scrolling silky smooth.</p>
+
+				</div><!-- column -->
+
+				<div class="column column_right column_medium">
+
+					<ul class="effects plain clearfix scrollme">
+						<li class="effect">
+							<div
+								class="effect_box effect_box_opacity animateme"
+								data-when="view"
+								data-from="0.5"
+								data-to="0"
+								data-opacity="0"
+							></div>
+						</li>
+						<li class="effect">
+							<div
+								class="effect_box effect_box_scale animateme"
+								data-when="view"
+								data-from="0.55"
+								data-to="0.05"
+								data-scale="0"
+							></div>
+						</li>
+						<li class="effect">
+							<div
+								class="effect_box effect_box_rotate animateme"
+								data-when="view"
+								data-from="0.6"
+								data-to="0.1"
+								data-rotatex="-90"
+								data-rotatey="90"
+								data-rotatez="-90"
+							></div>
+						</li>
+						<li class="effect">
+							<div
+								class="effect_box effect_box_translate animateme"
+								data-when="view"
+								data-from="0.65"
+								data-to="0.15"
+								data-translatex="400"
+								data-translatey="400"
+							></div>
+						</li>
+					</ul>
+
+				</div><!-- column -->
+
+				<div class="column column_large">
+
+					<h3>ScrollMe isn't</h3>
+
+					<ul>
+						<li>An excuse to add a bajillion scrolling effects to your pages. Use it sparingly or performance will suffer.</li>
+						<li>A framework for building sites like   or . ScrollMe is less complex than that; it's just for adding that little something extra.</li>
+						<li>A magic wand. This stuff will only work in browsers that support the corresponding CSS properties.</li>
+					</ul>
+
+				</div><!-- column -->
+
+			</div><!-- columns -->
+
+		</div><!-- wrapper -->
+
+	</section>
+
+	<hr>
+
+	<section class="section">
+
+		<div class="wrapper">
+
+			<h2 id="usage">Usage</h2>
+
+			<div class="columns columns_content">
+
+				<div class="column column_large">
+
+					<h3>ScrollMe uses a simple declarative syntax: just include jQuery + ScrollMe, add some bits to your markup and ScrollMe will do the rest.</h3>
+
+					<p>Two classes are used to define the elements that ScrollMe works with: <code class="code_value">scrollme</code> &amp; <code class="code_value">animateme</code>.</p>
+					<p>The <code class="code_value">scrollme</code> class defines a container for animated elements. The progression of the animations is based on the scrolling through this element.</p>
+					<p>The <code class="code_value">animateme</code> class defines the animated elements. Any number of these can be added within a container element. These elements also take the options that describe how and when the animation occurs.</p>
+					<p>Both <code class="code_value">scrollme</code> and <code class="code_value">animateme</code> classes can be applied to the same element if desired.</p>
+
+				</div><!-- column -->
+
+				<div class="column column_medium">
+
+<pre
+	class="animateme scrollme"
+	data-when="enter"
+	data-from="0.75"
+	data-to="0"
+	data-opacity="0"
+	data-translatex="400"
+><code>&lt;<span class="code_tag">div</span> <span class="code_attribute">class</span>=<span class="code_value">"scrollme"</span>&gt;
+    &lt;<span class="code_tag">div</span>
+        <span class="code_attribute">class</span>=<span class="code_value">"animateme"</span>
+        <span class="code_attribute">data-when</span>=<span class="code_value">"enter"</span>
+        <span class="code_attribute">data-from</span>=<span class="code_value">"0.5"</span>
+        <span class="code_attribute">data-to</span>=<span class="code_value">"0"</span>
+        <span class="code_attribute">data-opacity</span>=<span class="code_value">"0"</span>
+        <span class="code_attribute">data-translatex</span>=<span class="code_value">"-200"</span>
+        <span class="code_attribute">data-rotatez</span>=<span class="code_value">"90"</span>
+    &gt;
+        Yup, that's all.
+    &lt;/<span class="code_tag">div</span>&gt;
+&lt;/<span class="code_tag">div</span>&gt;</code></pre>
+
+				</div><!-- column -->
+
+			</div><!-- columns -->
+
+			<div class="columns columns_content">
+
+				<div class="column column_large">
+
+					<h3>Compatibility</h3>
+
+					<p>ScrollMe works fine with just about any up to date browser. It also works in IE10 but if you want support for IE9 you will need to use   polyfill for requestAnimationFrame</a>.</p>
+
+					<h3>Having trouble?</h3>
+
+					<p>If ScrollMe isn't doing what you expect it to please post an issue on . You can also get my attention on Twitter:  </p>
+
+				</div><!-- column -->
+
+			</div><!-- columns -->
+
+		</div><!-- wrapper -->
+
+	</section>
+
+	<hr>
+
+	<section class="section">
+
+		<div class="wrapper">
+
+			<h2 id="options">Options</h2>
+
+			<p>Options are added as attributes to <code class="code_value">scrollme</code> elements with the <code class="code_attribute">data-</code> prefix.</p>
+
+			<dl
+				class="scrollme animateme"
+				data-when="enter"
+				data-from="0.5"
+				data-to="0"
+				data-crop="false"
+				data-opacity="0"
+				data-scale="1.5"
+			>
+				<dt><code class="code_attribute">when</code></dt>
+				<dd>
+					<p>Determines when the scrolling boundaries start and end.</p>
+					<ul>
+						<li><code class="code_value">"enter"</code>: From when the top of the container enters the viewport to when it exits.</li>
+						<li><code class="code_value">"exit"</code>: From when the bottom of the container enters the viewport to when it exits.</li>
+						<li><code class="code_value">"span"</code>: From when the top of the container enters the viewport to when the bottom exits.</li>
+					</ul>
+				</dd>
+			</dl>
+
+			<dl
+				class="scrollme animateme"
+				data-when="enter"
+				data-from="0.5"
+				data-to="0"
+				data-crop="false"
+				data-opacity="0"
+				data-scale="1.5"
+			>
+				<dt><code class="code_attribute">from</code> &amp; <code class="code_attribute">to</code></dt>
+				<dd>
+					<p>Specifies the position within through the scrolling boundaries at which the animation starts and ends. The animated properties are set to their default value up to the <code class="code_attribute">from</code> position then transition to the value defined in the options as scrolling progresses to the <code class="code_attribute">to</code> position.</p>
+					<p>It is important to note that the <code class="code_attribute">from</code> value can be larger than the <code class="code_attribute">to</code> value. This would typically be the case if elements are being animated as they enter the viewport.</p>
+					<p>Value: 0 &ndash; 1</p>
+				</dd>
+			</dl>
+
+			<dl
+				class="scrollme animateme"
+				data-when="enter"
+				data-from="0.5"
+				data-to="0"
+				data-crop="false"
+				data-opacity="0"
+				data-scale="1.5"
+			>
+				<dt><code class="code_attribute">easing</code> (optional)</dt>
+				<dd>
+					<p>Sets the easing function to apply to the animation.</p>
+					<ul>
+						<li><code class="code_value">"easeout"</code>: Starts abruptly and comes to a gradual stop (default).</li>
+						<li><code class="code_value">"easein"</code>: Starts gradually and comes to an abrupt stop.</li>
+						<li><code class="code_value">"easeinout"</code>: Starts and comes to a stop gradually.</li>
+						<li><code class="code_value">"linear"</code>: No easing.</li>
+					</ul>
+				</dd>
+			</dl>
+
+			<dl
+				class="scrollme animateme"
+				data-when="enter"
+				data-from="0.5"
+				data-to="0"
+				data-crop="false"
+				data-opacity="0"
+				data-scale="1.5"
+			>
+				<dt><code class="code_attribute">crop</code> (optional)</dt>
+				<dd>
+					<p>Limits the effect scrolling boundaries to the boundaries of the document. Leaving the boundaries uncropped allows elements to remain unaffected by <code class="code_value">enter</code> effects when they are near the top of the page or, vice versa, by <code class="code_value">exit</code> effects near the bottom.</p>
+					<ul>
+						<li><code class="code_value">"true"</code>: Crops scrolling boundaries to fit within the document boundaries (default).</li>
+						<li><code class="code_value">"false"</code>: Allows scrolling boundaries to exist outside the document boundaries.</li>
+					</ul>
+				</dd>
+			</dl>
+
+			<dl
+				class="scrollme animateme"
+				data-when="enter"
+				data-from="0.5"
+				data-to="0"
+				data-crop="false"
+				data-opacity="0"
+				data-scale="1.5"
+			>
+				<dt><code class="code_attribute">opacity</code> (optional)</dt>
+				<dd>
+					<p>Specifies the opacity of the animated element when scrolling arrives at the the <code class="code_attribute">to</code> position.</p>
+					<p>Value: 0 &ndash; 1</p>
+				</dd>
+			</dl>
+
+			<dl
+				class="scrollme animateme"
+				data-when="enter"
+				data-from="0.5"
+				data-to="0"
+				data-crop="false"
+				data-opacity="0"
+				data-scale="1.5"
+			>
+				<dt><code class="code_attribute">scale</code>, <code class="code_attribute">scalex</code>, <code class="code_attribute">scaley</code> &amp; <code class="code_attribute">scalez</code> (optional)</dt>
+				<dd>
+					<p>Specifies the scale of the animated element (optionally along the X, Y &amp; Z axis) when scrolling arrives at the the <code class="code_attribute">to</code> position.</p>
+					<p>Value: Scaling factor</p>
+				</dd>
+			</dl>
+
+			<dl
+				class="scrollme animateme"
+				data-when="enter"
+				data-from="0.5"
+				data-to="0"
+				data-crop="false"
+				data-opacity="0"
+				data-scale="1.5"
+			>
+				<dt><code class="code_attribute">rotatex</code>, <code class="code_attribute">rotatey</code> &amp; <code class="code_attribute">rotatez</code> (optional)</dt>
+				<dd>
+					<p>Specifies the angle of rotation of the animated element along the X, Y &amp; Z axis when scrolling arrives at the the <code class="code_attribute">to</code> position.</p>
+					<p>Value: angle of rotation in degrees</p>
+				</dd>
+			</dl>
+
+			<dl
+				class="scrollme animateme"
+				data-when="enter"
+				data-from="0.5"
+				data-to="0"
+				data-crop="false"
+				data-opacity="0"
+				data-scale="1.5"
+			>
+				<dt><code class="code_attribute">translatex</code>, <code class="code_attribute">translatey</code> &amp; <code class="code_attribute">translatez</code> (optional)</dt>
+				<dd>
+					<p>Specifies the distance to translate the animated element along the X, Y &amp; Z axis when scrolling arrives at the the <code class="code_attribute">to</code> position.</p>
+					<p>Value: distance in pixels</p>
+				</dd>
+			</dl>
+
+		</div><!-- wrapper -->
+
+	</section>
+
+	<footer class="footer scrollme">
+
+		<div
+			class="footer_block animateme"
+			data-when="enter"
+			data-from="1"
+			data-to="0"
+			data-rotatex="90"
+		>
+
+			<div class="wrapper">
+
+				<h3>Also on this page:</h3>
+
+				<ul>
+					<li> Bellota  for the headings.</li>
+					<li> Droid Serif &amp; Droid Mono  for the rest of the type.</li>
+					<li> FitText.js  to make the big heading big.</li>
+				</ul>
+
+				<p>Made by  Nick Pearson </p>
+
+			</div><!-- wrapper -->
+
+		</div>
+
+	</footer>
+
+	<script>
+
+
+		// --------------------------------------------------
+		/*!
+		* FitText.js 1.1
+		*
+		* Copyright 2011, Dave Rupert http://daverupert.com
+		* Released under the WTFPL license
+		* http://sam.zoy.org/wtfpl/
+		*
+		* Date: Thu May 05 14:23:00 2011 -0600
+		*/
+
+		(function( $ ){
+
+			$.fn.fitText = function( kompressor, options ) {
+
+				// Setup options
+				var compressor = kompressor || 1,
+				settings = $.extend({
+					'minFontSize' : Number.NEGATIVE_INFINITY,
+					'maxFontSize' : Number.POSITIVE_INFINITY
+					}, options);
+
+				return this.each(function(){
+
+					// Store the object
+					var $this = $(this);
+
+					// Resizer() resizes items based on the object width divided by the compressor * 10
+					var resizer = function () {
+						$this.css('font-size', Math.max(Math.min($this.width() / (compressor*10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)));
+					};
+
+					// Call once to set.
+					setTimeout( function(){ resizer(); } , 250 );
+
+					// Call on resize. Opera debounces their resize by default.
+					$(window).on('resize.fittext orientationchange.fittext', resizer);
+
+				});
+
+			};
+
+		})( jQuery );
+
+		// --------------------------------------------------
+		// FitText init + animate to hash
+
+		$( document ).ready( function()
+		{
+			// Set FitText for main heading
+
+			$( '.fittext' ).fitText( 0.45 );
+
+			// Scroll to hash animation
+
+			$( function()
+			{
+				$( 'a[href*=#]:not([href=#])' ).click( function()
+				{
+					if( location.pathname.replace( /^\// , '' ) == this.pathname.replace( /^\// , '' ) && location.hostname == this.hostname )
+					{
+						var target = $( this.hash );
+						target = target.length ? target : $( '[name='+this.hash.slice( 1 )+']' );
+						if( target.length )
+						{
+							$( 'html,body' ).stop().animate(
+							{
+								scrollTop:target.offset().top - 120
+							} , 1000 );
+							return false;
+						}
+					}
+				});
+			});
+
+		});
+
+		// --------------------------------------------------
+
+	</script>
+
+</body>
+
+</html>

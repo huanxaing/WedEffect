@@ -1,0 +1,101 @@
+*{ margin:0px; padding:0px; list-style:none;border:0;}
+#featured {
+	background: none repeat scroll 0 0 #D6E4B1;
+	border: 5px solid #D6E4B1;
+	position: relative;
+	width: 599px;
+	margin:0 auto;
+}
+#featured .ui-tabs-panel img {
+    height: 289px;
+    width: 510px;
+}
+#featured ul.ui-tabs-nav {
+	list-style: none outside none;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 0;
+	width: 100px;
+	right: 0px;
+}
+#featured ul.ui-tabs-nav li img {
+    background: none repeat scroll 0 0 #FFCC66;
+    border: 1px solid #EEEEEE;
+    float: left;
+    margin: 4px;
+}
+#featured ul.ui-tabs-nav li span {
+    font-family: Verdana;
+    font-size: 11px;
+    line-height: 18px;
+}
+#featured li.ui-tabs-nav-item li{height: 62px;  overflow:hidden}
+#featured li.ui-tabs-nav-item a {
+	display: block;
+	height: 62px;
+}
+#featured li.ui-tabs-nav-item img {
+	height: 52px;
+	width: 80px;
+}
+#featured li.ui-tabs-nav-item a:hover {
+    background: none repeat scroll 0 0 #FFCC66;
+    width: 90px;
+}
+#featured li.ui-tabs-selected {
+    width: 90px;
+}
+#featured ul.ui-tabs-nav li.ui-tabs-selected a {
+    background: none repeat scroll 0 0 #FC6E1A;
+}
+#featured .ui-tabs-panel {
+    background: none repeat scroll 0 0 #999999;
+   width: 510px;height: 307px;
+    position: relative;
+}
+#featured .ui-tabs-panel img{ width: 510px;height: 307px;}
+#featured .ui-tabs-panel .info {
+    background: url("../images/transparent-bg.png") repeat scroll 0 0 transparent;
+	padding:10px;
+	width:490px;
+    left: 0;
+    position: absolute;
+    bottom:0px;
+}
+#featured .info h2 {
+    color: #FFFFFF;
+    font-family: Georgia,serif;
+    font-size: 18px;
+    margin: 0;
+    overflow: hidden;
+    padding: 5px;
+}
+#featured .info p {
+    color: #F0F0F0;
+    font-family: Verdana;
+    font-size: 11px;
+    line-height: 15px;
+    margin: 0 5px;
+}
+#featured .info a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+#featured .info a:hover {
+    text-decoration: underline;
+}
+#featured .ui-tabs-hide {
+    display: none;
+}
+#featured ul.ui-tabs-nav li {
+	color: #666666;
+	position:absolute;
+	font-size: 12px;
+	height: 62px;
+	margin: 0;
+	overflow: hidden;
+	padding-left: 12px;
+	text-align: right;
+
+}

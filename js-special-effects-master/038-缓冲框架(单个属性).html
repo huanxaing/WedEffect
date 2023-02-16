@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button>运动到400</button>
+    <button>宽度变为400</button>
+    <div></div>
+
+    <script>
+        var btnArr = document.getElementsByTagName("button");
+        var div = document.getElementsByTagName("div")[0];
+
+        btnArr[0].onclick = function () {
+            animate(div, "left", 400);
+        }
+
+        btnArr[1].onclick = function () {
+            animate(div, "width", 400);
+        }
+
+
+        //参数变为3个
+        function animate(ele, attr, target) {
+            //先清定时器
+            clearInterval(ele.timer);
+            ele.timer = setInterval(function () {
+                //四部
+                var leader = parseInt(getStyle(ele, attr)) || 0;
+                //1.获取步长
+                var step = (target - leader) / 10;
+                //2.二次加工步长
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                leader = leader + step;
+                //3.赋值
+                ele.style[attr] = leader + "px";
+                //4.清除定时器
+                if (Math.abs(target - leader) <= Math.abs(step)) {
+                    ele.style[attr] = target + "px";
+                    clearInterval(ele.timer);
+                }
+
+            }, 25);
+        }
+
+        //兼容方法获取元素样式
+        function getStyle(obj, attr) {
+            if (window.getComputedStyle) {
+                // ie9 获取  谷歌(因为ie9有该属性)
+                return getComputedStyle(obj, null)[attr];
+            } else {
+                // ie8(含)以下
+                return obj.currentStyle[attr];
+            }
+        }
+    </script>
+</body>
+
+</html>

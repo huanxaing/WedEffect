@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,jQuery文字滚动特效,javascript文字滚动特效">
+<meta name="Description" content="SuperSlide 致力于解决网站大部分特效展示问题，使网站代码规范整洁，方便维护更新。网站上常用的“焦点图/幻灯片”、“Tab标签切换”、“图片滚动”、“无缝滚动”等等只需要一个SuperSlide即可解决！还可以多个SuperSlide组合创造更多效果">
+<title>SuperSlide - 文字滚动特效-上</title>
+<script type="text/javascript" src="jquery1.42.min.js"></script><script type="text/javascript" src="jquery.SuperSlide.2.1.1.js"></script>
+</head>
+
+<body>
+
+
+
+
+		<style type="text/css">
+		/* css 重置 */
+		*{margin:0; padding:0; list-style:none; }
+		body{ background:#fff; font:normal 12px/22px 宋体; margin: 50px 200px;  }
+		img{ border:0;  }
+		a{ text-decoration:none; color:#333;  }
+		a:hover{ color:#1974A1;  }
+
+
+		/* 本例子css */
+		.m-notice{
+			width: 244px;
+			border:1px solid #fbd16b;
+			background: #ffdb8d;
+			border-radius: 5px;
+		}
+		.txtScroll-top .hd h3{
+			display: inline-block;
+			line-height: 30px;
+			font-size: 16px;
+			color: #c50e09;
+		}
+		.txtScroll-top{   overflow:hidden; position:relative;  border:1px solid #feecbe;   }
+		.txtScroll-top .hd{ overflow:hidden;  height:30px;  padding:0 10px;  }
+		.txtScroll-top .hd .prev{
+			display: inline-block;
+			width: 19px;
+			height: 19px;
+			background: url(images/m-up.jpg) no-repeat;
+			float: right;
+   			margin: 5px 5px 0 0;
+   			cursor: pointer;
+		}
+		.txtScroll-top .hd .next{ 
+			display: inline-block;
+			width: 19px;
+			height: 19px;
+			background: url(images/m-down.jpg) no-repeat;
+			float: right;
+    		margin-top: 5px;
+    		cursor: pointer;
+		}
+		.txtScroll-top .bd{ margin:3px; padding:15px; background: #fff; }
+		.txtScroll-top .infoList li{ height:67px; border-bottom: 1px dotted #e0dfdf;}
+		.txtScroll-top .infoList li a{ font-size: 13px; color: #333; line-height: 26px; margin:8px 0; display: inline-block;
+			-webkit-transition: all .3s ease 0s;
+			    -moz-transition: all .3s ease 0s;
+			    -o-transition: all .3s ease 0s;
+			    transition: all .3s ease 0s;
+		}
+		.txtScroll-top .infoList li:hover{
+			background: #e0dfdf;
+		}
+		/*.txtScroll-top .infoList li:hover a{
+			color: #fff;
+		}*/
+
+		</style>
+
+
+		<div class="m-notice">
+			<div class="txtScroll-top">
+				<div class="hd">
+					<h3>通知公告</h3>
+					<a class="next"></a>
+					<a class="prev"></a>
+				</div>
+				<div class="bd">
+					<ul class="infoList">
+						<li><a href="http://www.SuperSlide2.com" target="_blank">中国打破了世界软件巨头规则中国打破了世界软件巨头规则</a></li>
+						<li><a href="http://www.SuperSlide2.com" target="_blank">口语：会说中文就能说英语中国打破了世界软件巨头规则！</a></li>
+						<li><a href="http://www.SuperSlide2.com" target="_blank">农场摘菜不如在线学外语好玩中国打破了世界软件巨头规则</a></li>
+						<li><a href="http://www.SuperSlide2.com" target="_blank">数理化老师竟也看学习资料？中国打破了世界软件巨头规则</a></li>
+						<li><a href="http://www.SuperSlide2.com" target="_blank">学英语送ipad2,45天突破听说中国打破了世界软件巨头规则</a></li>
+						<li><a href="http://www.SuperSlide2.com" target="_blank">学外语，上北外！界软件巨头规则界软件巨头规则界软件巨头规则</a></li>
+						<li><a href="http://www.SuperSlide2.com" target="_blank">那些无法理解的荒唐事中国打破了世界软件巨头规则界软件巨头规则界软件巨头规则</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+		jQuery(".txtScroll-top").slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"top",autoPlay:true,vis:5});
+		</script>
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+//百度统计代码
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa630f96b6a9dd549675d26373853f7f1' type='text/javascript'%3E%3C/script%3E"));
+</script>
+

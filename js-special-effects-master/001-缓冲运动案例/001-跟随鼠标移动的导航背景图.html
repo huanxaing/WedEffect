@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        body {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .container {
+            width: 800px;
+            height: 42px;
+            background-color: #fff;
+            border-radius: 4px;
+            margin: 100px auto;
+            position: relative;
+            /*span标签以container标签这个为参照点*/
+        }
+
+        .container ul {
+            position: relative;
+        }
+
+        .container ul li {
+            float: left;
+            width: 100px;
+            height: 42px;
+            line-height: 40px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        span {
+            width: 83px;
+            height: 42px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: url('images/cloud.gif') no-repeat center;
+            /* background-color: #ccc; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <span></span>
+        <ul>
+            <li>首页新闻</li>
+            <li>活动策划</li>
+            <li>师资力量</li>
+            <li>企业文化</li>
+            <li>招聘信息</li>
+            <li>公司简介</li>
+            <li>武汉校区</li>
+            <li>广州校区</li>
+        </ul>
+    </div>
+</body>
+<script>
+    var lis = document.getElementsByTagName('li');
+    var span = document.getElementsByTagName('span')[0];
+    // 获取li的宽度
+    var liWidth = lis[0].offsetWidth;
+    var index = 0;
+    // 添加事件
+    for (var i = 0; i < lis.length; i++) {
+        // 1.添加自定义属性
+        lis[i].index = i;
+        // 2.添加鼠标移入事件
+        lis[i].onmouseover = function () {
+            // 我们是让span元素进行移动
+            animate(span, this.index * liWidth);
+        }
+        // 3.添加鼠标移出事件
+        lis[i].onmouseout = function () {
+            // 回到开始的地方
+            animate(span, index*liWidth);
+        }
+        // 4.添加单击事件
+        lis[i].onclick = function () {
+            index = this.index;
+            animate(span, this.index * liWidth);
+        }
+    }
+    function animate(ele, target) {
+        clearInterval(ele.timer);
+        ele.timer = setInterval(function () {
+            var distance = target - ele.offsetLeft;
+            var step = distance / 10;
+            step = step > 0 ? Math.ceil(step) : Math.floor(step);
+            ele.style.left = ele.offsetLeft + step + 'px';
+            if (Math.abs(distance) <= Math.abs(step)) {
+                ele.style.left = target + 'px';
+                clearInterval(ele.timer);
+            }
+        }, 10);
+    }
+</script>
+
+</html>

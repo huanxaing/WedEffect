@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: rgba(0,0,0,.5);
+        }
+        .box {
+            /*不给box盒子添加高度,由子级内容撑起来*/
+            width: 400px;
+            background-color: #ccc;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+        }
+
+        .close {
+            width: 15px;
+            height: 15px;
+            cursor: pointer;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+
+        .up {
+            height: 300px;
+            background-color: cadetblue;
+        }
+
+        .down {
+            height: 100px;
+            background-color: darksalmon;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="box">
+        <div class="close" id="close">X</div>
+        <div class="up" id="up"></div>
+        <div class="down" id="down"></div>
+    </div>
+    <script>
+        var close = document.getElementById('close');
+        var up = document.getElementById('up');
+        var down = document.getElementById('down');
+        close.onclick = function () {
+            // 需要隐藏关闭按钮
+            close.style.display = 'none';
+            animate(down, {
+                height: 0
+            }, function () {
+                animate(box, {
+                    width: 0
+                });
+            });
+        }
+        //参数又变为3个    ->  最终版
+        function animate(ele, attr, fn) {
+            //先清定时器
+            clearInterval(ele.timer);
+            ele.timer = setInterval(function () {
+                var flag = true;
+                // 遍历attr
+                for (var k in attr) {
+                    // k -> 属性
+                    // attr[k] -> target
+                    // 四部
+                    var leader = parseInt(getStyle(ele, k)) || 0;
+                    //  求出剩余距离
+                    // var distance = attr[k] - leader;
+                    //1.获取步长
+                    var step = (attr[k] - leader) / 10;
+                    //2.二次加工步长
+                    step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                    leader = leader + step;
+                    //3.赋值
+                    ele.style[k] = leader + "px";
+                    console.log(1);
+                    // 或者如下进行判断更加简单(不考虑目标值是小数,eg:400.5)
+                    // 而且本身 step就进行取整了,小数值目标也达不到
+                    //  4.判断条件:两个值不相等,就说明该属性还没达到目标值,
+                    // 那么,此时就不能清除定时器
+                    if (attr[k] !== leader) {
+                        flag = false;
+                    }
+                }
+                // 5.清除定时器
+                if (flag) {
+                    clearInterval(ele.timer);
+                    // 需要判断是否传递了fn
+                    if (fn) {
+                        fn();
+                    }
+                }
+            }, 25);
+        }
+        // 获取样式方法封装
+        function getStyle(obj, attr) {
+            if (window.getComputedStyle) {
+                // ie9 获取  谷歌(因为ie9有该属性)
+                return getComputedStyle(obj, null)[attr];
+            } else {
+                // ie8(含)以下
+                return obj.currentStyle[attr];
+            }
+        }
+    </script>
+</body>
+
+</html>

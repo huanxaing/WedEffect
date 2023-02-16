@@ -1,0 +1,107 @@
+ 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<TITLE>2015年情人节即将到来，这是我为您精心制作的祝福网页！</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<link href="93me/default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="93me/jquery.js"></script>
+<script type="text/javascript" src="93me/garden.js" ></script>
+<script type="text/javascript" src="93me/functions.js" ></script>
+<script type="text/javascript" src="93me/min.js"></script>
+</head>
+
+<body>
+<audio autoplay="autopaly">
+<source src="93me/93me.mp3" type="audio/mp3" />
+</audio>
+<div id="mainDiv">
+<div id="content">
+<div id="code">
+<span class="comments"></span><br />
+<span class="space"/><span class="comments">在你的微笑里，我才有呼吸。我们的故事是最感人，最真实的，早安，我永恒的爱人，虽然我尚未起床，但思想已经飞到你的身边来了，不管今世也好来世也好，我所要的只有你。我要与你同坐在有着月光的草坪上，一起遥望着繁星点缀的夜空，讲述那人间古老的爱情神话...</span><br />
+<span class="space"/><span class="comments">保留一个最浪漫的故事，给你一个kiss，爱你直到永远！我不是弱智，但我会傻傻的爱你到永远。我只想和你白头到老，只因让我遇到你!</span><br />
+<FORM name=form1 action="" mothod="post"><p><p>
+<font color=#00ffff>想给她或他一份惊喜吗？只需1分钟就能给Ta一份惊喜！</font><p>
+<font color=#00ffff>输入她/他的姓名:</font><p>
+<INPUT maxLength=50 size=28 name=y style="width: 119px"><p>
+<font color=#00ffff>请您输入您的姓名:</font><p>
+<INPUT maxLength=50 size=28 name=m style="width: 119px"><p>
+<font color=#00ffff>输入您想要说的话：</font><p>
+<INPUT style="width: 365px;"  name=w><p>
+<INPUT onclick=ok() type=button value=点击生成个性化表白网页 name=button title=点击按钮即可复制地址，然后只需在QQ/MSN消息框中直接粘贴哦。 style="width: 176px">
+<INPUT type="button"   name="Submit" onClick='copyToClipBoard()' value="复制本页地址，发给QQ/MSN好友" height="16" style="width: 232px"> 
+</FORM>
+</div>
+
+<script type="text/javascript">
+function copyToClipBoard(){ 
+var clipBoardContent=""; 
+clipBoardContent+=document.title; 
+clipBoardContent+=""; 
+clipBoardContent+=this.location.href; 
+window.clipboardData.setData("Text",clipBoardContent); 
+alert("该网址已经复制到您的剪贴板中，\n\n您可以使用Ctrl+V快捷键粘贴到QQ、E-mail、论坛、博客…"); 
+}
+</script>
+<div id="loveHeart">
+<canvas id="garden"></canvas>
+<div id="words">
+<div id="messages"><script language="JavaScript" type="text/javascript" src="93me/clock.js"></script><br>
+<div id="love">
+<script type="text/javascript">
+document.write('<font  color=#00ffff>'+getUrlParam1("y")+'：'+'</font>');
+</SCRIPT><script type="text/javascript">
+document.write('<font  color=#00ffff>'+getUrlParam3("w")+'</font>');
+</SCRIPT>
+</div>
+</div>
+
+<div id="loveu">
+<div class="signature"><script type="text/javascript">
+document.write('<font  color=#00ffff>'+'最爱你的'+getUrlParam2("m")+'</font>');
+</SCRIPT>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();	
+if (!document.createElement('canvas').getContext) {
+var msg = document.createElement("div");
+msg.id = "errorMsg";
+msg.innerHTML = "提醒您：IE低版本用户请一边惭愧去吧^_^<br/>"+
+"推荐使用浏览器 <a href='http://dl.pconline.com.cn/download/51614.html' target='_blank'>Chrome 14+</a>"+
+"/<a href='http://download.microsoft.com/download/0/4/9/049A037E-B6B4-4303-90BE-BA6CAE979674/IE10-Windows6.1-x86-zh-cn.exe' target='_blank'>IE 9+</a>"+
+"/<a href='http://download.firefox.com.cn/releases/partners/baidu/webins3.0/zh-CN/Firefox-setup.exe' target='_blank'>Firefox 7+</a>"+
+"/Safari 4+<br/>请先升级您的浏览器，效果很炫哦~~"; 
+document.body.appendChild(msg);
+$("#code").css("display", "none")
+$("#copyright").css("position", "absolute");
+$("#copyright").css("bottom", "10px");
+document.execCommand("stop");
+} else {
+setTimeout(function () {
+adjustWordsPosition();
+startHeartAnimation();
+}, 5000);
+
+timeElapse(together);
+setInterval(function () {
+timeElapse(together);
+}, 500);
+
+adjustCodePosition();
+$("#code").typewriter();
+}
+</script> 
+
+<br> 
+
+<div style="text-align:center;">
+<p>来源:<a href="http://down.admin5.com" target="_blank">A5源码</a></p>
+</div>
+
+</body>
+</html>

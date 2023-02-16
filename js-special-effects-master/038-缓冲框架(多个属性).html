@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button>综合运动</button>
+    <div></div>
+
+    <script>
+        var btnArr = document.getElementsByTagName("button");
+        var div = document.getElementsByTagName("div")[0];
+
+        btnArr[0].onclick = function () {
+            var attrs = {
+                width: 120,
+                height: 400,
+            };
+            // 传递一个对象(包含多个属性)
+            animate(div, attrs, 400);
+        }
+
+
+        //参数变为2个
+        function animate(ele, attr, target) {
+            //先清定时器
+            clearInterval(ele.timer);
+            ele.timer = setInterval(function () {
+                // 遍历attr
+                for (var k in attr) {
+                    // k -> 属性
+                    // attr[k] -> target
+                    //四部
+                    var leader = parseInt(getStyle(ele, k)) || 0;
+                    //1.获取步长
+                    var step = (attr[k] - leader) / 10;
+                    //2.二次加工步长
+                    step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                    leader = leader + step;
+                    //3.赋值
+                    ele.style[k] = leader + "px";
+                    //4.清除定时器
+                    console.log(1);
+                    if (Math.abs(attr[k] - leader) <= Math.abs(step)) {
+                        ele.style[k] = attr[k] + "px";
+                        clearInterval(ele.timer);
+                    }
+                }
+
+            }, 25);
+        }
+
+        //兼容方法获取元素样式
+        function getStyle(obj, attr) {
+            if (window.getComputedStyle) {
+                // ie9 获取  谷歌(因为ie9有该属性)
+                return getComputedStyle(obj, null)[attr];
+            } else {
+                // ie8(含)以下
+                return obj.currentStyle[attr];
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #ccc;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1" id="box1"></div>
+    <div class="box2" id="box2"></div>
+    <script>
+        document.onclick = function (e) {
+            // 即使没有给box1 box2添加单击事件
+            // 在box1 box2 上面单击
+            // event.target 依旧能获取到 box1 box2 dom对象
+            var event = e || window.event;
+            console.log(event.target);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            margin: 0;
+            padding: 5px;
+            height: 200px;
+            background-color: #ddd;
+            position: relative;
+        }
+
+        button {
+            margin: 5px;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 0;
+            /*这个要加上 相当于从0开始 清零*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <button type="button" id="btn1">运动到200</button>
+        <button type="button" id="btn2">运动到400</button>
+        <div class="box2" id="box2"></div>
+    </div>
+</body>
+<script>
+    var btn1 = document.getElementById('btn1');
+    var btn2 = document.getElementById('btn2');
+    var box2 = document.getElementById('box2');
+    var timer = null;
+    // 运动到200
+    btn1.onclick = function () {
+        _animate(200);
+    }
+    // 运动到200
+    btn2.onclick = function () {
+        _animate(400);
+    }
+    // 动画函数封装
+    // 该函数存在的bug:
+    // bug1:不停的点击,速度越来越快  ->  解决办法: 每次只能开启一个定时器
+    // bug2:无法返回 ,原因是 步长是一个固定的值 
+    // 解决办法: 
+    // 如果 target > 当前值 ,说明要往右走,为正值 eg:+ 10
+    // 如果 target < 当前值 ,说明要往左走,为负值 eg: -10
+    function animate(target) {
+        timer = setInterval(function () {
+            // 盒子自身的位置 + 步长
+            box2.style.left = box2.offsetLeft + 10 + 'px';
+            if (box2.offsetLeft === target) {
+                clearInterval(timer);
+            }
+        }, 30);
+    }
+    function _animate(target) {
+        // 解决bug1
+        // 先清除掉定时器  保证每次只能开启一个定时器
+        // 如果是不停的点击 元素的速度就会越来越快
+        clearInterval(timer);
+        // 解决bug2
+        // 点击一次就判断一次,看step 此次循环应该是 10 还是 -10
+        // 不需要在定时器里面,每次都判断step是负值还是正值
+        var step = target > box2.offsetLeft ? 7 : -7;
+        timer = setInterval(function () {
+            // 每次需要判断还剩余多上的距离
+            // distance<step,就不能再前进了,否则就超过了,此时就需要清除掉定时器
+            // distance>step,还能接着走一个step
+            var distance = target - box2.offsetLeft;
+            box2.style.left = box2.offsetLeft + step + 'px';
+            // 因为步长step 有正有负  所以我们也需要对step使用绝对值
+            if (Math.abs(distance) <= Math.abs(step)) {
+                box2.style.left = target + 'px';
+                clearInterval(timer);
+            }
+        }, 30);
+    }
+</script>
+
+</html>

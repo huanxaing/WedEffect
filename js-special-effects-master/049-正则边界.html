@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 以abc开头,同时以abc结尾
+        console.log(/^abc$/.test('abc')); // true
+        console.log(/^abc$/.test('a')); // false
+        console.log(/^abc$/.test('ab')); // false
+        console.log(/^abc$/.test('ac')); // false
+        console.log(/^abc$/.test('abcabc')); // false
+    </script>
+</body>
+</html>

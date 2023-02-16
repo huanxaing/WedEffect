@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="gb2312">
+    <title>360浏览器6.3版本jQuery滑块</title>
+	<link type="text/css" href="css/zzsc.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="screen first">
+		<div class="bottom">
+			<div class="star">
+			</div>
+		</div>
+		
+		<div class="center"></div>
+	</div>
+	<div class="middle">
+		<div class="line"></div>
+		<div class="automiddle">
+			<div class="m1"></div>
+			<div class="m2"></div>
+			<div class="m3"></div>
+			<div class="m4"></div>
+			<div class="m5-cover"></div>
+			<div class="m5"></div>
+		</div>
+		<div class="bottom">
+			<div class="star">
+			</div>
+		</div>
+	</div>
+	<div class="screen more">
+		<div class="center2">
+			<a href="http://sc.admin5.com/" class="hover"></a>
+		</div>
+	</div>
+	<div class="tip">
+		<a href="javascript:;"></a>
+		<a href="javascript:;"></a>
+		<a href="javascript:;"></a>
+	</div>
+</body>
+
+<script src="js/jquery.js"></script>
+<script>
+	(function(){
+		var n = 0;
+		$(window).scroll(function(){
+			if(n == 0 && $(window).scrollTop()>150){
+				n = 1;
+				$('.line').show().animate({'height':'1800'},1000,function(){
+					$('.automiddle div').each(function(){
+						var _this = this;
+						var top = parseInt($(this).css('top').replace('px',''));
+						$(_this).css({'top':top-100}).animate({'top':top+30,'opacity':'0.6'},600,function(){
+								$(_this).animate({'top':top-10,'opacity':'0.8'},200,function(){
+									$(_this).animate({'top':top,'opacity':'1'},200);
+								})
+							})
+						});
+				});
+			}
+			if($(window).scrollTop()<$(window).height()/2){
+				$('.tip').css({'background-position':'-6px 0'});
+			}else if($(window).scrollTop()<$(window).height()/2+1800 && $(window).scrollTop()>=$(window).height()/2){
+				$('.tip').css({'background-position':'-36px 0'});
+			}else{
+				$('.tip').css({'background-position':'-68px -3px'});
+			}
+		})
+		
+		$(window).resize(function(){
+			$('.screen,.center,.center2').css({'height':$(window).height()});
+			$('.line').css('left',$(window).width()/2);
+			$('.hover').css('top',$(window).height()/2+9);
+		}).resize();
+		setInterval(function(){
+			$('.star').animate({'margin-top':'38px'},1000,function(){
+				$('.star').css('margin-top','16px');
+			})
+		},1000);
+		var b = $('.bottom');
+		b.eq(0).click(function(){
+			$('html,body').animate({'scrollTop':$(window).height()},1000);
+		})
+		b.eq(1).click(function(){
+			$('html,body').animate({'scrollTop':$(window).height()+1800},1000);
+		})
+		$('.center2 a').click(function(){
+			external.AppCmd(external.GetSID(window),"","main.openurl","chrome://newtab","1.0",function(r,s){
+				window.opener=null;
+                window.open('','_self');
+				window.close();
+			})
+		})
+		$('.tip a').click(function(){
+			var i = $(this).index();
+			if(i==0){
+				$('html,body').stop(true,true).animate({'scrollTop':0},1000);
+			}else if(i==1){
+				$('html,body').stop(true,true).animate({'scrollTop':$(window).height()},1000);
+			}else if(i==2){
+				$('html,body').stop(true,true).animate({'scrollTop':$(window).height()+1800},1000);
+			}
+		})
+
+		$('html,body').animate({'scrollTop':'37px'},100);
+	})()
+</script>
+<div style="text-align:center;clear:both">
+</div>
+</html>

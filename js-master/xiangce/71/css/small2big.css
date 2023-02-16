@@ -1,0 +1,42 @@
+body{
+    margin: 0 auto;
+    padding: 0;
+    background-color: gray;
+}
+.s2b_col{
+    position: absolute;
+    top : 200px;
+    list-style-type: none;
+    background-color: aqua;
+    margin-left: 140px;
+    padding: 0;
+}
+.s2b_col li{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    border: 5px solid;
+    font-size: 30px;
+}
+
+#pageLink{
+    margin: 0 auto;
+    height: 40px;
+    color:white;
+    width: 500px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    margin-top: 100px;
+}
+#pageLink a{
+   display: block;
+   float: left;
+   background-color: #ccc;
+   text-decoration: none;
+   border-radius: 5px;
+   margin-left: 50px;
+   width: 100px;
+
+}

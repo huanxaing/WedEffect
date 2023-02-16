@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .ad {
+            position: absolute;
+            top: 80px;
+            width: 150px;
+            height: 300px;
+            background-color: #1acd7e;
+        }
+
+        .left {
+            left: 10px;
+        }
+
+        .right {
+            right: 10px;
+        }
+
+        .main {
+            height: 2000px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ad left" id="left"></div>
+    <div class="ad right" id="right"></div>
+    <div class="main"></div>
+</body>
+<script>
+    window.onload = function () {
+        var left = document.getElementById('left');
+        var right = document.getElementById('right');
+        window.onscroll = function () {
+            var scrollTop = scroll().top;
+            animate(left,scrollTop + 80);
+            animate(right,scrollTop + 80);
+        }
+    }
+    function animate(ele, target) {
+        clearInterval(ele.timer);
+        ele.timer = setInterval(function () {
+            var distance = target - ele.offsetTop;
+            var step = distance / 10;
+            step = step > 0 ? Math.ceil(step) : Math.floor(step);
+            ele.style.top = ele.offsetTop + step + 'px';
+            if (Math.abs(distance) <= Math.abs(step)) {
+                ele.style.top = target + 'px';
+                clearInterval(ele.timer);
+            }
+        }, 30);
+    }
+    function scroll() {
+        return {
+            top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop,
+            left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft
+        }
+    }
+</script>
+
+</html>

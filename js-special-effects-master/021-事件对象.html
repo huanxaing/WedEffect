@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // chrome ff ie6/7/8  都可以获取
+    document.onclick = function(){
+        console.log(event);
+    }
+    // chrome ff ie9(含)+  将事件对象作为形参传递进去也可以
+    // 但是ie5/6/7/8 不行 输出的是undefined
+    document.onclick = function (e) {
+        console.log(e);
+    }
+
+
+    // 兼容性获取事件对象的方法
+    document.onclick = function(e){
+        event = e || window.event;
+        console.log(event);
+    }
+</script>
+
+</html>

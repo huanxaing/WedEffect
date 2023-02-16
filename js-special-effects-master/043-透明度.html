@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            /* opacity: 0.3; */
+            /* filter:alpha(opacity=30); */
+        }
+    </style>
+</head>
+
+<body>
+    <button type="button">改变</button>
+    <div></div>
+    <script src="animate.js"></script>
+    <script>
+        var div = document.getElementsByTagName('div')[0];
+        var btn = document.getElementsByTagName('button')[0];
+        console.log(getStyle(div,'opacity'));  // 1
+        // 1.鼠标移入操作
+        div.onmouseover = function(){
+            animate(this,{
+                opacity:0
+            });
+        }
+        // 2.鼠标移出操作
+        div.onmouseout = function(){
+            animate(this,{
+                opacity:100
+            });
+        }
+
+    </script>
+</body>
+
+</html>

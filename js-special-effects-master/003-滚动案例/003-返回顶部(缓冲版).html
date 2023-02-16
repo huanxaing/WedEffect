@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .return-top {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 40px;
+            background-color: #1acd7e;
+            border-radius: 50%;
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            cursor: pointer;
+            display: none;
+        }
+
+        body {
+            height: 5000px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="return-top" id="return-top">
+        ↑
+    </div>
+    <script>
+        /*
+            需求:
+                1.被卷去的头部超过200px,显示返回顶部图标
+                2.点击返回顶部图标,滚动条回到顶部去 
+            技术点:
+                1.之前是移动dom元素,显示需要移动屏幕!! 如何实现?
+    
+        */
+        window.onload = function () {
+            var returnTop = document.getElementById('return-top');
+            window.onscroll = function () {
+                if (scroll().top > 200) {
+                    returnTop.style.display = 'block';
+                } else {
+                    returnTop.style.display = 'none';
+                }
+                // 重点在这个地方,如何获取当前的屏幕当前的位置
+                // 其实就是被卷去的距离
+                currentPosition = scroll().top;
+            }
+            var currentPosition = 0;  // 屏幕当前的位置
+            var target = 0;  // 屏幕需要达到的位置 为0
+            var timer = null; // 定时器
+            returnTop.onclick = function () {
+                // 1.先清楚掉定时器
+                clearInterval(timer);
+                timer = setInterval(function () {
+                    // 2. 计算步长
+                    var step = (target - currentPosition) / 10;
+                    // 3.对步长进行取整
+                    step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                    // 4.显示区域 开始移动  
+                    currentPosition = currentPosition + step;// 缓冲动画技术点
+                    // console.log(step, currentPosition);
+                    window.scrollTo(0, currentPosition);// 核心技术点
+                    // 5.清除定时器
+                    if (currentPosition === 0) {
+                        clearInterval(timer);
+                    }
+                }, 30);
+            }
+        }
+        function scroll() {
+            return {
+                top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop,
+                left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft
+            }
+        }
+    </script>
+</body>
+
+
+</html>

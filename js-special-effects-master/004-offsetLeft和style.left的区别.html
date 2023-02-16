@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1" id="div1" style="left:10px;top:10px;"></div>
+</body>
+<script>
+    /*
+    offsetLeft 和 style.left 的区别:
+        前提是 当前元素 是行内的left/top 样式,否则就没有比较性
+        1. 如果当前元素没定定位属性,offsetLeft也能获取到就近的带有的定位属性的父级的左边距
+        而style.left 不行,因为left/top/right/bottom要和定位属性一起使用才有意义和作用
+        2.offsetLeft返回的是数字    10  number类型
+          style.left返回的是字符串   10px 
+        3.offsetLeft是只读的
+          style.left 是可以赋值的
+        4.如果没有给元素设置top/left样式,返回的是空字符串
+    */
+    var div1 = document.getElementById('div1');
+    console.log(div1.offsetLeft);  // 0
+    console.log(div1.style.left);   // '10px'
+</script>
+</html>

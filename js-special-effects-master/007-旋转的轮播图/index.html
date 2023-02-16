@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styel.css">
+    <script src="animate.js"></script>
+    <script>
+        window.onload = function () {
+            // 核心思路:
+            // 1.操作数组,正向旋转,删除数组中的第一个样式,添加到最后
+            // 2.操作数组,反向旋转,删除数组中的最后一个样式,添加到最前
+            var arr = [
+                {   //  1
+                    width: 400,
+                    top: 70,
+                    left: 50,
+                    opacity: 20,
+                    zIndex: 2
+                },
+                {  // 2
+                    width: 600,
+                    top: 120,
+                    left: 0,
+                    opacity: 80,
+                    zIndex: 3
+                },
+                {   // 3
+                    width: 800,
+                    top: 100,
+                    left: 200,
+                    opacity: 100,
+                    zIndex: 4
+                },
+                {  // 4
+                    width: 600,
+                    top: 120,
+                    left: 600,
+                    opacity: 80,
+                    zIndex: 3
+                },
+                {   //5
+                    width: 400,
+                    top: 70,
+                    left: 750,
+                    opacity: 20,
+                    zIndex: 2
+                }
+            ];
+            // 1.获取元素
+            var slide = document.getElementById('slide');
+            var lis = slide.getElementsByTagName('li');
+            var arrow = slide.children[1];
+            var prevBtn = arrow.children[0];
+            var nextBtn = arrow.children[1];
+            var flag = true;
+            // 2.移入大盒子 左右箭头显示(这里改变的是透明)
+            slide.onmouseenter = function () {
+                // arrow.style.opacity = 1;
+                // 使用缓动效果
+                animate(arrow, {
+                    opacity: 100
+                });
+            }
+            // 3.鼠标移出 左右箭头隐藏(改变透明度)
+            slide.onmouseleave = function () {
+                animate(arrow, {
+                    opacity: 0
+                });
+            }
+            // 4.给li添加样式
+            for (var i = 0; i < lis.length; i++) {
+                animate(lis[i], arr[i]);
+            }
+            // 5.旋转
+            // 上
+            prevBtn.onclick = function () {
+                if (flag) {
+                    flag = false;
+                    move(true);
+                }
+            }
+            // 下
+            nextBtn.onclick = function () {
+                if (flag) {
+                    flag = false;
+                    move(false);
+                }
+            }
+            function move(bool) {
+                if (bool) {
+                    // 反向旋转,删除数组中的最后一个样式,添加到最前
+                    // push 末尾添加
+                    // pop  删除最后一个元素
+                    // unshift  在前面添加
+                    // shift  删除第一位
+                    arr.unshift(arr.pop());
+
+                } else {
+                    // 正向旋转,删除数组中的第一个样式,添加到最后
+                    arr.push(arr.shift());
+                }
+                // 重新给li赋值样式
+                for (var i = 0; i < lis.length; i++) {
+                    animate(lis[i], arr[i], function () {
+                        // 上一个动画执行完以后,变成true
+                        flag = true;
+                    });
+                }
+            }
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="wrap" id="wrap">
+        <div class="slide" id="slide">
+            <ul>
+                <li><a href="#"><img src="images/slidepic1.jpg" alt="" /></a></li>
+                <li><a href="#"><img src="images/slidepic2.jpg" alt="" /></a></li>
+                <li><a href="#"><img src="images/slidepic3.jpg" alt="" /></a></li>
+                <li><a href="#"><img src="images/slidepic4.jpg" alt="" /></a></li>
+                <li><a href="#"><img src="images/slidepic5.jpg" alt="" /></a></li>
+            </ul>
+            <div class="arrow" id="arrow">
+                <a href="javascript:;" class="prev"></a>
+                <a href="javascript:;" class="next"></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

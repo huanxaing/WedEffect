@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 400px;
+            height: 400px;
+            background-color: steelblue;
+        }
+
+        .box2 {
+            width: 350px;
+            height: 350px;
+            background-color: tan;
+        }
+
+        .box3 {
+            width: 150px;
+            height: 150px;
+            background-color: turquoise;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1" id="box1">
+        <div class="box2">
+            <div class="box3"></div>
+        </div>
+    </div>
+    <script>
+        var box1 = document.getElementById('box1');
+        var box2 = box1.children[0];
+        var box3 = box2.children[0];
+        box3.addEventListener('click', function () {
+            console.log('box3');
+        }, true);
+        box2.addEventListener('click', function () {
+            console.log('box2');
+        }, true);
+        box1.addEventListener('click', function () {
+            console.log('box1');
+        }, true);
+        document.addEventListener('click', function () {
+            console.log('document');
+        }, true);
+    </script>
+</body>
+
+</html>

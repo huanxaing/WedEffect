@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<script src="jquery-1.11.1.min.js"></script>
+	<script src="unslider.min.js"></script>
+	<style>
+		.banner { position: relative; overflow: auto; text-align: center;}
+		.banner li { list-style: none; }
+		.banner ul li { float: left; }
+		#b05 { width: 640px;}
+		#b05 .dots { position: absolute; left: 0; right: 0; bottom: 20px;}
+		#b05 .dots li 
+		{ 
+			display: inline-block; 
+			width: 10px; 
+			height: 10px; 
+			margin: 0 4px; 
+			text-indent: -999em; 
+			border: 2px solid #fff; 
+			border-radius: 6px; 
+			cursor: pointer; 
+			opacity: .4; 
+			-webkit-transition: background .5s, opacity .5s; 
+			-moz-transition: background .5s, opacity .5s; 
+			transition: background .5s, opacity .5s;
+		}
+		#b05 .dots li.active 
+		{
+			background: #fff;
+			opacity: 1;
+		}
+		#b05 .arrow { position: absolute; top: 200px;}
+		#b05 #al { left: 15px;}
+		#b05 #ar { right: 15px;}
+	</style>
+</head>
+<body>
+	<div class="banner" id="b05">
+		<ul>
+		    <li><img src="01.jpg" alt="" width="640" height="480" ></li>
+		    <li><img src="02.jpg" alt="" width="640" height="480" ></li>
+		    <li><img src="03.jpg" alt="" width="640" height="480" ></li>
+		    <li><img src="04.jpg" alt="" width="640" height="480" ></li>
+		    <li><img src="05.jpg" alt="" width="640" height="480" ></li>
+		</ul>
+	</div>
+	<script>
+	$(document).ready(function(e) {
+	    var unslider05 = $('#b05').unslider({
+			dots: true
+		}),
+		data05 = unslider05.data('unslider');
+		
+		$('.unslider-arrow05').click(function() {
+	        var fn = this.className.split(' ')[1];
+	        data05('unslider')[fn]();
+	    });
+		
+		$("#stop").click(function() {
+			data05.stop();
+		});
+		
+		$("#start").click(function() {
+			data05.start();
+		});
+		
+		$("#move").click(function() {
+			data05.move(1, function() {});
+		});
+	});
+	</script>
+</body>
+</html>

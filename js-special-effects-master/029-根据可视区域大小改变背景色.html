@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function fn() {
+            if (client().width > 960) {
+                // pc
+                document.body.style.backgroundColor = 'red'
+            } else if (client().width > 640) {
+                // ipad
+                document.body.style.backgroundColor = 'green'
+            } else {
+                // phone
+                document.body.style.backgroundColor = 'blue'
+            }
+
+        }
+        fn();
+        window.onresize = function () {
+            fn();
+        }
+        function client() {
+            // 注意:window.innerWidth有可能值为0 ,0就是false
+            if (window.innerWidth !== undefined) {
+                console.log(1)
+                return {
+                    width: window.innerWidth,
+                    height: window.innerHeight
+                }
+            } else if (document.compatMode === 'CSS1Compat') {
+                console.log(2);
+                // 有DTD声明
+                return {
+                    width: document.documentElement.clientWidth,
+                    height: document.documentElement.clientHeight
+                }
+            } else {
+                console.log(3);
+                return {
+                    width: document.body.clientWidth,
+                    height: document.body.clientHeight
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

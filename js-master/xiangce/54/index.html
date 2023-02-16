@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>jquery带缩略图可触摸焦点图 - A5源码</title>
+<link rel="stylesheet" type="text/css" href="css/slider-pro.min.css" media="screen"/>
+<link rel="stylesheet" type="text/css" href="css/examples.css" media="screen"/>
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.sliderPro.min.js"></script>
+<script type="text/javascript">
+$( document ).ready(function($) {
+	$( '#example1' ).sliderPro({
+		width: 960,
+		height: 500,
+		arrows: true,
+		buttons: false,
+		waitForLayers: true,
+		thumbnailWidth: 200,
+		thumbnailHeight: 100,
+		thumbnailPointer: true,
+		autoplay: false,
+		autoScaleLayers: false,
+		breakpoints: {
+			500:{
+				thumbnailWidth: 120,
+				thumbnailHeight: 50
+			}
+		}
+	});
+});
+</script>
+</head>
+<body>
+	<div id="example1" class="slider-pro">
+		<div class="sp-slides">
+			<div class="sp-slide">
+				<img class="sp-image" src="css/images/blank.gif" data-src="images/image1_medium.jpg" data-retina="images/image1_large.jpg"/>				
+				<p class="sp-layer sp-white sp-padding"	data-horizontal="50" data-vertical="50" data-show-transition="left" data-hide-transition="up" data-show-delay="400" data-hide-delay="200">
+					A5源码
+				</p>
+
+				<p class="sp-layer sp-black sp-padding hide-small-screen" data-horizontal="180" data-vertical="50" data-show-transition="left" data-hide-transition="up" data-show-delay="600" data-hide-delay="100">
+					sc.admin5.com
+				</p>
+			</div>
+
+	        <div class="sp-slide">
+	        	<img class="sp-image" src="css/images/blank.gif" data-src="images/image2_medium.jpg" data-retina="images/image2_large.jpg"/>
+				<h3 class="sp-layer sp-black sp-padding" data-horizontal="40" data-vertical="10%" data-show-transition="left" data-hide-transition="left">A5源码</h3>
+				<p class="sp-layer sp-black sp-padding hide-small-screen" data-horizontal="40" data-vertical="34%" data-width="350" data-show-transition="left" data-show-delay="400" data-hide-transition="left" data-hide-delay="500">sc.admin5.com</p>
+			</div>
+
+			<div class="sp-slide">
+				<img class="sp-image" src="css/images/blank.gif" data-src="images/image1_medium.jpg" data-retina="images/image1_large.jpg"/>
+				<p class="sp-layer sp-white sp-padding" data-position="centerCenter" data-vertical="-50" data-show-transition="right" data-hide-transition="left" data-show-delay="500" >A5源码</p>
+				<p class="sp-layer sp-black sp-padding hide-small-screen" data-position="centerCenter" data-vertical="50" data-show-transition="left" data-show-delay="700" data-hide-transition="right" data-hide-delay="200">
+					sc.admin5.com
+				</p>
+			</div>
+
+			<div class="sp-slide">
+				<img class="sp-image" src="css/images/blank.gif" data-src="images/image2_medium.jpg" data-retina="images/image2_large.jpg"/>
+				<p class="sp-layer sp-black sp-padding" data-position="bottomLeft" data-show-transition="up" data-hide-transition="down">
+					<span class="hide-small-screen">A5源码</span>
+                    <span class="hide-medium-screen">sc.admin5.com</span>
+				</p>
+			</div>
+
+			<div class="sp-slide">
+				<img class="sp-image" src="css/images/blank.gif" data-src="images/image1_medium.jpg" data-retina="images/image1_large.jpg"/>
+				<p class="sp-layer sp-white sp-padding" data-vertical="10" data-horizontal="2%" data-width="96%" data-show-transition="down" data-show-delay="400" data-hide-transition="up">
+					<span class="hide-small-screen">A5源码</span>
+                    <span class="hide-medium-screen">sc.admin5.com</span>
+				</p>
+			</div>
+		</div>
+
+		<div class="sp-thumbnails">
+			<div class="sp-thumbnail">
+				<div class="sp-thumbnail-title">A5源码免费素材网</div>
+				<div class="sp-thumbnail-description">sc.admin5.com</div>
+			</div>
+
+			<div class="sp-thumbnail">
+				<div class="sp-thumbnail-title">A5源码免费素材网</div>
+				<div class="sp-thumbnail-description">sc.admin5.com</div>
+			</div>
+
+			<div class="sp-thumbnail">
+				<div class="sp-thumbnail-title">A5源码免费素材网</div>
+				<div class="sp-thumbnail-description">sc.admin5.com</div>
+			</div>
+
+			<div class="sp-thumbnail">
+				<div class="sp-thumbnail-title">A5源码免费素材网</div>
+				<div class="sp-thumbnail-description">sc.admin5.com</div>
+			</div>
+
+			<div class="sp-thumbnail">
+				<div class="sp-thumbnail-title">A5源码免费素材网</div>
+				<div class="sp-thumbnail-description">sc.admin5.com</div>
+			</div>
+		</div>
+    </div>
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+<p>适用浏览器：IE8、360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗. </p>
+<p>来源：<a href="http://sc.admin5.com/" target="_blank">A5源码</a></p>
+</div>
+</body>
+</html>

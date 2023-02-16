@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log('--------*的使用-------');
+        // * 表示: a的个数 >=0 
+        // 同时以 a结尾 
+        console.log(/^a*$/.test(''));// 注意: true
+
+        console.log(/^a*$/.test('b'));// false
+        console.log(/^a*$/.test('a')); // true
+        console.log(/^a*$/.test('aa'));//true
+        console.log(/^a*$/.test('aaa')); // true
+        console.log(/^a*$/.test('aaab'));//false
+        console.log('--------+的使用-------');
+        // +  表示: a的个数 >=1
+        console.log(/^a+$/.test(''));// 注意: false
+        console.log(/^a+$/.test('b'));// false
+        console.log(/^a+$/.test('a')); // true
+        console.log(/^a+$/.test('aa'));//true
+        console.log(/^a+$/.test('aaa')); // true
+        console.log(/^a+$/.test('aaab'));//false
+        console.log('--------?的使用-------');
+        // ?  表示: a的个数  要么=0 或者 =1
+        console.log(/^a?$/.test(''));// true
+        console.log(/^a?$/.test('b'));// false(这里必须以a开头)
+        console.log(/^a?$/.test('a')); // true
+        console.log(/^a?$/.test('aa'));// false
+        console.log(/^a?$/.test('aaa')); // false
+        console.log(/^a?$/.test('aaab'));// false
+
+        // {}
+        console.log('--------{}的使用-------');
+        /*
+        {n}   ->   出现的次数为n,  x=n; 
+        {n,}  ->   出现的次数>=n,  x>=n;
+        {n,m} ->   出现的次数 ,   n<=x<=m;
+        所以:
+        * 可以表示为   {0,}
+        + 可以表示为   {1,}
+        ? 可以表示为   {0,1}
+        */
+        console.log('--------|的使用-------');
+        // | 表示 或者 有一个符合即可
+        console.log(/(abc)|(xyz)/.test('ab')); // false(必须是要包含)
+        console.log(/(abc)|(xyz)/.test('abcd')); //true
+        console.log(/(abc)|(xyz)/.test('xy')); // false(必须是包含)
+        console.log(/(abc)|(xyz)/.test('xyzaaa')); // true
+        console.log(/(abc)|(xyz)/.test('abxy')); //false
+        console.log(/(abc)|(xyz)/.test('abcxyz')); //true
+    </script>
+</body>
+
+</html>

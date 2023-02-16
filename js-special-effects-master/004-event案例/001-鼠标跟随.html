@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 5000px;
+            width: 5000px;
+            background-color: #ccc;
+        }
+
+        img {
+            position: absolute;
+            padding: 10px 0;
+            border: 1px solid #fff;
+            cursor: pointer;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/img.jpg" alt="">
+    <script>
+        /*
+            难点:
+            `   1.既要上下运动,又要左右运动
+            技术点:
+                1.缓冲运动框架
+                2.坐标值的处理
+        
+        */
+        var img = document.getElementsByTagName('img')[0];
+        var timer = null;
+        var pageX, pageY, targetX = 0, targetY = 0;
+        document.onclick = function (e) {
+            var event = e || window.event;
+            pageX = event.pageX || (scroll().left + event.clientX);
+            pageY = event.pageY || (scroll().top + event.clientY);
+            // targetX = pageX;
+            // targetY = pageY;
+            // 如果想要让鼠标停留在元素的中间
+            targetX = pageX - img.offsetWidth / 2;
+            targetY = pageY - img.offsetHeight / 2;
+            leaderX = img.offsetLeft;
+            leaderY = img.offsetTop;
+            // 1.先清楚定时器
+            clearInterval(timer);
+            timer = setInterval(function () {
+                // 左右运动
+                // 2.计算步长
+                var stepX = (targetX - leaderX) / 10;
+                // 3.对步长取整
+                stepX = stepX > 0 ? Math.ceil(stepX) : Math.floor(stepX);
+                // 4.开始运动:  元素本身的位置 + 步长
+                // 这一步不能少 让leaderX发生改变, 和我们之前的缓冲运动有点区别
+                // 也就是说leaderX是在慢慢变化的,然后在赋值给ele.style.left
+                leaderX = leaderX + stepX;
+                img.style.left = leaderX + stepX + 'px';
+
+                // 上下运动
+                // 2.计算步长
+                var stepY = (targetY - leaderY) / 10;
+                // 3.步长取整
+                stepY = stepY > 0 ? Math.ceil(stepY) : Math.floor(stepY);
+                // 4.开始移动
+                // 这一步不能少 让leaderY发生改变, 和我们之前的缓冲运动有点区别
+                // 也就是说leaderY是在慢慢变化的,然后在赋值给ele.style.top
+                leaderY = leaderY + stepY;
+                img.style.top = leaderY + 'px';
+                console.log(1);
+                if (Math.abs(targetX - img.offsetLeft) <= Math.abs(stepX) && Math.abs(targetY - img.offsetTop) <= Math.abs(stepY)) {
+                    img.style.left = targetX + 'px';
+                    img.style.top = targetY + 'px';
+                    clearInterval(timer);
+                }
+            }, 30);
+        }
+        function scroll() {
+            return {
+                top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop,
+                left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft
+            }
+        }
+    </script>
+</body>
+
+</html>

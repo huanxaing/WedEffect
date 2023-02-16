@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+        }
+
+        ul {
+            height: 100%;
+        }
+        h1{
+            text-align: center;
+        }
+        ul li {
+            height: 100%;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        ol {
+            position: fixed;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        ol li {
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border: 1px solid #ccc;
+            text-align: center;
+            margin-top: -1px;
+            /*注意这个地方 -1px 的使用*/
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>好后学习</h1>
+    <ul>
+        <li>鞋子区域</li>
+        <li>袜子区域</li>
+        <li>裤子区域</li>
+        <li>裙子区域</li>
+        <li>图书区域</li>
+        <li>帽子区域</li>
+    </ul>
+    <ol>
+        <li>鞋子</li>
+        <li>袜子</li>
+        <li>裤子</li>
+        <li>裙子</li>
+        <li>图书</li>
+        <li>帽子</li>
+    </ol>
+    <script>
+        /*
+        需求:
+            1. 点击楼层,滑到对应的楼层区域
+        技术点:
+            1. window.scrollTo(x,y)
+            2. 缓冲动画框架
+        */
+
+        // 1.获取元素
+        var ul = document.getElementsByTagName('ul')[0];
+        var ol = document.getElementsByTagName('ol')[0];
+        var ulLis = ul.children;
+        var olLis = ol.children;
+        // 获取ul>li的高度
+        var ulLiHeight = ul.children[0].offsetHeight;
+        var colors = ['#426ab3', '#ffce7b', '#7d5886', '#472d56', '#1acd7e', '#ea66a6']
+        var timer = null;
+        var target = 0;
+        var currentPostion = 0;
+        for (var i = 0; i < colors.length; i++) {
+            // 2.动态给li添加背景色
+            ulLis[i].style.backgroundColor = colors[i];
+            olLis[i].style.backgroundColor = colors[i];
+            olLis[i].index = i;
+            // 3.给ol>li添加单击事件
+            olLis[i].onclick = function () {
+                // 4.使用定时器前,先清除掉定时器
+                clearInterval(timer);
+                // 5.获取目标位置在哪
+                // 这个地方不能这样获取 target 的值
+                // 如果顶上面有其他内容,就会出现问题
+                // target = this.index * ulLiHeight; // 会出现一个bug
+                // 也就是获取当前的ul>li距离顶部的距离
+                target = ulLis[this.index].offsetTop;// 这个是正确的
+                console.log(target);
+                // 6.打开定时器
+                timer = setInterval(function () {
+                    // (1).设置步长
+                    var step = (target - currentPostion) / 10;
+                    // (2).取整
+                    step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                    // (3).屏幕滚动
+                    currentPostion = currentPostion + step;
+                    window.scrollTo(0, currentPostion);
+                    // (4).清除定时器
+                    if (Math.abs(target - currentPostion) <= Math.abs(step)) {
+                        window.scrollTo(0, currentPostion);
+                        clearInterval(timer);
+                    }
+                }, 30);
+            }
+        }
+
+        // 3.获取滚动的距离,也就是被卷去的距离
+        window.onscroll = function () {
+            // 注意:屏幕在滚动的时候,这个值会发生变化
+            currentPostion = scroll().top;
+            console.log(currentPostion);
+        }
+
+        function scroll() {
+            return {
+                top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop,
+                left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+
+*{padding:0;margin:0;box-sizing:border-box;}
+html,body{font-family:'微软雅黑';font-size:14px;color:#666;height:100%;background:#fff;height:100%;position:relative;}
+body{height:100%;}
+ul{list-style:none;}
+img{border:0;vertical-align:middle;}
+a{text-decoration:none;-webkit-transition:500ms ease-out;transition:500ms ease-out;text-decoration:none;}
+input[type="button"],input[type="submit"],input[type="reset"],input[type="text"],input[type="password"]{-webkit-appearance:none;border-radius:0px;font-family:Arial;font-family:'微软雅黑';}
+input:focus{border:1px solid #e2e2e2;outline:none;}
+h1,h2,h3,h4,h5,h6{font-weight:normal;}
+
+iframe{border:none;}
+
+.fl{float:left;}
+.fr{float:right;}
+.clear{clear:both;}
+
+.bar{width:80px;position:fixed;right:0;top:200px;z-index:999;background:rgba(0,0,0,0.0);}
+.bar a{width:80px;height:80px;padding-top:52px;display:block;border-top-left-radius:3px;border-bottom-left-radius:3px;margin-bottom:2px;text-align:center;color:#fff;font-size:12px;position:relative;z-index:2;}
+
+/*.bar a.bar01{background:rgba(0,0,0,0.8) url(http://static.szhqsd.com/public/images/bar-icon01.png) no-repeat center 13px;}*/
+.bar a.bar01{background:rgba(0,0,0,0.8) url(http://static.szhqsd.com/public/images/bar-icon01.png) no-repeat center 13px;position:relative;}
+#BDBridgeFixedWrap{position:absolute !important;left:0 !important;top:0 !important;width:100% !important;height:100% !important;}
+#BDBridgeFixedWrap a{width:80px !important;height:80px !important; background:none !important;}
+.bar a.bar02{background:rgba(0,0,0,0.8) url(http://static.szhqsd.com/public/images/bar-icon02.png) no-repeat center 15px;}
+.bar a.bar03{background:rgba(0,0,0,0.8) url(http://static.szhqsd.com/public/images/bar-icon03.png) no-repeat center 16px;}
+.bar a.bar04{background:rgba(0,0,0,0.8) url(http://static.szhqsd.com/public/images/bar-icon04.png) no-repeat center 17px;display:none;}
+.bar a.bar05{background:rgba(0,0,0,0.8) url(http://static.szhqsd.com/public/images/bar-icon05.png) no-repeat center 17px;}
+.bar a.bar06{background:rgba(0,0,0,0.8) url(http://static.szhqsd.com/public/images/bar-icon06.png) no-repeat center center;}
+.bar a.bar01:hover{background:#00afda url(http://static.szhqsd.com/public/images/bar-icon01.png) no-repeat center 13px;}
+.bar a.bar02:hover{background:#00afda url(http://static.szhqsd.com/public/images/bar-icon02.png) no-repeat center 15px;}
+.bar a.bar03:hover{background:#00afda url(http://static.szhqsd.com/public/images/bar-icon03.png) no-repeat center 16px;}
+.bar a.bar04:hover{background:#00afda url(http://static.szhqsd.com/public/images/bar-icon04.png) no-repeat center 17px;}
+.bar a.bar05:hover{background:#00afda url(http://static.szhqsd.com/public/images/bar-icon05.png) no-repeat center 17px;}
+.bar a.bar06:hover{background:#00afda url(http://static.szhqsd.com/public/images/bar-icon06.png) no-repeat center center;}
+
+.bar03-box{position:relative;}
+.bar03-model{width:345px;height:410px;position:absolute;right:-265px;background:#fff;box-shadow:0px 0px 10px #ccc;top:-165px;padding:0px 20px;opacity:0;z-index:0;}
+.bar03-model > .tit{font-size:20px;color:#25a6ff;height:69px;border-bottom:1px solid #e8e8e8;line-height:69px;font-weight:bold;}
+.bar03-model .list{padding-top:16px;border-bottom:1px solid #e8e8e8;padding-bottom:20px;}
+.bar03-model .list .tit{font-size:16px;color:#999;}
+.bar03-model .list .tel{font-size:24px;color:#333;margin-top:10px;}
+.bar03-box:hover a.bar03{background:#00afda url(http://static.szhqsd.com/public/images/bar-icon03.png) no-repeat center 16px;}
+.bar03-box:hover .bar03-model{right:85px;opacity:1;}
+
+/*.bar03-box{position:relative;}
+.bar03-model{width:345px;height:492px;position:absolute;right:-265px;background:#fff;box-shadow:0px 0px 10px #ccc;top:-165px;padding:0px 20px;opacity:0;z-index:0;}
+.bar03-model > .tit{font-size:20px;color:#25a6ff;height:79px;border-bottom:1px solid #e8e8e8;line-height:79px;font-weight:bold;}
+.bar03-model .list{padding-top:30px;border-bottom:1px solid #e8e8e8;padding-bottom:28px;}
+.bar03-model .list .tit{font-size:16px;color:#999;}
+.bar03-model .list .tel{font-size:24px;color:#333;margin-top:13px;}
+.bar03-box:hover a.bar03{background:#00afda url(http://static.szhqsd.com/public/images/bar-icon03.png) no-repeat center 16px;}
+.bar03-box:hover .bar03-model{right:85px;opacity:1;}*/
+
+.transition500{transition:500ms ease-out;-webkit-transition:500ms ease-out;-ms-transition:500ms ease-out;-moz-transition:500ms ease-out;-o-transition:500ms ease-out;}
+
+
+.page-tit{text-align:center;font-size:24px;margin:80px 0px 50px 0px;color:#010101;}
+.page-tit .page-tit-en{font-family:Pincolor;text-transform:uppercase;font-size:36px;color:#333;}
+.page-tit .line{width:40px;height:2px;background:#00afda;margin:0 auto;margin-top:35px;}
+.contact-con{width:1300px;margin:60px auto 60px auto;}
+
+.contact-con .contact-conList{width:315px;float:left;margin:0 50px;}
+
+.contact-con .contact-conList .icon{float:left;margin-top:20px;transition:500ms ease-out;-webkit-transition:500ms ease-out;}
+
+.contact-con .contact-conList .con{float:left;padding-left:20px;}
+
+.contact-con .contact-conList .con .tit{font-size:22px;color:#333;}
+
+.contact-con .contact-conList .con p{margin-top:10px;line-height:22px;}
+
+.contact-con .contact-conList:hover .icon{margin-top:0;}

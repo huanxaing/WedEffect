@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <button type="button">改变</button>
+    <div></div>
+    <script src="animate.js"></script>
+    <script>
+        var div = document.getElementsByTagName('div')[0];
+        var btn = document.getElementsByTagName('button')[0];
+        btn.onclick = function () {
+
+            animate(div, {
+                width: 200,
+                borderRadius:10
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 150px;
+            height: 150px;
+            /* overflow: auto; */
+            border:10px solid #000;
+            padding: 10px;
+        }
+        .nowrap{white-space:nowrap;}
+    </style>
+</head>
+
+<body>
+    <div class="nowrap">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita minus eius, deserunt autem dignissimos exercitationem alias consequuntur totam rerum nam sapiente, quos nihil? Quo quisquam odio ipsa iste assumenda porro.
+    </div>
+    <script>
+        var div = document.getElementsByTagName('div')[0];
+        console.log(div.offsetWidth);  // 190=150(width) + 20(padding) + 20(border)
+        console.log(div.offsetHeight); // 190=150(height) + 20(padding) +20(border)
+        console.log(div.scrollWidth); // 1762= 为实例内容的宽度(不包含border)
+        console.log(div.scrollHeight);// 153 = 为实际内容的高度(不包含border)
+        console.log(div.clientWidth); // 170 = 150(width) + 20(padding) -0(没出现滚动条)
+        console.log(div.clientHeight); // 153 = 150(height) +20(padding) - 17(有滚动条) 
+        /*
+        offset/scroll/client三大家族的区别总结:
+
+        1.width和height
+        offsetWidth/offsetHeight = width + padding + border
+        scrollWidth/scrollHeight = 内容的宽度/内容的高度
+        clientWidth/clientHeight = width + padding
+
+
+        2.top和left
+        offsetTop/offsetLeft
+            调用者: 任意盒子
+            作用:距离带有定位父级盒子的距离
+        scrollTop/scrollLeft
+            调用者: document.body.scrollTop...(盒子也可以调用,但必须有滚动条)
+            作用:浏览器无法显示的部分(页面被卷去的距离)
+        clientX/clientY(clientLeft和clientTop:获取的是border值,不常用)
+            调用者:event.clientX/event.clientY
+            作用:鼠标点击的地方距离浏览器可视区域的距离(左,上)
+        */
+
+    </script>
+</body>
+
+</html>

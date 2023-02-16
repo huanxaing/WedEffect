@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .return-top {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 40px;
+            background-color: #1acd7e;
+            border-radius: 50%;
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            cursor: pointer;
+        }
+
+        body {
+            height: 3000px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="return-top" id="return-top">
+        ↑
+    </div>
+    <script>
+        /*
+            需求:
+                1.被卷去的头部超过200px,显示返回顶部图标
+                2.点击返回顶部图标,滚动条回到顶部去 
+            技术点:
+                1.之前是移动dom元素,显示需要移动屏幕!! 如何实现?
+    
+        */
+        window.onload = function () {
+            var returnTop = document.getElementById('return-top');
+            window.onscroll = function () {
+                if (scroll().top > 200) {
+                    returnTop.style.display = 'block';
+                } else {
+                    returnTop.style.display = 'none';
+                }
+            }
+
+            returnTop.onclick = function () {
+                window.scrollTo(0, 0);
+            }
+        }
+        function scroll() {
+            return {
+                top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop,
+                left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft
+            }
+        }
+    </script>
+</body>
+
+
+</html>

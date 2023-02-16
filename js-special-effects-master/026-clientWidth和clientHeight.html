@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin: 100px;
+            padding: 10px;
+            border:10px solid #000;
+            overflow:scroll;
+        }
+    </style>
+</head>
+<body>
+    <div  class="box"></div>
+    <script>
+        // clientWidth/clientHeight = width + padding - 滚动条宽度
+        // offsetWidth/offsetHeight = width + padding + border
+        var box = document.getElementsByTagName('div')[0];
+        console.log(box.clientWidth);   // 100 + 20(padding) -17(滚动条宽度加) = 103;
+        console.log(box.clientHeight);  // 100 + 20(padding) - 17(滚动条宽度) = 103;
+        console.log(box.offsetWidth);   // 100 + 20(padding) + 20(border) = 140
+        console.log(box.offsetHeight);
+    </script>
+</body>
+</html>

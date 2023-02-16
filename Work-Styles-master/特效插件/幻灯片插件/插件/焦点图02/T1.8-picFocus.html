@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="SuperSlide,图片导航焦点图">
+<meta name="Description" content="SuperSlide 致力于解决网站大部分特效展示问题，使网站代码规范整洁，方便维护更新。网站上常用的“焦点图/幻灯片”、“Tab标签切换”、“图片滚动”、“无缝滚动”等等只需要一个SuperSlide即可解决！还可以多个SuperSlide组合创造更多效果">
+<title>SuperSlide - 图片导航焦点图</title>
+<script type="text/javascript" src="jquery1.42.min.js"></script><script type="text/javascript" src="jquery.SuperSlide.2.1.1.js"></script>
+</head>
+
+<body>
+
+
+
+		<style type="text/css">
+		/* css 重置 */
+		*{margin:0; padding:0; list-style:none; }
+		body{ background:#fff; font:normal 12px/22px 宋体;  }
+		img{ border:0;  }
+
+
+		/* 本例子css */
+		.picFocus{ margin:0 auto;  width:418px;  padding:5px;  position:relative;  overflow:hidden;  zoom:1;   }
+		.picFocus .hd{ 
+			padding-top: 5px;
+			    padding: 5px 18px 0;
+			    overflow: hidden;
+			    position: relative;
+		}
+		.picFocus .hd .next{
+			position: absolute;
+			top: 12px;
+			left: 0px;
+			display: inline-block;
+			width: 16px;
+			height: 83px;
+			background: #c50e09 url(images/m-left.png) no-repeat center center;
+			cursor: pointer;
+		}
+		.picFocus .hd .prev{
+			position: absolute;
+			top: 12px;
+			right: 0px;
+			display: inline-block;
+			width: 16px;
+			height: 83px;
+			background: #c50e09 url(images/m-right.png) no-repeat center center;
+			cursor: pointer;
+		}
+
+		.picFocus .hd ul{ margin-right:-5px;  overflow:hidden; zoom:1; }
+		.picFocus .hd ul li{ padding-top:5px; float:left;  text-align:center;  }
+		.picFocus .hd ul li img{ width:117px; height:83px; border:2px solid #ccc; cursor:pointer; margin-right:8px;   }
+		.picFocus .hd ul li.on{ background:url("images/icoUp.gif") no-repeat center 0; }
+		.picFocus .hd ul li.on img{ border-color:#c50e09; border-width: 2px; }
+		.picFocus .bd li{ vertical-align:middle; }
+		.picFocus .bd img{ width:418px; height:297px; display:block;  }
+
+		</style>
+
+		<div class="picFocus">
+			<div class="bd">
+				<ul>
+					<li><a target="_blank" href="www.SuperSlide2.com"><img src="images/pic1.jpg" /></a></li>
+					<li><a target="_blank" href="www.SuperSlide2.com"><img src="images/pic2.jpg" /></a></li>
+					<li><a target="_blank" href="www.SuperSlide2.com"><img src="images/pic3.jpg" /></a></li>
+				</ul>
+			</div>
+
+			<div class="hd">
+				<a class="next"></a>
+				<ul>
+					<li><img src="images/pic1.jpg" /></li>
+					<li><img src="images/pic2.jpg" /></li>
+					<li><img src="images/pic3.jpg" /></li>
+				</ul>
+				<a class="prev"></a>
+			</div>
+
+		</div>
+		<script type="text/javascript">jQuery(".picFocus").slide({ mainCell:".bd ul",effect:"left",autoPlay:true });</script>
+
+
+
+
+</body>
+</html>
+
+
