@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="stylesheet" href="table.css">
+  <title>数组练习 💪</title>
+</head>
+<body>
+    <!-- 头部样式 -->
+    <style>
+        .billSu-header {
+            background-color: rgb(21, 21, 21);
+            text-align: center;
+            padding: 10px;
+            color: #dde666;
+            font-size: 20px;
+            font-weight: 100;
+        }
+        .billSu-header span{
+            margin: 0 5px;
+        }
+        .billSu-header a{
+            text-decoration: none;
+            color: unset;
+        }
+    </style>
+    <!-- 头部盒子 -->
+    <div class="billSu-header">
+        <span><a href="https://github.com/wesbos/JavaScript30" target="_blank">JavaScript30 灵感来源</a></span>
+        <span>|</span>
+        <span><a href="https://github.com/FangzhouSu/JS-30Demos" target="_blank">本项目仓库-billSU</a></span>
+        <span>|</span>
+        <span><a href="https://blog.csdn.net/qq_45704942?spm=1010.2135.3001.5421&type=blog" target="_blank">了解我</a></span>
+    </div>
+    <br />
+    <table class="inventors">
+        <caption>发明家们的信息</caption>
+        <thead>
+            <tr>
+                <th>Number</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Date of Birth</th>
+                <th>Date of Death</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Albert</td>
+                <td>Einstein</td>
+                <td>1879</td>
+                <td>1955</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Isaac</td>
+                <td>Einstein</td>
+                <td>1643</td>
+                <td>1727</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Galileo</td>
+                <td>Galilei</td>
+                <td>1564</td>
+                <td>1642</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Marie</td>
+                <td>Curie</td>
+                <td>1867</td>
+                <td>1934</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Johannes</td>
+                <td>Kepler</td>
+                <td>1571</td>
+                <td>1630</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Nicolaus</td>
+                <td>Copernicus</td>
+                <td>1473</td>
+                <td>1543</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Max</td>
+                <td>Planck</td>
+                <td>1858</td>
+                <td>1947</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Katherine</td>
+                <td>Blodgett</td>
+                <td>1898</td>
+                <td>1979</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Ada</td>
+                <td>Lovelace</td>
+                <td>1815</td>
+                <td>1852</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Sarah E.</td>
+                <td>Goode</td>
+                <td>1855</td>
+                <td>1905</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Lisa</td>
+                <td>Meitner</td>
+                <td>1878</td>
+                <td>1968</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Hanna</td>
+                <td>Hammarström</td>
+                <td>1829</td>
+                <td>1909</td>
+            </tr>
+
+        </tbody>
+    </table>
+    <h2>1.筛选出于1500-1599年间出生的发明家</h2>
+    <div id="demo1"><em>打开控制台 看输出的表格！</em> 😊</div>
+    <h2>2.将发明家们的fisrtName和lastName组合成一个阵列</h2>
+    <div id="demo2"></div>
+    <h2>3.依据生日由大到小排列所有的发明家</h2>
+    <div id="demo3"><em>打开控制台 看输出的表格！</em> 😊</div>
+    <h2>4.将所有发明家的在世时间求和</h2>
+    <div id="demo4"></div>
+    <h2>5.依据年龄由大到小排列所有的发明家</h2>
+    <div id="demo5"><em>打开控制台 看输出！</em> 😊</div>
+    <h2>6.列出维基百科中巴黎所有包含'de'的路名</h2>
+    <h3>（在wiki中通过querySelectorAll来选取资料做筛选）</h3>
+    <div id="demo6">有墙打不开 & 那个获取的方法我没老看懂的</div>
+    <h2>7.依据lastName排序所有“people”的资料 按照字母表的顺序 从前往后~(大写在小写前面哦）</h2>
+    <div id="demo7"><em>打开控制台 看输出！</em> 😊</div>
+    <h2>8.分别计算给出的data数组内每个种类的数量 返回一个对象</h2>
+    <div id="demo8"><em>打开控制台 看输出！</em> 😊</div>
+
+    <script>
+    // Get your shorts on - this is an array workout!
+    // ## Array Cardio Day 1
+
+    // Some data we can work with
+
+    const inventors = [
+      { first: 'Albert', last: 'Einstein', year: 1879, passed: 1955 },
+      { first: 'Isaac', last: 'Newton', year: 1643, passed: 1727 },
+      { first: 'Galileo', last: 'Galilei', year: 1564, passed: 1642 },
+      { first: 'Marie', last: 'Curie', year: 1867, passed: 1934 },
+      { first: 'Johannes', last: 'Kepler', year: 1571, passed: 1630 },
+      { first: 'Nicolaus', last: 'Copernicus', year: 1473, passed: 1543 },
+      { first: 'Max', last: 'Planck', year: 1858, passed: 1947 },
+      { first: 'Katherine', last: 'Blodgett', year: 1898, passed: 1979 },
+      { first: 'Ada', last: 'Lovelace', year: 1815, passed: 1852 },
+      { first: 'Sarah E.', last: 'Goode', year: 1855, passed: 1905 },
+      { first: 'Lise', last: 'Meitner', year: 1878, passed: 1968 },
+      { first: 'Hanna', last: 'Hammarström', year: 1829, passed: 1909 }
+    ];
+
+    const people = ['AA姓-lastname,名-firstname - 虽然感觉有点怪 但就是这样','aaaa,aaaa瞧不起我小写字母是吧', 'Zzzz,zzzz甚至我都比你靠前 谁叫你是小写字母','Beck, Glenn', 'Becker, Carl', 'Beckett, Samuel', 'Beddoes, Mick', 'Beecher, Henry', 'Beethoven, Ludwig', 'Begin, Menachem', 'Belloc, Hilaire', 'Bellow, Saul', 'Benchley, Robert', 'Benenson, Peter', 'Ben-Gurion, David', 'Benjamin, Walter', 'Benn, Tony', 'Bennington, Chester', 'Benson, Leana', 'Bent, Silas', 'Bentsen, Lloyd', 'Berger, Ric', 'Bergman, Ingmar', 'Berio, Luciano', 'Berle, Milton', 'Berlin, Irving', 'Berne, Eric', 'Bernhard, Sandra', 'Berra, Yogi', 'Berry, Halle', 'Berry, Wendell', 'Bethea, Erin', 'Bevan, Aneurin', 'Bevel, Ken', 'Biden, Joseph', 'Bierce, Ambrose', 'Biko, Steve', 'Billings, Josh', 'Biondo, Frank', 'Birrell, Augustine', 'Black, Elk', 'Blair, Robert', 'Blair, Tony', 'Blake, William'];
+
+    // Array.prototype.filter()
+    // 1. Filter the list of inventors for those who were born in the 1500's
+    // function checkFifteen(inventor){
+    //     if(inventor.year >= 1500 && inventor.year < 1600){
+    //         return true;
+    //     }
+    // }
+
+    const fifteen = inventors.filter(inventor => (inventor.year >= 1500 && inventor.year < 1600));
+    console.table(fifteen)//以表格形式在控制台打印出来
+    // document.getElementById("demo1").innerHTML = fifteen;这个本来想将对象的数据输出到页面 但是这样输出的结果不是数值 而是 [object Object] 因为invenors是元素为对象的数组。不知道该怎么显示在页面嘞 
+    
+    // Array.prototype.map()
+    // 2. Give us an array of the inventors' first and last names
+
+    const fullNames = inventors.map(inventor => `${inventor.first}-${inventor.last}<br/>`)
+    // const fullnames = inventors.map(function(inventor){
+    //     return `${inventor.first}-${inventor.last}<br/>`
+    // })
+    document.getElementById("demo2").innerHTML = fullNames;
+    // Array.prototype.sort()
+    // 3. Sort the inventors by birthdate, oldest to youngest
+    // const ordered = inventors.sort(function(a,b){
+    //     if(a.year > b.year){
+    //         return 1;
+    //     }
+    //     else{
+    //         return -1;
+    //     }
+    // })
+    // 这个sort排序的方法之前有了解过hhh 是一种冒泡排序
+    const ordered = inventors.sort((a,b) => {
+        return a.year > b.year ? 1 : -1;
+        // 也可以写 a.year > b.year ? 1 : -1;啦 效果是一样的嗷
+    })
+    console.table(ordered);
+
+    // Array.prototype.reduce()
+    // 4. How many years did all the inventors live?
+    const totalYears = inventors.reduce((total,cur_inventor) => {
+        return total + (cur_inventor.passed - cur_inventor.year);
+    }, 0)
+    console.log(totalYears);
+    document.getElementById('demo4').innerHTML = totalYears;
+
+    // 5. Sort the inventors by years lived
+    const unordered = inventors.sort((a,b) => {
+        let lastInventor = a.passed - a.year;
+        let nextInventor = b.passed - b.year;
+        return nextInventor < lastInventor;//相邻两个科学家的年龄做对比 只要last大（说明上一个发明家更老）那就排在前面
+        // return lastInventor > nextInventor ? -1 : 1;这样更好理解
+    })
+    console.table(unordered)
+
+    // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
+    // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+    // const category = document.querySelector('.mw-category');
+    // const links = Array.from(category.querySelectorAll('a'));
+    // const de = links
+    //             .map(link => link.textContent)
+    //             .filter(streetName => streetName.includes('de'));    
+
+    // 7. sort Exercise
+    // Sort the people alphabetically by last name
+
+    // 因为people的每一项都是字符串
+    // 所以要先把这每一项都变成数组 然后提取出来数组的某一位（就是那个lastName啦）
+    const alpha = people.sort((a,b) => {
+        const [alastName,afirstName] = a.split(",");
+        const [blastName,bfirstName] = b.split(",");
+        return alastName > blastName ? 1 : -1;//按照字母表的顺序来排
+    })
+    console.log(alpha);
+
+    // 字符串的比较方法如下 大写字母确实是“<”小写字母的~
+    // const a = "bb";
+    // const b = "cc";
+    // const c = "A"
+    // console.log(a < b);//true
+    // console.log(c < a && c < b);//true
+
+    // 8. Reduce Exercise
+    // Sum up the instances of each of these
+    const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+
+    const transportation = data.reduce(function(obj,item){
+        if(!obj[item]){
+            obj[item] = 0;
+        }
+        obj[item]++;
+        return obj;
+    }, {});
+    console.log(transportation);
+  </script>
+</body>
+</html>
